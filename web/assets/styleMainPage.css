@@ -1,0 +1,45 @@
+.kosmetics {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.exito{
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 72px;
+}
+
+#estadGlobales {
+    position: center;
+    background-image: url("images/estadGlobales.jpg");
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    background-size: 200%;
+    background-position: center;
+}
+
+#estadCateg {
+    position: center;
+    background-image: url("images/Tatiana-1.JPG");
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    background-size: 100%;
+    background-position: center;
+}
+
+#estadIndividuales {
+    position: center;
+    background-image: url("images/estadIndividuales.jpg");
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    background-size: 200%;
+    background-position: center;
+}

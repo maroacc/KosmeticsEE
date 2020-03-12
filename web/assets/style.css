@@ -1,5 +1,17 @@
-#background{
+#body-landing-page{
     background-image: url("images/the-honest-company-AiADE3prv90-unsplash.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+
+}
+
+@media screen and (min-width: 960px){
+    #brand{
+        font-size: 100px;
+    }
+}
+@media screen and (min-width: 1200px){
+    #brand{
+        font-size: 150px;
+    }
 }

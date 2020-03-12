@@ -5,8 +5,13 @@
 
 }
 
-@media screen and (min-width: 1200px){
-#brand{
-    font-size: 80px;
+@media screen and (min-width: 960px){
+    #brand{
+        font-size: 100px;
+    }
 }
+@media screen and (min-width: 1200px){
+    #brand{
+        font-size: 150px;
+    }
 }

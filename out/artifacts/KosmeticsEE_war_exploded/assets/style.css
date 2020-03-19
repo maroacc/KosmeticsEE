@@ -1,0 +1,34 @@
+#body-landing-page{
+    background-image: url("images/the-honest-company-AiADE3prv90-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+@media screen and (max-width: 576px) {
+    #brand {
+        font-size: 60px;
+    }
+}
+@media screen and (min-width: 576px) {
+    #brand {
+        font-size: 90px;
+    }
+}
+@media screen and (min-width: 992px){
+    #brand{
+        font-size: 120px;
+
+    }
+    #body-landing-page{
+        height: 75vh;
+    }
+}
+@media screen and (min-width: 1200px){
+    #brand{
+        font-size: 150px;
+    }
+    #body-landing-page{
+        height: 100vh;
+    }
+
+}

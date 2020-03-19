@@ -18,7 +18,6 @@
 }
 
 .kosmetics{
-    font-family: Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -30,14 +29,16 @@
 }
 
 .exito{
-
-    font-family: Poppins;
     font-style: normal;
     font-weight: 600;
     font-size: 30px;
     line-height: 72px;
 }
 
+.fotos{
+    width: 200px;
+    height: 200px;
+}
 #estadGlobales{
     position: center;
     background-image: url("images/estadGlobales.jpg");
@@ -60,62 +61,36 @@
 
 #estadIndividuales{
     position: center;
-    background-image: url("images/estadIndividuales.jpg");
-    background-repeat: no-repeat;
     width: 200px;
     height: 200px;
-    background-size: 200%;
-    background-position: center;
 }
 
-#perfilCliente{
-    position: center;
-    background-image: url("images/perfilCliente.jpg");
-    background-repeat: no-repeat;
-    width: 200px;
+/*.card-img-top{
     height: 200px;
-    background-size: 100%;
-    background-position: top;
-}
+}*/
 
 #competencia{
     position: center;
-    background-image: url("images/competencia.jpg");
-    background-repeat: no-repeat;
     width: 200px;
     height: 200px;
-    background-size: 100%;
-    background-position: center;
 }
 
 #coloretes{
     position: center;
-    background-image: url("images/coloretes.jpg");
-    background-repeat: no-repeat;
     width: 200px;
     height: 200px;
-    background-size: 180%;
-    background-position: center;
 }
 
 #sombras{
     position: center;
-    background-image: url("images/sombrasDeOjos.jpg");
-    background-repeat: no-repeat;
     width: 200px;
     height: 200px;
-    background-size: 100%;
-    background-position: center;
 }
 
 #bases{
     position: center;
-    background-image: url("images/bases.jpg");
-    background-repeat: no-repeat;
     width: 200px;
     height: 200px;
-    background-size: 165%;
-    background-position: center;
 }
 
 .bases{

@@ -11,13 +11,15 @@
     <title>Kosmetics</title>
 </head>
 <body>
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-0 bg-white border-bottom shadow-sm">
+<div class="d-flex flex-md-row align-items-center p-3 px-md-4 mb-0 bg-white border-bottom shadow-sm">
     <img id="logo" src="assets/images/LogoBueno.svg">
     <h5 class="my-0 mr-md-auto font-weight-bold">osmetics</h5>
-    <form class="form-inline my-2 my-lg-0 mr-md-auto">
+    <form class="form-inline my-2 my-lg-0 mr-md-auto d-none d-lg-block">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     </form>
-    <a class="btn btn-outline-primary" href="#">Añadir productos</a>
+    <nav class="my-2 my-md-0 mr-md-3 ml-auto">
+        <a class="btn btn-outline-primary" href="#">Añadir productos</a>
+    </nav>
     <div class="vl"></div>
     <img id="logoEmpresa" src="assets/images/pruebaLogoEmpresa.png">
 </div>
@@ -30,34 +32,44 @@
 <!--Aquí lo de descubre el éxito de tu empresa-->
 <div class="container">
     <div class="exito">
-        <p>Descubre el éxito de tu empresa</p>
+        <p id="exito">Descubre el éxito de tu empresa</p>
     </div>
 </div>
-<!--Primera línea de fotos-->
-<div class="container">
-    <section class="main row">
-        <div class="col-xs-12 col-md-6 col-lg-4">
-            <button type="button" name="bases" id="bases" value=""></button>
-            <p class="bases">Bases de maquillaje y primers</p>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-4">
-            <button type="button" name="estadCateg" id="estadCateg" value=""></button>
-            <p style="padding-left: 10px">Estadísticas por categoría</p>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-4">
-            <button type="button" name="estadIndividuales" id="estadIndividuales" value=""></button>
-            <p style="padding-left: 15px">Estadísticas individuales</p>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-4">
-            <button type="button" name="coloretes" id="coloretes" value=""></button>
-            <p style="padding-left: 10px">Coloretes e iluminadores</p>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-4">
-            <button type="button" name="sombras" id="sombras" value=""></button>
-            <p style="padding-left: 50px">Competencia</p>
-        </div>
-    </section>
-</div>
+    <!--Primera línea de fotos-->
+    <div class="container">
+        <section class="main row">
+            <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="card" style="width: 200px;">
+                    <a><img src="assets/images/bases.jpg" class="card-img-top"></a>
+                    <p class="bases">Bases de maquillaje y primers</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="card" style="width: 200px;">
+                    <a><img src="assets/images/pintalabios.jpg" class="card-img-top"></a>
+                    <p style="padding-left: 10px">Estadísticas por categoría</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="card" style="width: 200px;">
+                    <a><img src="assets/images/estadIndividuales.jpg" class="card-img-top"></a>
+                    <p style="padding-left: 15px">Estadísticas individuales</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="card" style="width: 200px;">
+                    <a><img src="assets/images/coloretes.jpg" class="card-img-top"></a>
+                    <p style="padding-left: 10px">Coloretes e iluminadores</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="card" style="width: 200px;">
+                    <a><img src="assets/images/sombrasDeOjos.jpg" class="card-img-top"></a>
+                    <p style="padding-left: 50px">Competencia</p>
+                </div>
+            </div>
+        </section>
+    </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

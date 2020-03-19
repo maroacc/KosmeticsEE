@@ -1,8 +1,32 @@
-.kosmetics {
+#logo{
+    height: 24px;
+    position: relative;
+}
+
+.vl{
+    height: 40px;
+    width: 2px;
+    background-color: gray;
+    margin-left: 15px;
+    margin-right: 15px;
+    opacity: 50%;
+}
+
+#logoEmpresa{
+    height: 40px;
+    width: 40px;
+}
+
+.kosmetics{
     font-family: Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
+}
+
+#titulo{
+    font-size: 50px;
+    margin-bottom: 0;
 }
 
 .exito{
@@ -14,7 +38,7 @@
     line-height: 72px;
 }
 
-#estadGlobales {
+#estadGlobales{
     position: center;
     background-image: url("images/estadGlobales.jpg");
     background-repeat: no-repeat;
@@ -24,9 +48,9 @@
     background-position: center;
 }
 
-#estadCateg {
+#estadCateg{
     position: center;
-    background-image: url("images/Tatiana-1.JPG");
+    background-image: url("images/pintalabios.jpg");
     background-repeat: no-repeat;
     width: 200px;
     height: 200px;
@@ -34,7 +58,7 @@
     background-position: center;
 }
 
-#estadIndividuales {
+#estadIndividuales{
     position: center;
     background-image: url("images/estadIndividuales.jpg");
     background-repeat: no-repeat;
@@ -42,4 +66,59 @@
     height: 200px;
     background-size: 200%;
     background-position: center;
+}
+
+#perfilCliente{
+    position: center;
+    background-image: url("images/perfilCliente.jpg");
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    background-size: 100%;
+    background-position: top;
+}
+
+#competencia{
+    position: center;
+    background-image: url("images/competencia.jpg");
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    background-size: 100%;
+    background-position: center;
+}
+
+#coloretes{
+    position: center;
+    background-image: url("images/coloretes.jpg");
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    background-size: 180%;
+    background-position: center;
+}
+
+#sombras{
+    position: center;
+    background-image: url("images/sombrasDeOjos.jpg");
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    background-size: 100%;
+    background-position: center;
+}
+
+#bases{
+    position: center;
+    background-image: url("images/bases.jpg");
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    background-size: 165%;
+    background-position: center;
+}
+
+.bases{
+    width: 200px;
+    text-align: center;
 }

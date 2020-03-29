@@ -1,3 +1,8 @@
+#logo{
+    height: 24px;
+    position: relative;
+}
+
 #body-landing-page{
     background-image: url("../assets/images/the-honest-company-AiADE3prv90-unsplash.jpg");
     background-size: cover;

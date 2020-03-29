@@ -1,13 +1,10 @@
 .kosmetics {
-    font-family: Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
 }
 
 .exito{
-
-    font-family: Poppins;
     font-style: normal;
     font-weight: 600;
     font-size: 30px;
@@ -16,7 +13,7 @@
 
 #estadGlobales {
     position: center;
-    background-image: url("images/estadGlobales.jpg");
+    background-image: url("../assets/images/estadGlobales.jpg");
     background-repeat: no-repeat;
     width: 200px;
     height: 200px;
@@ -26,7 +23,7 @@
 
 #estadCateg {
     position: center;
-    background-image: url("images/Tatiana-1.JPG");
+    background-image: url("../assets/images/Tatiana-1.JPG");
     background-repeat: no-repeat;
     width: 200px;
     height: 200px;
@@ -36,7 +33,7 @@
 
 #estadIndividuales {
     position: center;
-    background-image: url("images/estadIndividuales.jpg");
+    background-image: url("../assets/images/estadIndividuales.jpg");
     background-repeat: no-repeat;
     width: 200px;
     height: 200px;

@@ -26,26 +26,26 @@
             <div class = "col-lg-8">
                 <h1 class="text-center pt-5">Crea tu cuenta</h1>
                 <h4 class="text-center text-muted py-3">¡Descubre lo que opinan tus clientes!</h4>
-                <form onsubmit="return validate()" class="needs-validation" novalidate>
+                <form onsubmit="return validate()" action="registro" method="post" class="needs-validation" novalidate>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Correo electrónico</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                        <label for="inputEmail">Correo electrónico</label>
+                        <input type="email" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="emailHelp" required>
                         <div class="invalid-feedback">
                             Campo obligatorio
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Nombre de usuario</label>
-                        <input type="text" class="form-control" id="exampleInputUsername" aria-describedby="emailHelp" required>
+                        <label for="inputUsername">Nombre de usuario</label>
+                        <input type="text" class="form-control" id="inputUsername" name="inputUsername" aria-describedby="emailHelp" required>
                         <div class="invalid-feedback">
                             Campo obligatorio
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Contraseña</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" required>
+                        <label for="inputPassword">Contraseña</label>
+                        <input type="password" class="form-control" id="inputPassword" name="inputPassword" required>
                         <div class="invalid-feedback">
                             Campo obligatorio
                         </div>

@@ -31,7 +31,7 @@ public class DAOBrands {
             pstmt.setNString(1, brand.getName());
             pstmt.setNString(2, brand.getUsername());
             pstmt.setNString(3, brand.getPassword());
-            pstmt.setNString(4, brand.getEmail());
+            pstmt.setNString(4, brand.getUserEmail());
             pstmt.setNString(5, brand.getWebAddress());
             pstmt.setNString(6, brand.getBrandContact().getContactEmail());
             pstmt.setNString(7, brand.getDescription());

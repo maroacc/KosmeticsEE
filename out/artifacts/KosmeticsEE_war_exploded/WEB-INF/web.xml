@@ -8,4 +8,22 @@
     <welcome-file-list>
         <welcome-file>registrarse.jsp</welcome-file>
     </welcome-file-list>
+
+    <servlet>
+        <servlet-name>servletRegistro</servlet-name>
+        <servlet-class>Servlets.ServletRegistro</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletRegistro</servlet-name>
+        <url-pattern>/registro</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>checkoutJSP</servlet-name>
+        <jsp-file>/checkout.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>checkoutJSP</servlet-name>
+        <url-pattern>/checkout</url-pattern>
+    </servlet-mapping>
+
 </web-app>

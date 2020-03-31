@@ -1,11 +1,13 @@
 'use strict';
 function validate() {
+    var ok = true;
     var inputs = $("form").find(':input');
     for ( var i = 0; i < inputs.length; i++ ) {
         //inputs[i].classList.add("is-invalid");
         var inpObj = inputs[i];
         if (!inpObj.checkValidity()) {
             inpObj.classList.add("is-invalid");
+            ok = false;
             var name = inpObj.name;
             if (name != ""){
                 //$("#"+ name).parent().find(".invalid-feedback").text("Por favor, especifique el nombre del producto");
@@ -15,7 +17,8 @@ function validate() {
         else {
             inpObj.classList.remove("is-invalid");
         }
-
+        alert(ok);
+    return ok;
     }
 
     /*if (!inpObj.checkValidity()) {

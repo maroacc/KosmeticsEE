@@ -3,7 +3,7 @@ package Dominio;
 public class Brand {
     private String name;
     private String username;
-    private String email;
+    private String userEmail;
     private String password;
     private String webAddress;
     private String description;
@@ -12,11 +12,15 @@ public class Brand {
     private BrandContact brandContact = new BrandContact();
     private Payment payment = new Payment();
 
-    public Brand(String name, String username,String password, String userEmail, String webAddress, String contactEmail, String description, String fiscalAddress, String CIF, String tipoPago, Boolean pagoAutomatico, String companyName, String contactPerson, String contactDirection){
-        this.setName(name);
+    public Brand(String userEmail, String username, String password){
+        this.setUserEmail(userEmail);
         this.setUsername(username);
         this.setPassword(password);
-        this.setEmail(userEmail);
+    }
+
+    public Brand(String name, String username,String password, String userEmail, String webAddress, String contactEmail, String description, String fiscalAddress, String CIF, String tipoPago, Boolean pagoAutomatico, String companyName, String contactPerson, String contactDirection){
+        this(userEmail, username, password);
+        this.setName(name);
         this.setWebAddress(webAddress);
         this.getBrandContact().setContactEmail(contactEmail);
         this.getBrandContact().getContactEmail();
@@ -46,12 +50,12 @@ public class Brand {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
     public String getPassword() {

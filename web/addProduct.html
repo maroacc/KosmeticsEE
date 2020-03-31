@@ -19,6 +19,7 @@
         <h4 class="my-3">Información general</h4>
         <div class="form-group">
             <label for="exampleNombreProducto">Nombre del producto</label>
+            <label for="inputNombre" class="sr-only">Nombre del producto</label>
             <input type="text" class="form-control" id="inputNombre" name="inputNombre" aria-describedby="nombreHelpBlock" required>
             <small id="nombreHelpBlock" class="form-text text-muted">
             Nombre con el que se verá el producto en la aplicación
@@ -30,7 +31,8 @@
 
 
         <div class="my-3">
-            <textarea class="form-control" id="validationTextarea" placeholder="Descripción del producto" aria-describedby="nombreHelpBlock" required></textarea>
+            <label for="validationTextarea" class="sr-only">Descripción del producto</label>
+            <textarea class="form-control" id="validationTextarea" placeholder="Descripción del producto" aria-describedby="descriptionHelpBlock" required></textarea>
             <small id="descriptionHelpBlock" class="form-text text-muted">
                 La descripción debe contener al menos 100 caracteres y un máximo de 300
             </small>
@@ -60,17 +62,18 @@
             <h4 class="my-3">Precio</h4>
             <div class="form-row">
                 <div class="input-group col-lg-6 mb-3">
-
-                    <input type="text" class="form-control" id="exampleNombreProducto" aria-describedby="emailHelp" placeholder="Precio en euros" required>
+                    <label for="inputDescuento" class="sr-only">Porcentaje de descuento</label>
+                    <label for="inputPrecio" class="sr-only">Precio en euros</label>
+                    <input type="text" class="form-control" id="inputPrecio" aria-describedby="emailHelp" placeholder="Precio en euros" required>
                     <div class="input-group-append">
-                        <span class="input-group-text" id="basic-addon1">€</span>
+                        <span class="input-group-text">€</span>
                     </div>
                 </div>
                 <div class="input-group col-lg-6 mb-3">
 
-                    <input type="text" class="form-control" id="exampleNombreProducto" aria-describedby="emailHelp" placeholder="Porcentaje de descuento" required>
+                    <input type="text" class="form-control" id="inputDescuento" aria-describedby="emailHelp" placeholder="Porcentaje de descuento" required>
                     <div class="input-group-append">
-                        <span class="input-group-text" id="basic-addon1">%</span>
+                        <span class="input-group-text">%</span>
                     </div>
                 </div>
             </div>
@@ -81,7 +84,7 @@
             <div class="form-row">
                 <div class="col-lg-4">
                     <div class="form-check m-1 m-lg-2">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" >
                         <label class="form-check-label" for="defaultCheck1">
                             Larga Duración
                         </label>
@@ -90,33 +93,16 @@
 
                 <div class="col-lg-4">
                     <div class="form-check m-1 m-lg-2">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
+                        <label class="form-check-label" for="defaultCheck2">
                             Larga Duración
                         </label>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-check m-1 m-lg-2">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                            Larga Duración
-                        </label>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="form-check m-1 m-lg-2">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                            Larga Duración
-                        </label>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="form-check m-1 m-lg-2">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck3" >
+                        <label class="form-check-label" for="defaultCheck3">
                             Larga Duración
                         </label>
                     </div>
@@ -124,16 +110,33 @@
 
                 <div class="col-lg-4">
                     <div class="form-check m-1 m-lg-2">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck4" >
+                        <label class="form-check-label" for="defaultCheck4">
                             Larga Duración
                         </label>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="form-check m-1 m-lg-2">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck5" >
+                        <label class="form-check-label" for="defaultCheck5">
+                            Larga Duración
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="form-check m-1 m-lg-2">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" >
+                        <label class="form-check-label" for="defaultCheck6">
+                            Larga Duración
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-check m-1 m-lg-2">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck7" >
+                        <label class="form-check-label" for="defaultCheck7">
                             Larga Duración
                         </label>
                     </div>
@@ -150,20 +153,27 @@
                         </small>
                     </div>
                     <div class="col-lg-6 mb-3">
-                        <select type="text" class="form-control" placeholder="Nombre del color" required>
-                            <option>Negro</option>
-                            <option>Blanco</option>
-                            <option>Beige</option>
-                        </select>
+                        <label class="sr-only" for="inputNombreColor">Nombre del color</label>
+                            <select class="form-control" id="inputNombreColor" aria-describedby="colorHelpBlock" required>
+                                <option>Negro</option>
+                                <option>Blanco</option>
+                                <option>Beige</option>
+                            </select>
+                        <small id="colorHelpBlock" class="form-text text-muted">
+                            Especifique el color del producto
+                        </small>
                     </div>
 
                     <div class="input-group col-lg-6 mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">#</span>
                         </div>
-                        <input type="text" class="form-control" id="exampleNombreProducto" aria-describedby="emailHelp" placeholder="Hex" required>
-
+                        <input type="text" class="form-control" id="exampleNombreProducto" aria-describedby="colorHexHelpBlock" placeholder="Hex" required>
+                        <small id="colorHexHelpBlock" class="form-text text-muted col-12 px-0">
+                            Especifique el color en hexadecimal
+                        </small>
                     </div>
+
                     <button class="btn btn-link my-0 mx-2 p-0"><h4>+</h4></button>
                 </div>
             </div>

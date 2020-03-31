@@ -1,12 +1,21 @@
 'use strict';
 function validate() {
-    var inpObj = document.getElementById("inputNombre");
     var inputs = $("form").find(':input');
-
     for ( var i = 0; i < inputs.length; i++ ) {
         //inputs[i].classList.add("is-invalid");
         var inpObj = inputs[i];
-        inpObj.classList.add("is-invalid");
+        if (!inpObj.checkValidity()) {
+            inpObj.classList.add("is-invalid");
+            var name = inpObj.name;
+            if (name != ""){
+                //$("#"+ name).parent().find(".invalid-feedback").text("Por favor, especifique el nombre del producto");
+                // Esto cambiaría el mensaje de error en caso de necesitarlo
+            }
+        }
+        else {
+            inpObj.classList.remove("is-invalid");
+        }
+
     }
 
     /*if (!inpObj.checkValidity()) {

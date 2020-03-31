@@ -13,10 +13,16 @@
     #brand {
         font-size: 60px;
     }
+    #body-landing-page{
+        height: 100vh;
+    }
 }
 @media screen and (min-width: 576px) {
     #brand {
         font-size: 90px;
+    }
+    #body-landing-page{
+        height: 100vh;
     }
 }
 @media screen and (min-width: 992px){
@@ -25,7 +31,7 @@
 
     }
     #body-landing-page{
-        height: 75vh;
+        height: 100vh;
     }
 }
 @media screen and (min-width: 1200px){

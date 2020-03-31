@@ -14,9 +14,9 @@
 <div id="body-landing-page" class="pb-0">
     <div class="d-flex flex-md-row align-items-center p-3 px-md-4 mb-0 bg-white border-bottom shadow-sm">
         <h5 class="my-0 mr-md-auto font-weight-normal">Kosmetics</h5>
-        <form class="form-inline my-2 my-lg-0 mr-md-auto d-none d-lg-block">
+        <div class="form-inline my-2 my-lg-0 mr-md-auto d-none d-lg-block">
             <input class="form-control mr-sm-2 d-none d-lg" type="search" placeholder="Search" aria-label="Search">
-        </form>
+        </div>
         <nav class="my-2 my-md-0 mr-md-3 ml-auto">
             <a class="p-2 text-dark" href="#">Iniciar sesión</a>
         </nav>
@@ -24,15 +24,158 @@
     </div>
 </div>
 
-<div class="pricing-header px-3 py pt-md-5 pb-md-4 mx-auto text-center">
+<div class="pricing-header px-3 py pt-4 pb-4 mx-auto text-center">
     <h1 class="display-4">Checkout</h1>
 </div>
+<form onsubmit="return validate()" class="needs-validation" novalidate>
 <div class="row d-flex justify-content-center">
-    <form class="col-10 col-lg-8 col-xl-6">
-        <div class="form-group">
-            <label for="exampleInputEmail1">Nombre de la marca</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+        <div class="col-10 col-lg-8 col-xl-6" novalidate>
+            <h3 class="mb-4">Información General</h3>
+            <div class="form-group">
+                <label for="inputNombreMarca">Nombre de la marca*</label>
+                <input type="text" class="form-control" id="inputNombreMarca" aria-describedby="nombreMarcaHelpBlock" required>
+                <small id="nombreMarcaHelpBlock" class="form-text text-muted col-12 px-0">
+                    Especifique el nombre tal y como quiere que lo vean los clientes
+                </small>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio
+                </div>
+            </div>
+
+            <div class="my-3">
+                <label for="descripcionTextarea">Descripción de la marca</label>
+                <textarea class="form-control" id="descripcionTextarea" placeholder="Cuente a sus clientes los valores y los objetivos de su marca" aria-describedby="descriptionHelpBlock" required></textarea>
+                <small id="descriptionHelpBlock" class="form-text text-muted ml-0">
+                    La descripción debe contener al menos 100 caracteres y un máximo de 300
+                </small>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio
+                </div>
+            </div>
+
+            <div class="custom-file mb-5 col-12">
+                <input type="file" class="custom-file-input" id="customFile" aria-describedby="imageHelpBlock">
+                <label class="custom-file-label" for="customFile">Logo de la marca</label>
+            </div>
+
         </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class = "col-10 col-lg-8 col-xl-6">
+        <h3 class="py-3">Información de la empresa</h3>
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-lg-2 col-form-label">Nombre de la empresa*</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail3" aria-describedby="nombreEmpresaHelpBlock" placeholder="Nombre en el Registro Mercantil" required>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword3" class="col-lg-2 col-form-label info"><u >CIF*</u></label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" required>
+            </div>
+            <div class="invalid-feedback">
+                Este campo es obligatorio
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-lg-2 col-form-label">Dirección</label>
+            <div class="col-10 mb-3">
+                <label for="inputDireccionEmpresa1" class="sr-only">Linea 1 de direccion</label>
+                <input type="email" class="form-control" id="inputDireccionEmpresa1" placeholder="Línea 1 de dirección">
+            </div>
+            <div class="col-12">
+                <label for="inputDireccionEmpresa2" class="sr-only">Linea 2 de direccion</label>
+                <input type="email" class="form-control" id="inputDireccionEmpresa2" placeholder="Línea 2 de dirección">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-12 col-lg-7 mb-3">
+                <label for="inputMunicipio" class="sr-only">Municipio</label>
+                <input type="text" class="form-control" id="inputMunicipio" placeholder="Municipio">
+            </div>
+            <div class="col-6 col-lg">
+                <label for="inputProvincia" class="sr-only">Provincia</label>
+                <input type="text" class="form-control" id="inputProvincia" placeholder="Provincia">
+            </div>
+            <div class="col-6 col-lg">
+                <label for="inputCodigopostal" class="sr-only">Código Postal</label>
+                <input type="text" class="form-control" id="inputCodigopostal" placeholder="Código Postal">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row d-flex justify-content-center pb-3">
+    <div class = "col-10 col-lg-8 col-xl-6">
+        <h3 class="py-3">Contacto de la empresa</h3>
+        <div class="form-group row">
+            <label for="inputEmailContacto" class="col-sm-3 col-form-label">Email de contacto*</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="inputEmailContacto" placeholder="email@example.com" required>
+            </div>
+            <div class="invalid-feedback">
+                Este campo es obligatorio
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputNombreContacto" class="col-sm-3 col-form-label info">Nombre*: </label>
+            <div class="col">
+                <input type="text" id="inputNombreContacto" class="form-control" placeholder="Nombre" required>
+            </div>
+            <label for="inputApellidosContacto" class="col-sm-3 col-form-label info sr-only">Nombre: </label>
+            <div class="col">
+                <input type="text" class="form-control" id="inputApellidosContacto" placeholder="Apellidos" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputTelefono" class="col-sm-3 col-form-label">Teléfono</label>
+            <div class="col-sm-9">
+                <input type="email" class="form-control" id="inputTelefono">
+            </div>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Utilizar la dirección de la empresa como dirección de contacto</label>
+        </div>
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-3 col-form-label">Dirección</label>
+            <div class="col-9 mb-3">
+                <label for="inputDireccionContacto1" class="sr-only">Línea 1 de dirección</label>
+                <input type="email" class="form-control" id="inputDireccionContacto1" placeholder="Línea 1 de dirección">
+            </div>
+            <div class="col-12">
+                <label for="inputDireccionContacto2" class="sr-only">Línea 1 de dirección</label>
+                <input type="email" class="form-control" id="inputDireccionContacto2" placeholder="Línea 2 de dirección">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-12 col-lg-7 mb-3">
+                <label for="inputMunicipioContacto" class="sr-only">Municipio: </label>
+                <input type="text" class="form-control" id="inputMunicipioContacto" placeholder="Municipio">
+            </div>
+            <div class="col-6 col-lg">
+                <label for="inputProvinciaContacto" class="sr-only">Provincia: </label>
+                <input type="text" class="form-control" placeholder="Provincia" id="inputProvinciaContacto">
+            </div>
+            <div class="col-6 col-lg">
+                <label for="inputCodigoPostalContacto" class="sr-only">Código Postal: </label>
+                <input type="text" class="form-control" placeholder="Código Postal" id="inputCodigoPostalContacto">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row d-flex justify-content-center pb-5">
+    <div  class = "col-10 col-lg-8 col-xl-6 pb-3">
+        <h3 class="py-3">Pago</h3>
+
         <div class="form-group">
             <label for="exampleInputTipoDePago">Tipo de pago</label>
             <select class="form-control" id="exampleInputTipoDePago">
@@ -42,8 +185,8 @@
 
         </div>
         <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Activar el pago automático de la subscripción</label>
+            <input type="checkbox" class="form-check-input" id="checkboxPagoAutomatico">
+            <label class="form-check-label" for="checkboxPagoAutomatico">Activar el pago automático de la subscripción</label>
         </div>
         <ul class="form-group pl-0">
             <li class="list-group-item d-flex justify-content-between lh-condensed">
@@ -55,152 +198,61 @@
             </li>
 
         </ul>
-    </form>
-</div>
-
-<div class="row d-flex justify-content-center">
-    <form class = "col-10 col-lg-8 col-xl-6">
-    <h3 class="py-3">Información de la empresa</h3>
-    <div class="form-group row">
-        <label for="inputEmail3" class="col-sm-3 col-form-label">Nombre de la empresa</label>
-        <div class="col-sm-9">
-            <input type="email" class="form-control" id="inputEmail3">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="inputPassword3" class="col-sm-3 col-form-label info"><u >EU VAT ID</u></label>
-        <div class="col-sm-9">
-            <input type="password" class="form-control" id="inputPassword3">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label for="inputEmail3" class="col-sm-3 col-form-label">Dirección</label>
-         <div class="col-9 mb-3">
-            <input type="email" class="form-control" id="inputEmail4 " placeholder="Línea 1 de dirección">
-         </div>
-        <div class="col-12">
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Línea 2 de dirección">
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="col-12 col-lg-7 mb-3">
-            <input type="text" class="form-control" placeholder="Municipio">
-        </div>
-        <div class="col-6 col-lg">
-            <input type="text" class="form-control" placeholder="Provincia">
-        </div>
-        <div class="col-6 col-lg">
-            <input type="text" class="form-control" placeholder="Código Postal">
-        </div>
-    </div>
-</form>
-</div>
-
-<div class="row d-flex justify-content-center pb-3">
-    <form class = "col-10 col-lg-8 col-xl-6">
-        <h3 class="py-3">Contacto de la empresa</h3>
-        <div class="form-group row">
-            <label for="staticEmail" class="col-sm-3 col-form-label">Email de contacto</label>
-            <div class="col-sm-9">
-                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-3 col-form-label info">Nombre: </label>
-            <div class="col">
-                <input type="text" class="form-control" placeholder="Nombre">
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" placeholder="Apellidos">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-3 col-form-label">Teléfono (Opcional)</label>
-            <div class="col-sm-9">
-                <input type="email" class="form-control" id="inputEmail4">
-            </div>
-        </div>
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Utilizar la dirección de la empresa como dirección de contacto</label>
-        </div>
-        <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-3 col-form-label">Dirección</label>
-            <div class="col-9 mb-3">
-                <input type="email" class="form-control" id="inputEmail4 " placeholder="Línea 1 de dirección">
-            </div>
-            <div class="col-12">
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Línea 2 de dirección">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="col-12 col-lg-7 mb-3">
-                <input type="text" class="form-control" placeholder="Municipio">
-            </div>
-            <div class="col-6 col-lg">
-                <input type="text" class="form-control" placeholder="Provincia">
-            </div>
-            <div class="col-6 col-lg">
-                <input type="text" class="form-control" placeholder="Código Postal">
-            </div>
-        </div>
-
-    </form>
-</div>
-
-<div class="row d-flex justify-content-center pb-5">
-    <form class = "col-10 col-lg-8 col-xl-6 pb-3">
-        <h3 class="py-3">Pago</h3>
         <div class="d-block my-3">
             <div class="custom-control custom-radio">
                 <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                <label class="custom-control-label" for="credit">Credit card</label>
+                <label class="custom-control-label" for="credit">Tarjeta de crédito</label>
             </div>
             <div class="custom-control custom-radio">
                 <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" for="debit">Debit card</label>
+                <label class="custom-control-label" for="debit">Tarjeta de débito</label>
             </div>
             <div class="custom-control custom-radio">
                 <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
                 <label class="custom-control-label" for="paypal">PayPal</label>
             </div>
         </div>
-            <div class="mb-3">
-                <label for="cc-name">Name on card</label>
-                <input type="text" class="form-control" id="cc-name" placeholder="" required>
-                <small class="text-muted">Full name as displayed on card</small>
-                <div class="invalid-feedback">
-                    Name on card is required
-                </div>
+        <div class="mb-3">
+            <label for="cc-name">Nombre del propietario de la tarjeta*</label>
+            <input type="text" class="form-control" id="cc-name" placeholder="" required>
+            <small class="text-muted">Nombre completo tal y como se muestra en la tarjeta</small>
+            <div class="invalid-feedback">
+                Especifique el titular de la tarjeta
             </div>
-            <div class="mb-3">
-                <label for="cc-number">Credit card number</label>
-                <input type="text" class="form-control" id="cc-number" placeholder="" required>
-                <div class="invalid-feedback">
-                    Credit card number is required
-                </div>
+        </div>
+        <div class="mb-3">
+            <label for="cc-number">Credit card number*</label>
+            <input type="text" class="form-control" id="cc-number" placeholder="" required>
+            <div class="invalid-feedback">
+                Especifique el número de la tarjeta
             </div>
+        </div>
         <div class="row">
             <div class="col-md-3 mb-3">
-                <label for="cc-expiration">Expiration</label>
+                <label for="cc-expiration">Expiration*</label>
                 <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
                 <div class="invalid-feedback">
-                    Expiration date required
+                    Especifique la fecha de caducidad
                 </div>
             </div>
             <div class="col-md-3 mb-3">
-                <label for="cc-cvv">CVV</label>
+                <label for="cc-cvv">CVV*</label>
                 <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
                 <div class="invalid-feedback">
-                    Security code required
+                    Especifique el código de seguridad
                 </div>
             </div>
         </div>
 
         <button class="btn btn-primary btn-lg btn-block mt-5" type="submit">Finalizar la compra</button>
 
-    </form>
+    </div>
 </div>
+</form>
+
+<script type="text/javascript" src="js/validation.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

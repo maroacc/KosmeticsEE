@@ -3,6 +3,8 @@ package Dominio;
 public class BrandContact {
     private String contactName;
     private String telephone;
+    private String contactEmail;
+    private String contactDirection;
 
     public BrandContact(){
 
@@ -39,9 +41,6 @@ public class BrandContact {
     public void setContactEmail(String contactEmail) {
         this.contactEmail = contactEmail;
     }
-
-    private String contactDirection;
-    private String contactEmail;
 
 }
 

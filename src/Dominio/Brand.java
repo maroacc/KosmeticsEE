@@ -8,9 +8,9 @@ public class Brand {
     private String webAddress;
     private String description;
     private String logo; //Probablemente no sea string
-    private Company company;
-    private BrandContact brandContact;
-    private Payment payment;
+    private Company company = new Company();
+    private BrandContact brandContact = new BrandContact();
+    private Payment payment = new Payment();
 
     public Brand(String name, String username,String password, String userEmail, String webAddress, String contactEmail, String description, String fiscalAddress, String CIF, String tipoPago, Boolean pagoAutomatico, String companyName, String contactPerson, String contactDirection){
         this.setName(name);
@@ -19,6 +19,7 @@ public class Brand {
         this.setEmail(userEmail);
         this.setWebAddress(webAddress);
         this.getBrandContact().setContactEmail(contactEmail);
+        this.getBrandContact().getContactEmail();
         this.setDescription(description);
         this.getBrandContact().setContactName(contactPerson);
         this.getCompany().setFiscalAddress(fiscalAddress);

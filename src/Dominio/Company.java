@@ -3,7 +3,7 @@ package Dominio;
 public class Company {
     private String fiscalAddress;
     private String CIF;
-    private String companyName;
+    private String name;
 
     public String getFiscalAddress() {
         return fiscalAddress;
@@ -21,11 +21,11 @@ public class Company {
         this.CIF = CIF;
     }
 
-    public String getCompanyName() {
-        return companyName;
+    public String getName() {
+        return name;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setName(String name) {
+        this.name = name;
     }
 }

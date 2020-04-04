@@ -9,7 +9,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
+    <!--  meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -35,14 +35,14 @@
 <div class="pricing-header px-3 py pt-4 pb-4 mx-auto text-center">
     <h1 class="display-4">Checkout</h1>
 </div>
-<form onsubmit="return validate()" class="needs-validation" novalidate>
+<form onsubmit="return validate()" class="needs-validation" method="post" action="servletCheckout" novalidate>
     <div class="row d-flex justify-content-center">
 
-        <div class="col-10 col-lg-8 col-xl-6" novalidate>
+        <div class="col-10 col-lg-8 col-xl-6">
             <h3 class="mb-4">Información General</h3>
             <div class="form-group">
                 <label for="inputNombreMarca">Nombre de la marca*</label>
-                <input type="text" class="form-control" id="inputNombreMarca" aria-describedby="nombreMarcaHelpBlock" required>
+                <input type="text" class="form-control" id="inputNombreMarca" name="inputNombreMarca" aria-describedby="nombreMarcaHelpBlock" >
                 <small id="nombreMarcaHelpBlock" class="form-text text-muted col-12 px-0">
                     Especifique el nombre tal y como quiere que lo vean los clientes
                 </small>
@@ -53,7 +53,7 @@
 
             <div class="my-3">
                 <label for="descripcionTextarea">Descripción de la marca</label>
-                <textarea class="form-control" id="descripcionTextarea" name="descripcionTextarea" placeholder="Cuente a sus clientes los valores y los objetivos de su marca" aria-describedby="descriptionHelpBlock" required></textarea>
+                <textarea class="form-control" id="descripcionTextarea" name="descripcionTextarea" placeholder="Cuente a sus clientes los valores y los objetivos de su marca" aria-describedby="descriptionHelpBlock" ></textarea>
                 <small id="descriptionHelpBlock" class="form-text text-muted ml-0">
                     La descripción debe contener al menos 100 caracteres y un máximo de 300
                 </small>
@@ -63,8 +63,19 @@
             </div>
 
             <div class="custom-file mb-5 col-12">
-                <input type="file" class="custom-file-input" id="customFile" aria-describedby="imageHelpBlock">
-                <label class="custom-file-label" for="customFile">Logo de la marca</label>
+                <input type="file" class="custom-file-input" name="inputLogo" id="inputLogo" aria-describedby="imageHelpBlock">
+                <label class="custom-file-label" for="inputLogo">Logo de la marca</label>
+            </div>
+
+            <div class="form-group">
+                <label for="inputWebAddress">Dirección web</label>
+                <input type="url" class="form-control" id="inputWebAddress" name="inputWebAddress" aria-describedby="webAddressHelpBlock" >
+                <small id="webAddressHelpBlock" class="form-text text-muted col-12 px-0">
+                    Url del la página web
+                </small>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio
+                </div>
             </div>
 
         </div>
@@ -76,44 +87,44 @@
             <div class="form-group row">
                 <label for="inputNombreEmpresa" class="col-lg-2 col-form-label">Nombre de la empresa*</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputNombreEmpresa" name = "inputNombreEmpresa" aria-describedby="nombreEmpresaHelpBlock" placeholder="Nombre en el Registro Mercantil" required>
+                    <input type="text" class="form-control" id="inputNombreEmpresa" name = "inputNombreEmpresa" aria-describedby="nombreEmpresaHelpBlock" placeholder="Nombre en el Registro Mercantil" >
                     <div class="invalid-feedback">
                         Este campo es obligatorio
                     </div>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputPassword3" class="col-lg-2 col-form-label info"><u >CIF*</u></label>
+                <label for="inputCIF" class="col-lg-2 col-form-label info"><u >CIF*</u></label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword3" required>
+                    <input type="text" class="form-control" id="inputCIF" name="inputCIF" >
                 </div>
                 <div class="invalid-feedback">
                     Este campo es obligatorio
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputEmail3" class="col-lg-2 col-form-label">Dirección</label>
+                <label class="col-lg-2 col-form-label">Dirección</label>
                 <div class="col-10 mb-3">
                     <label for="inputDireccionEmpresa1" class="sr-only">Linea 1 de direccion</label>
-                    <input type="email" class="form-control" id="inputDireccionEmpresa1" placeholder="Línea 1 de dirección">
+                    <input type="email" class="form-control" id="inputDireccionEmpresa1" name="inputDireccionEmpresa1" placeholder="Línea 1 de dirección">
                 </div>
                 <div class="col-12">
                     <label for="inputDireccionEmpresa2" class="sr-only">Linea 2 de direccion</label>
-                    <input type="email" class="form-control" id="inputDireccionEmpresa2" placeholder="Línea 2 de dirección">
+                    <input type="email" class="form-control" id="inputDireccionEmpresa2" name="inputDireccionEmpresa2" placeholder="Línea 2 de dirección">
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-12 col-lg-7 mb-3">
                     <label for="inputMunicipio" class="sr-only">Municipio</label>
-                    <input type="text" class="form-control" id="inputMunicipio" placeholder="Municipio">
+                    <input type="text" class="form-control" id="inputMunicipio" name="inputMunicipio" placeholder="Municipio">
                 </div>
                 <div class="col-6 col-lg">
                     <label for="inputProvincia" class="sr-only">Provincia</label>
-                    <input type="text" class="form-control" id="inputProvincia" placeholder="Provincia">
+                    <input type="text" class="form-control" id="inputProvincia" name="inputProvincia" placeholder="Provincia">
                 </div>
                 <div class="col-6 col-lg">
                     <label for="inputCodigopostal" class="sr-only">Código Postal</label>
-                    <input type="text" class="form-control" id="inputCodigopostal" placeholder="Código Postal">
+                    <input type="text" class="form-control" id="inputCodigopostal" name="inputCodigopostal" placeholder="Código Postal">
                 </div>
             </div>
         </div>
@@ -125,7 +136,7 @@
             <div class="form-group row">
                 <label for="inputEmailContacto" class="col-sm-3 col-form-label">Email de contacto*</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="inputEmailContacto" placeholder="email@example.com" required>
+                    <input type="text" class="form-control" id="inputEmailContacto" name="inputEmailContacto" placeholder="email@example.com" >
                 </div>
                 <div class="invalid-feedback">
                     Este campo es obligatorio
@@ -134,46 +145,46 @@
             <div class="form-group row">
                 <label for="inputNombreContacto" class="col-sm-3 col-form-label info">Nombre*: </label>
                 <div class="col">
-                    <input type="text" id="inputNombreContacto" class="form-control" placeholder="Nombre" required>
+                    <input type="text" id="inputNombreContacto" name="inputNombreContacto" class="form-control" placeholder="Nombre" >
                 </div>
                 <label for="inputApellidosContacto" class="col-sm-3 col-form-label info sr-only">Nombre: </label>
                 <div class="col">
-                    <input type="text" class="form-control" id="inputApellidosContacto" placeholder="Apellidos" required>
+                    <input type="text" class="form-control" id="inputApellidosContacto" name="inputApellidosContacto" placeholder="Apellidos" >
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputTelefono" class="col-sm-3 col-form-label">Teléfono</label>
                 <div class="col-sm-9">
-                    <input type="email" class="form-control" id="inputTelefono">
+                    <input type="email" class="form-control" id="inputTelefono" name="inputTelefono">
                 </div>
             </div>
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Utilizar la dirección de la empresa como dirección de contacto</label>
             </div>
             <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-3 col-form-label">Dirección</label>
+                <label class="col-sm-3 col-form-label">Dirección</label>
                 <div class="col-9 mb-3">
                     <label for="inputDireccionContacto1" class="sr-only">Línea 1 de dirección</label>
-                    <input type="email" class="form-control" id="inputDireccionContacto1" placeholder="Línea 1 de dirección">
+                    <input type="email" class="form-control" id="inputDireccionContacto1" name="inputDireccionContacto1" placeholder="Línea 1 de dirección">
                 </div>
                 <div class="col-12">
                     <label for="inputDireccionContacto2" class="sr-only">Línea 1 de dirección</label>
-                    <input type="email" class="form-control" id="inputDireccionContacto2" placeholder="Línea 2 de dirección">
+                    <input type="email" class="form-control" id="inputDireccionContacto2" name="inputDireccionContacto2" placeholder="Línea 2 de dirección">
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-12 col-lg-7 mb-3">
                     <label for="inputMunicipioContacto" class="sr-only">Municipio: </label>
-                    <input type="text" class="form-control" id="inputMunicipioContacto" placeholder="Municipio">
+                    <input type="text" class="form-control" id="inputMunicipioContacto" name="inputMunicipioContacto" placeholder="Municipio">
                 </div>
                 <div class="col-6 col-lg">
                     <label for="inputProvinciaContacto" class="sr-only">Provincia: </label>
-                    <input type="text" class="form-control" placeholder="Provincia" id="inputProvinciaContacto">
+                    <input type="text" class="form-control" placeholder="Provincia" name="inputProvinciaContacto" id="inputProvinciaContacto">
                 </div>
                 <div class="col-6 col-lg">
                     <label for="inputCodigoPostalContacto" class="sr-only">Código Postal: </label>
-                    <input type="text" class="form-control" placeholder="Código Postal" id="inputCodigoPostalContacto">
+                    <input type="text" class="form-control" placeholder="Código Postal" id="inputCodigoPostalContacto" name="inputCodigoPostalContacto">
                 </div>
             </div>
 
@@ -185,15 +196,15 @@
             <h3 class="py-3">Pago</h3>
 
             <div class="form-group">
-                <label for="exampleInputTipoDePago">Tipo de pago</label>
-                <select class="form-control" id="exampleInputTipoDePago">
+                <label for="inputTipoPago">Tipo de pago</label>
+                <select class="form-control" id="inputTipoPago" name="inputTipoPago">
                     <option>Pago mensual</option>
                     <option>Pago anual</option>
                 </select>
 
             </div>
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="checkboxPagoAutomatico">
+                <input type="checkbox" class="form-check-input" id="checkboxPagoAutomatico" name="checkboxPagoAutomatico">
                 <label class="form-check-label" for="checkboxPagoAutomatico">Activar el pago automático de la subscripción</label>
             </div>
             <ul class="form-group pl-0">
@@ -208,21 +219,21 @@
             </ul>
             <div class="d-block my-3">
                 <div class="custom-control custom-radio">
-                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked >
                     <label class="custom-control-label" for="credit">Tarjeta de crédito</label>
                 </div>
                 <div class="custom-control custom-radio">
-                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" >
                     <label class="custom-control-label" for="debit">Tarjeta de débito</label>
                 </div>
                 <div class="custom-control custom-radio">
-                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" >
                     <label class="custom-control-label" for="paypal">PayPal</label>
                 </div>
             </div>
             <div class="mb-3">
                 <label for="cc-name">Nombre del propietario de la tarjeta*</label>
-                <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                <input type="text" class="form-control" id="cc-name" placeholder="" >
                 <small class="text-muted">Nombre completo tal y como se muestra en la tarjeta</small>
                 <div class="invalid-feedback">
                     Especifique el titular de la tarjeta
@@ -230,7 +241,7 @@
             </div>
             <div class="mb-3">
                 <label for="cc-number">Credit card number*</label>
-                <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                <input type="text" class="form-control" id="cc-number" placeholder="" >
                 <div class="invalid-feedback">
                     Especifique el número de la tarjeta
                 </div>
@@ -238,14 +249,14 @@
             <div class="row">
                 <div class="col-md-3 mb-3">
                     <label for="cc-expiration">Expiration*</label>
-                    <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                    <input type="text" class="form-control" id="cc-expiration" placeholder="" >
                     <div class="invalid-feedback">
                         Especifique la fecha de caducidad
                     </div>
                 </div>
                 <div class="col-md-3 mb-3">
                     <label for="cc-cvv">CVV*</label>
-                    <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                    <input type="text" class="form-control" id="cc-cvv" placeholder="" >
                     <div class="invalid-feedback">
                         Especifique el código de seguridad
                     </div>

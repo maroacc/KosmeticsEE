@@ -18,12 +18,38 @@
         <url-pattern>/registro</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>servletCheckout</servlet-name>
+        <servlet-class>Servlets.ServletCheckout</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletCheckout</servlet-name>
+        <url-pattern>/servletCheckout</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>checkoutJSP</servlet-name>
         <jsp-file>/checkout.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>checkoutJSP</servlet-name>
         <url-pattern>/checkout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>errorJSP</servlet-name>
+        <jsp-file>/error.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>errorJSP</servlet-name>
+        <url-pattern>/error</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>lucasJSP</servlet-name>
+        <jsp-file>/lucas.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>lucasJSP</servlet-name>
+        <url-pattern>/lucas</url-pattern>
     </servlet-mapping>
 
 </web-app>

@@ -25,7 +25,7 @@ public class DAOBrands {
                     " userEmail, webAddress, contactEmail," +
                     " description, fiscalAddress, CIF," +
                     " tipoPago, pagoAutomatico, companyName," +
-                    " contactPerson, contactDirection) " +
+                    " contactName, contactAddress) " +
                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             pstmt.setNString(1, brand.getName());
@@ -33,15 +33,15 @@ public class DAOBrands {
             pstmt.setNString(3, brand.getPassword());
             pstmt.setNString(4, brand.getUserEmail());
             pstmt.setNString(5, brand.getWebAddress());
-            pstmt.setNString(6, brand.getBrandContact().getContactEmail());
+            pstmt.setNString(6, brand.getContact().getEmail());
             pstmt.setNString(7, brand.getDescription());
             pstmt.setNString(8, brand.getCompany().getFiscalAddress());
             pstmt.setNString(9, brand.getCompany().getCIF());
             pstmt.setNString(10, brand.getPayment().getPaymentType());
             pstmt.setBoolean(11, brand.getPayment().isAutomaticPayment());
-            pstmt.setNString(12, brand.getUsername());
-            pstmt.setNString(13, brand.getPassword());
-            pstmt.setNString(14, brand.getUsername());
+            pstmt.setNString(12, brand.getCompany().getName());
+            pstmt.setNString(13, brand.getContact().getName());
+            pstmt.setNString(14, brand.getContact().getAddress());
 
             pstmt.executeUpdate();
 
@@ -50,5 +50,30 @@ public class DAOBrands {
             e.printStackTrace();
         }
         return ok;
+    }
+    public static boolean updateBrand(Brand brand) {
+        boolean ok = true;
+        try {
+            PreparedStatement pstmt = conBD.getConnection().prepareStatement("UPDATE brands SET brandName = ?, description = ?, webAddress = ?, " +
+                    "companyName = ?, CIF = ? , fiscalAddress = ? , contactEmail = ?, contactName = ?, contactTelephone = ?, contactAddress = ? WHERE username = ?");
+            pstmt.setNString(1, brand.getName());
+            pstmt.setNString(2, brand.getDescription());
+            pstmt.setNString(3, brand.getWebAddress());
+            pstmt.setNString(4, brand.getCompany().getName());
+            pstmt.setNString(5, brand.getCompany().getCIF());
+            pstmt.setNString(6, brand.getCompany().getFiscalAddress());
+            pstmt.setNString(7, brand.getContact().getEmail());
+            pstmt.setNString(8, brand.getContact().getName());
+            pstmt.setNString(9, brand.getContact().getTelephone());
+            pstmt.setNString(10, brand.getContact().getAddress());
+
+            pstmt.setNString(11, brand.getUsername());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            ok = false;
+        }
+
+    return ok;
     }
 }

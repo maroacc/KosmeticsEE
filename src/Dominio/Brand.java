@@ -9,9 +9,12 @@ public class Brand {
     private String description;
     private String logo; //Probablemente no sea string
     private Company company = new Company();
-    private BrandContact brandContact = new BrandContact();
+    private Contact contact = new Contact();
     private Payment payment = new Payment();
 
+    public Brand(){
+
+    }
     public Brand(String userEmail, String username, String password){
         this.setUserEmail(userEmail);
         this.setUsername(username);
@@ -22,14 +25,14 @@ public class Brand {
         this(userEmail, username, password);
         this.setName(name);
         this.setWebAddress(webAddress);
-        this.getBrandContact().setContactEmail(contactEmail);
-        this.getBrandContact().getContactEmail();
+        this.getContact().setEmail(contactEmail);
+        this.getContact().getEmail();
         this.setDescription(description);
-        this.getBrandContact().setContactName(contactPerson);
+        this.getContact().setName(contactPerson);
         this.getCompany().setFiscalAddress(fiscalAddress);
         this.getCompany().setCIF(CIF);
-        this.getCompany().setCompanyName(companyName);
-        this.getBrandContact().setContactDirection(contactDirection);
+        this.getCompany().setName(companyName);
+        this.getContact().setAddress(contactDirection);
         this.getPayment().setPaymentType(tipoPago);
         this.getPayment().setAutomaticPayment(pagoAutomatico);
     }
@@ -98,12 +101,12 @@ public class Brand {
         this.company = company;
     }
 
-    public BrandContact getBrandContact() {
-        return brandContact;
+    public Contact getContact() {
+        return contact;
     }
 
-    public void setBrandContact(BrandContact brandContact) {
-        this.brandContact = brandContact;
+    public void setContact(Contact contact) {
+        this.contact = contact;
     }
 
     public Payment getPayment() {

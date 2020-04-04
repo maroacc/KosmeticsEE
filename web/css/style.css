@@ -9,6 +9,10 @@
     background-repeat: no-repeat;
 
 }
+
+#foto-media-pantalla{
+    height: 100%;
+}
 @media screen and (max-width: 576px) {
     #brand {
         font-size: 60px;

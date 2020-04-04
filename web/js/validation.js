@@ -17,7 +17,6 @@ function validate() {
         else {
             inpObj.classList.remove("is-invalid");
         }
-        alert(ok);
     return ok;
     }
 

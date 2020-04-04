@@ -1,5 +1,6 @@
 package Servlets;
 
+import DAO.DAOBrands;
 import Dominio.Brand;
 
 import javax.servlet.ServletException;
@@ -14,8 +15,14 @@ import java.io.PrintWriter;
 public class ServletRegistro extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Brand brand = new Brand(request.getParameter("inputEmail"),request.getParameter("inputUsername"), request.getParameter("inputPassword") );
-        request.getSession().setAttribute("brand", brand);
-        request.getRequestDispatcher("/checkout.jsp").forward(request, response);
+        if(DAOBrands.addBrand(brand)){
+            request.getSession().setAttribute("username", brand.getUsername());
+            request.getRequestDispatcher("/checkout.jsp").forward(request, response);
+
+        }
+        else {
+            request.getRequestDispatcher("/error.jsp").forward(request, response);
+        }
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

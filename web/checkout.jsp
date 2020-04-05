@@ -42,18 +42,40 @@
             <h3 class="mb-4">Información General</h3>
             <div class="form-group">
                 <label for="inputNombreMarca">Nombre de la marca*</label>
-                <input type="text" class="form-control" id="inputNombreMarca" name="inputNombreMarca" aria-describedby="nombreMarcaHelpBlock" >
+                <% if(request.getSession().getAttribute("brandUnique")!=null){
+                    if(!(boolean) request.getSession().getAttribute("brandUnique")){
+                %>
+                <input type="text" class="form-control is-invalid" id="inputNombreMarca" name="inputNombreMarca" aria-describedby="nombreMarcaHelpBlock" required>
+                <small id="nombreMarcaHelpBlock" class="form-text text-muted col-12 px-0 is-invalid">
+                    Especifique el nombre tal y como quiere que lo vean los clientes
+                </small>
+                <div class="invalid-feedback">
+                    Ya existe una marca registrada con el nombre especificado
+                </div>
+                <%} else { %>
+                <input type="text" class="form-control" id="inputNombreMarca" name="inputNombreMarca" aria-describedby="nombreMarcaHelpBlock" required>
                 <small id="nombreMarcaHelpBlock" class="form-text text-muted col-12 px-0">
                     Especifique el nombre tal y como quiere que lo vean los clientes
                 </small>
                 <div class="invalid-feedback">
                     Este campo es obligatorio
                 </div>
+                <% }} else{
+                %>
+                <input type="text" class="form-control" id="inputNombreMarca" name="inputNombreMarca" aria-describedby="nombreMarcaHelpBlock" required>
+                <small id="nombreMarcaHelpBlock" class="form-text text-muted col-12 px-0">
+                    Especifique el nombre tal y como quiere que lo vean los clientes
+                </small>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio
+                </div>
+                <%}
+                %>
             </div>
 
             <div class="my-3">
                 <label for="descripcionTextarea">Descripción de la marca</label>
-                <textarea class="form-control" id="descripcionTextarea" name="descripcionTextarea" placeholder="Cuente a sus clientes los valores y los objetivos de su marca" aria-describedby="descriptionHelpBlock" ></textarea>
+                <textarea class="form-control" id="descripcionTextarea" name="descripcionTextarea" placeholder="Cuente a sus clientes los valores y los objetivos de su marca" aria-describedby="descriptionHelpBlock" required></textarea>
                 <small id="descriptionHelpBlock" class="form-text text-muted ml-0">
                     La descripción debe contener al menos 100 caracteres y un máximo de 300
                 </small>
@@ -69,7 +91,7 @@
 
             <div class="form-group">
                 <label for="inputWebAddress">Dirección web</label>
-                <input type="url" class="form-control" id="inputWebAddress" name="inputWebAddress" aria-describedby="webAddressHelpBlock" >
+                <input type="url" class="form-control" id="inputWebAddress" name="inputWebAddress" maxlength="45" aria-describedby="webAddressHelpBlock" >
                 <small id="webAddressHelpBlock" class="form-text text-muted col-12 px-0">
                     Url del la página web
                 </small>
@@ -87,7 +109,7 @@
             <div class="form-group row">
                 <label for="inputNombreEmpresa" class="col-lg-2 col-form-label">Nombre de la empresa*</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputNombreEmpresa" name = "inputNombreEmpresa" aria-describedby="nombreEmpresaHelpBlock" placeholder="Nombre en el Registro Mercantil" >
+                    <input type="text" class="form-control" id="inputNombreEmpresa" name = "inputNombreEmpresa" maxlength="45" aria-describedby="nombreEmpresaHelpBlock" placeholder="Nombre en el Registro Mercantil" >
                     <div class="invalid-feedback">
                         Este campo es obligatorio
                     </div>
@@ -96,7 +118,7 @@
             <div class="form-group row">
                 <label for="inputCIF" class="col-lg-2 col-form-label info"><u >CIF*</u></label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputCIF" name="inputCIF" >
+                    <input type="text" class="form-control" id="inputCIF" minlength="9" maxlength="9" name="inputCIF" >
                 </div>
                 <div class="invalid-feedback">
                     Este campo es obligatorio
@@ -123,8 +145,8 @@
                     <input type="text" class="form-control" id="inputProvincia" name="inputProvincia" placeholder="Provincia">
                 </div>
                 <div class="col-6 col-lg">
-                    <label for="inputCodigopostal" class="sr-only">Código Postal</label>
-                    <input type="text" class="form-control" id="inputCodigopostal" name="inputCodigopostal" placeholder="Código Postal">
+                    <label for="inputCodigoPostal" class="sr-only">Código Postal</label>
+                    <input type="text" class="form-control" id="inputCodigoPostal" name="inputCodigoPostal" maxlength="5" placeholder="Código Postal">
                 </div>
             </div>
         </div>
@@ -136,7 +158,7 @@
             <div class="form-group row">
                 <label for="inputEmailContacto" class="col-sm-3 col-form-label">Email de contacto*</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="inputEmailContacto" name="inputEmailContacto" placeholder="email@example.com" >
+                    <input type="text" class="form-control" id="inputEmailContacto" name="inputEmailContacto" placeholder="email@example.com" maxlength="45">
                 </div>
                 <div class="invalid-feedback">
                     Este campo es obligatorio
@@ -145,17 +167,17 @@
             <div class="form-group row">
                 <label for="inputNombreContacto" class="col-sm-3 col-form-label info">Nombre*: </label>
                 <div class="col">
-                    <input type="text" id="inputNombreContacto" name="inputNombreContacto" class="form-control" placeholder="Nombre" >
+                    <input type="text" id="inputNombreContacto" name="inputNombreContacto" class="form-control" placeholder="Nombre" maxlength="15">
                 </div>
                 <label for="inputApellidosContacto" class="col-sm-3 col-form-label info sr-only">Nombre: </label>
                 <div class="col">
-                    <input type="text" class="form-control" id="inputApellidosContacto" name="inputApellidosContacto" placeholder="Apellidos" >
+                    <input type="text" class="form-control" id="inputApellidosContacto" name="inputApellidosContacto" placeholder="Apellidos" maxlength="30">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputTelefono" class="col-sm-3 col-form-label">Teléfono</label>
                 <div class="col-sm-9">
-                    <input type="email" class="form-control" id="inputTelefono" name="inputTelefono">
+                    <input type="text" class="form-control" id="inputTelefono" name="inputTelefono" maxlength="13">
                 </div>
             </div>
             <div class="form-group form-check">
@@ -184,7 +206,7 @@
                 </div>
                 <div class="col-6 col-lg">
                     <label for="inputCodigoPostalContacto" class="sr-only">Código Postal: </label>
-                    <input type="text" class="form-control" placeholder="Código Postal" id="inputCodigoPostalContacto" name="inputCodigoPostalContacto">
+                    <input type="text" class="form-control" placeholder="Código Postal" id="inputCodigoPostalContacto" maxlength="5" name="inputCodigoPostalContacto">
                 </div>
             </div>
 
@@ -233,7 +255,7 @@
             </div>
             <div class="mb-3">
                 <label for="cc-name">Nombre del propietario de la tarjeta*</label>
-                <input type="text" class="form-control" id="cc-name" placeholder="" >
+                <input type="text" class="form-control" id="cc-name" placeholder="" maxlength="100">
                 <small class="text-muted">Nombre completo tal y como se muestra en la tarjeta</small>
                 <div class="invalid-feedback">
                     Especifique el titular de la tarjeta
@@ -241,7 +263,7 @@
             </div>
             <div class="mb-3">
                 <label for="cc-number">Credit card number*</label>
-                <input type="text" class="form-control" id="cc-number" placeholder="" >
+                <input type="text" class="form-control" id="cc-number" placeholder="" maxlength="16">
                 <div class="invalid-feedback">
                     Especifique el número de la tarjeta
                 </div>
@@ -249,14 +271,14 @@
             <div class="row">
                 <div class="col-md-3 mb-3">
                     <label for="cc-expiration">Expiration*</label>
-                    <input type="text" class="form-control" id="cc-expiration" placeholder="" >
+                    <input type="date" class="form-control" id="cc-expiration" placeholder="" >
                     <div class="invalid-feedback">
                         Especifique la fecha de caducidad
                     </div>
                 </div>
                 <div class="col-md-3 mb-3">
                     <label for="cc-cvv">CVV*</label>
-                    <input type="text" class="form-control" id="cc-cvv" placeholder="" >
+                    <input type="text" class="form-control" id="cc-cvv" placeholder="" maxlength="3" >
                     <div class="invalid-feedback">
                         Especifique el código de seguridad
                     </div>

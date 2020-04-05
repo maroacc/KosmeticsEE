@@ -24,28 +24,58 @@
         <img src = "assets/images/Tatiana-2.JPG" class="img-fluid col-lg-6 p-0 d-none d-xl-block">
         <div class="col-12 col-xl-6 py-5 d-flex justify-content-center">
             <div class = "col-lg-8">
-                <h1 class="text-center pt-5">Crea tu cuenta</h1>
+                <h1 class="text-center pt-4">Nueva cuenta de empresa</h1>
                 <h4 class="text-center text-muted py-3">¡Descubre lo que opinan tus clientes!</h4>
                 <form onsubmit="return validate()" action="registro" method="post" class="needs-validation" novalidate>
                     <div class="form-group">
+
                         <label for="inputEmail">Correo electrónico</label>
-                        <input type="email" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="emailHelp" required>
+                        <% if(request.getSession().getAttribute("emailUnique")!=null){
+                            if(!(boolean) request.getSession().getAttribute("emailUnique")){
+                        %>
+                        <input type="email" class="form-control is-invalid" id="inputEmail" name="inputEmail" maxlength="45" required>
+                        <div class="invalid-feedback">
+                            Ya existe una cuenta con el email especificado
+                        </div>
+
+                            <%} else { %>
+                            <input type="email" class="form-control" id="inputEmail" name="inputEmail" maxlength="45" required>
+                            <div class="invalid-feedback">
+                                Campo obligatorio
+                            </div>
+                        <% }}
+                         else{
+                        %>
+                        <input type="email" class="form-control" id="inputEmail" name="inputEmail" maxlength="45" required>
                         <div class="invalid-feedback">
                             Campo obligatorio
                         </div>
+                        <%}
+                        %>
                     </div>
 
                     <div class="form-group">
                         <label for="inputUsername">Nombre de usuario</label>
-                        <input type="text" class="form-control" id="inputUsername" name="inputUsername" aria-describedby="emailHelp" required>
+                        <% if(request.getSession().getAttribute("emailUnique")!=null){
+                            if(!(boolean) request.getSession().getAttribute("emailUnique")){
+                        %>
+                        <input type="text" class="form-control is-invalid" id="inputUsername" name="inputUsername" maxlength="45" required>
+                        <div class="invalid-feedback">
+                            Ya existe una cuenta con el nombre de ususario especificado
+                        </div>
+                        <%}} else{
+                        %>
+                        <input type="text" class="form-control" id="inputUsername" name="inputUsername" maxlength="45" required>
                         <div class="invalid-feedback">
                             Campo obligatorio
                         </div>
+                        <%}
+                        %>
                     </div>
 
                     <div class="form-group">
                         <label for="inputPassword">Contraseña</label>
-                        <input type="password" class="form-control" id="inputPassword" name="inputPassword" required>
+                        <input type="password" class="form-control" id="inputPassword" name="inputPassword" minlength="8" maxlength="45" required>
                         <div class="invalid-feedback">
                             Campo obligatorio
                         </div>

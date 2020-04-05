@@ -42,8 +42,11 @@ public class ServletCheckout extends HttpServlet {
         if(request.getParameter("inputCIF")!=null)
             brand.getCompany().setCIF(request.getParameter("inputCIF"));
 
-        if(request.getParameter("inputDireccionEmpresa1")!=null && request.getParameter("inputDireccionEmpresa2")!=null)
-            brand.getCompany().setFiscalAddress(request.getParameter("inputDireccionEmpresa1") + " " +request.getParameter("inputDireccionEmpresa2"));
+        if(request.getParameter("inputDireccionEmpresa1")!=null && request.getParameter("inputDireccionEmpresa2")!=null
+        && request.getParameter("inputMunicipio")!=null && request.getParameter("inputProvincia")!=null && request.getParameter("inputCodigoPostal")!=null){
+            brand.getCompany().setFiscalAddress(request.getParameter("inputDireccionEmpresa1") + " " +request.getParameter("inputDireccionEmpresa2")
+            + ", " + request.getParameter("inputMunicipio") + ", " + request.getParameter("inputProvincia") + ", " + request.getParameter("inputCodigoPostal"));
+        }
 
         //Información de contacto
 
@@ -56,15 +59,33 @@ public class ServletCheckout extends HttpServlet {
         if(request.getParameter("inputTelefono")!=null)
             brand.getContact().setTelephone(request.getParameter("inputTelefono"));
 
-        if(request.getParameter("inputDireccionEmpresa2")!=null)
-            brand.getContact().setAddress(request.getParameter("inputDireccionEmpresa2"));
+        if(request.getParameter("inputDireccionContacto1")!=null && request.getParameter("inputDireccionContacto2")!=null
+                && request.getParameter("inputMunicipioContacto")!=null && request.getParameter("inputProvinciaContacto")!=null && request.getParameter("inputCodigoPostalContacto")!=null){
+            brand.getContact().setAddress(request.getParameter("inputDireccionContacto1") + " " +request.getParameter("inputDireccionContacto2")
+                    + ", " + request.getParameter("inputMunicipioContacto") + ", " + request.getParameter("inputProvinciaContacto") + ", "  + request.getParameter("inputCodigoPostalContacto"));
+        }
 
         // Información de pago
 
         brand.getPayment().setPaymentType(request.getParameter("inputTipoPago"));
         brand.getPayment().setAutomaticPayment(true);
 
-        DAOBrands.updateBrand(brand);
+
+//Primero comprobamos que el usuario no esté repetido
+        if (!DAOBrands.checkBrandNameUnique(brand)) {
+            request.getSession().setAttribute("brandUnique", false);
+            request.getRequestDispatcher("/checkout.jsp").forward(request, response);
+
+        } else {
+            if (DAOBrands.updateBrand(brand)) {
+                request.getSession().setAttribute("brandUnique", true);
+                request.getSession().setAttribute("username", brand.getUsername());
+                request.getRequestDispatcher("/checkout.jsp").forward(request, response);
+
+            } else {
+                request.getRequestDispatcher("/error.jsp").forward(request, response);
+            }
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

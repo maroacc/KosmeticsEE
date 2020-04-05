@@ -3,6 +3,7 @@ package DAO;
 import Dominio.Brand;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DAOBrands {
@@ -55,7 +56,8 @@ public class DAOBrands {
         boolean ok = true;
         try {
             PreparedStatement pstmt = conBD.getConnection().prepareStatement("UPDATE brands SET brandName = ?, description = ?, webAddress = ?, " +
-                    "companyName = ?, CIF = ? , fiscalAddress = ? , contactEmail = ?, contactName = ?, contactTelephone = ?, contactAddress = ? WHERE username = ?");
+                    "companyName = ?, CIF = ? , fiscalAddress = ? , contactEmail = ?, contactName = ?, contactTelephone = ?, contactAddress = ?," +
+                    "tipoPago = ?, pagoAutomatico = ? WHERE username = ?");
             pstmt.setNString(1, brand.getName());
             pstmt.setNString(2, brand.getDescription());
             pstmt.setNString(3, brand.getWebAddress());
@@ -66,8 +68,10 @@ public class DAOBrands {
             pstmt.setNString(8, brand.getContact().getName());
             pstmt.setNString(9, brand.getContact().getTelephone());
             pstmt.setNString(10, brand.getContact().getAddress());
+            pstmt.setNString(11, brand.getPayment().getPaymentType());
+            pstmt.setBoolean(12, brand.getPayment().isAutomaticPayment());
 
-            pstmt.setNString(11, brand.getUsername());
+            pstmt.setNString(13, brand.getUsername());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -75,5 +79,53 @@ public class DAOBrands {
         }
 
     return ok;
+    }
+
+    public static boolean checkUsernameUnique(Brand brand){
+        boolean unique = true;
+        PreparedStatement pstmt = null;
+        try {
+            pstmt = conBD.getConnection().prepareStatement("SELECT 1 FROM brands WHERE username = ?");
+            pstmt.setNString(1, brand.getUsername());
+            ResultSet rs = pstmt.executeQuery();
+            if(rs.next() == true){
+                unique = false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return unique;
+    }
+
+    public static boolean checkEmailUnique(Brand brand){
+        boolean unique = true;
+        PreparedStatement pstmt = null;
+        try {
+            pstmt = conBD.getConnection().prepareStatement("SELECT 1 FROM brands WHERE userEmail = ?");
+            pstmt.setNString(1, brand.getUserEmail());
+            ResultSet rs = pstmt.executeQuery();
+            if(rs.next() == true){
+                unique = false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return unique;
+    }
+
+    public static boolean checkBrandNameUnique(Brand brand){
+        boolean unique = true;
+        PreparedStatement pstmt = null;
+        try {
+            pstmt = conBD.getConnection().prepareStatement("SELECT 1 FROM brands WHERE brandName = ?");
+            pstmt.setNString(1, brand.getName());
+            ResultSet rs = pstmt.executeQuery();
+            if(rs.next() == true){
+                unique = false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return unique;
     }
 }

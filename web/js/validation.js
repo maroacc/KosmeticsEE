@@ -1,13 +1,21 @@
 'use strict';
 function validate() {
     var ok = true;
-    var inputs = $("form").find(':input');
+    var inputs = $("form.needs-validation").find(':input');
     for ( var i = 0; i < inputs.length; i++ ) {
         //inputs[i].classList.add("is-invalid");
         var inpObj = inputs[i];
         if (!inpObj.checkValidity()) {
             inpObj.classList.add("is-invalid");
             ok = false;
+            if(inpObj.validity.typeMismatch){
+                if(inpObj.type = "email"){
+                    $("#"+ inpObj.name).parent().find(".invalid-feedback").text("Por favor, introduzca un email con un formato válido");
+                }
+                if(inpObj.type = "url"){
+                    $("#"+ inpObj.name).parent().find(".invalid-feedback").text("Por favor, una url con un formato válido");
+                }
+            }
             var name = inpObj.name;
             if (name != ""){
                 //$("#"+ name).parent().find(".invalid-feedback").text("Por favor, especifique el nombre del producto");
@@ -17,7 +25,6 @@ function validate() {
         else {
             inpObj.classList.remove("is-invalid");
         }
-    return ok;
     }
 
     /*if (!inpObj.checkValidity()) {
@@ -32,7 +39,7 @@ function validate() {
         //document.getElementById("geeks")
             //.innerHTML = "Input is ALL RIGHT";
     }*/
-    return false;
+    return ok;
 }
 
 function setErrorMessage(input, error){

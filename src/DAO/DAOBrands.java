@@ -128,4 +128,31 @@ public class DAOBrands {
         }
         return unique;
     }
+
+    public static boolean checkLogin(Brand brand) {
+        boolean ok = false;
+        PreparedStatement pstmt = null;
+        try {
+            pstmt = conBD.getConnection().prepareStatement("SELECT * FROM brands WHERE username = ? AND password = ?");
+            pstmt.setNString(1, brand.getUsername());
+            pstmt.setNString(2, brand.getPassword());
+            ResultSet rs = pstmt.executeQuery();
+            if(rs.next()){
+                ok= true;
+            }
+            else {
+                pstmt = conBD.getConnection().prepareStatement("SELECT * FROM brands WHERE userEmail = ? AND password = ?");
+                pstmt.setNString(1, brand.getUsername());
+                pstmt.setNString(2, brand.getPassword());
+                ResultSet rs2 = pstmt.executeQuery();
+                if(rs2.next()){
+                    ok= true;
+                }
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return ok;
+    }
 }

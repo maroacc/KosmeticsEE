@@ -21,17 +21,17 @@ public class Brand {
         this.setPassword(password);
     }
 
-    public Brand(String name, String username,String password, String userEmail, String webAddress, String contactEmail, String description, String fiscalAddress, String CIF, String tipoPago, Boolean pagoAutomatico, String companyName, String contactPerson, String contactDirection){
+    public Brand(String name, String username, String userEmail,String password, String description, String webAddress, String companyName, String CIF , String fiscalAddress, String contactEmail, String contactPerson, String contactTelephone, String contactDirection, String tipoPago, Boolean pagoAutomatico){
         this(userEmail, username, password);
         this.setName(name);
         this.setWebAddress(webAddress);
         this.getContact().setEmail(contactEmail);
-        this.getContact().getEmail();
         this.setDescription(description);
         this.getContact().setName(contactPerson);
         this.getCompany().setFiscalAddress(fiscalAddress);
         this.getCompany().setCIF(CIF);
         this.getCompany().setName(companyName);
+        this.getContact().setTelephone(contactTelephone);
         this.getContact().setAddress(contactDirection);
         this.getPayment().setPaymentType(tipoPago);
         this.getPayment().setAutomaticPayment(pagoAutomatico);

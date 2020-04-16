@@ -109,7 +109,7 @@
             <div class="form-group row">
                 <label for="inputNombreEmpresa" class="col-lg-2 col-form-label">Nombre de la empresa*</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputNombreEmpresa" name = "inputNombreEmpresa" maxlength="45" aria-describedby="nombreEmpresaHelpBlock" placeholder="Nombre en el Registro Mercantil" >
+                    <input type="text" class="form-control" id="inputNombreEmpresa" name = "inputNombreEmpresa" maxlength="45" aria-describedby="nombreEmpresaHelpBlock" placeholder="Nombre en el Registro Mercantil" required>
                     <div class="invalid-feedback">
                         Este campo es obligatorio
                     </div>
@@ -118,35 +118,35 @@
             <div class="form-group row">
                 <label for="inputCIF" class="col-lg-2 col-form-label info"><u >CIF*</u></label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputCIF" minlength="9" maxlength="9" name="inputCIF" >
+                    <input type="text" class="form-control" id="inputCIF" minlength="9" maxlength="9" name="inputCIF" required>
                 </div>
                 <div class="invalid-feedback">
                     Este campo es obligatorio
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-lg-2 col-form-label">Dirección</label>
+                <label class="col-lg-2 col-form-label">Dirección*</label>
                 <div class="col-10 mb-3">
                     <label for="inputDireccionEmpresa1" class="sr-only">Linea 1 de direccion</label>
-                    <input type="email" class="form-control" id="inputDireccionEmpresa1" name="inputDireccionEmpresa1" placeholder="Línea 1 de dirección">
+                    <input type="email" class="form-control" id="inputDireccionEmpresa1" name="inputDireccionEmpresa1" placeholder="Línea 1 de dirección" required>
                 </div>
                 <div class="col-12">
                     <label for="inputDireccionEmpresa2" class="sr-only">Linea 2 de direccion</label>
-                    <input type="email" class="form-control" id="inputDireccionEmpresa2" name="inputDireccionEmpresa2" placeholder="Línea 2 de dirección">
+                    <input type="email" class="form-control" id="inputDireccionEmpresa2" name="inputDireccionEmpresa2" placeholder="Línea 2 de dirección" required>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-12 col-lg-7 mb-3">
                     <label for="inputMunicipio" class="sr-only">Municipio</label>
-                    <input type="text" class="form-control" id="inputMunicipio" name="inputMunicipio" placeholder="Municipio">
+                    <input type="text" class="form-control" id="inputMunicipio" name="inputMunicipio" placeholder="Municipio" required>
                 </div>
                 <div class="col-6 col-lg">
                     <label for="inputProvincia" class="sr-only">Provincia</label>
-                    <input type="text" class="form-control" id="inputProvincia" name="inputProvincia" placeholder="Provincia">
+                    <input type="text" class="form-control" id="inputProvincia" name="inputProvincia" placeholder="Provincia" required>
                 </div>
                 <div class="col-6 col-lg">
                     <label for="inputCodigoPostal" class="sr-only">Código Postal</label>
-                    <input type="text" class="form-control" id="inputCodigoPostal" name="inputCodigoPostal" maxlength="5" placeholder="Código Postal">
+                    <input type="text" class="form-control" id="inputCodigoPostal" name="inputCodigoPostal" maxlength="5" placeholder="Código Postal" required>
                 </div>
             </div>
         </div>
@@ -158,7 +158,7 @@
             <div class="form-group row">
                 <label for="inputEmailContacto" class="col-sm-3 col-form-label">Email de contacto*</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="inputEmailContacto" name="inputEmailContacto" placeholder="email@example.com" maxlength="45">
+                    <input type="text" class="form-control" id="inputEmailContacto" name="inputEmailContacto" placeholder="email@example.com" maxlength="45" required>
                 </div>
                 <div class="invalid-feedback">
                     Este campo es obligatorio
@@ -167,11 +167,11 @@
             <div class="form-group row">
                 <label for="inputNombreContacto" class="col-sm-3 col-form-label info">Nombre*: </label>
                 <div class="col">
-                    <input type="text" id="inputNombreContacto" name="inputNombreContacto" class="form-control" placeholder="Nombre" maxlength="15">
+                    <input type="text" id="inputNombreContacto" name="inputNombreContacto" class="form-control" placeholder="Nombre" maxlength="15" required>
                 </div>
-                <label for="inputApellidosContacto" class="col-sm-3 col-form-label info sr-only">Nombre: </label>
+                <label for="inputApellidosContacto" class="col-sm-3 col-form-label info sr-only">Apellidos: </label>
                 <div class="col">
-                    <input type="text" class="form-control" id="inputApellidosContacto" name="inputApellidosContacto" placeholder="Apellidos" maxlength="30">
+                    <input type="text" class="form-control" id="inputApellidosContacto" name="inputApellidosContacto" placeholder="Apellidos" maxlength="30" required>
                 </div>
             </div>
             <div class="form-group row">
@@ -181,7 +181,7 @@
                 </div>
             </div>
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="exampleCheck1">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="exampleCheck1" required>
                 <label class="form-check-label" for="exampleCheck1">Utilizar la dirección de la empresa como dirección de contacto</label>
             </div>
             <div class="form-group row">

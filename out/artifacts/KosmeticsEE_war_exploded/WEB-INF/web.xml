@@ -6,7 +6,7 @@
     <display-name>KosmeticsEE</display-name>
 
     <welcome-file-list>
-        <welcome-file>registrarse.jsp</welcome-file>
+        <welcome-file>iniciar-sesion.jsp</welcome-file>
     </welcome-file-list>
 
     <servlet>
@@ -24,6 +24,14 @@
     <servlet-mapping>
         <servlet-name>servletCheckout</servlet-name>
         <url-pattern>/servletCheckout</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>servletLogin</servlet-name>
+        <servlet-class>Servlets.ServletLogin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletLogin</servlet-name>
+        <url-pattern>/servletLogin</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>checkoutJSP</servlet-name>

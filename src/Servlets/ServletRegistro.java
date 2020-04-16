@@ -20,7 +20,7 @@ public class ServletRegistro extends HttpServlet {
             request.getSession().setAttribute("emailUnique", false);
             if(!DAOBrands.checkUsernameUnique(brand))
                 request.getSession().setAttribute("usernameUnique", false);
-            request.getRequestDispatcher("/checkout.jsp").forward(request, response);
+            request.getRequestDispatcher("/registrarse.jsp").forward(request, response);
         } else {
             if (DAOBrands.addBrand(brand)) {
                 request.getSession().setAttribute("emailUnique", true);

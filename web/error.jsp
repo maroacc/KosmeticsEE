@@ -17,8 +17,8 @@
 <body>
 <div class="d-flex justify-content-center row">
     <h1 class="display-1 col-12 text-center m-3 mt-5">Ups!</h1>
-    <h2 class="display-3 col-12 text-center mb-2">An error occured</h2>
-    <h3 class="col-12 text-center mb-5">Please try again later</h3>
+    <h2 class="display-3 col-12 text-center mb-2">Ha ocurrido un error</h2>
+    <h3 class="col-12 text-center mb-5">Por favor, inténtelo de nuevo más adelante</h3>
     <svg class="bi bi-exclamation-triangle-fill" width="5em" height="5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M8.982 1.566a1.13 1.13 0 00-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5a.905.905 0 00-.9.995l.35 3.507a.552.552 0 001.1 0l.35-3.507A.905.905 0 008 5zm.002 6a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"/>
     </svg>

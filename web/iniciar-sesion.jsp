@@ -31,10 +31,10 @@
                     <div class="form-group">
                         <label for="inputEmail">Nombre de usuario / correo electrónico</label>
                         <c:if test="${not empty invalidLogin}">
-                            <input type="email" class="form-control is-invalid" id="inputEmail" name="inputEmail" aria-describedby="emailHelp">
+                            <input type="text" class="form-control is-invalid" id="inputEmail" name="inputEmail" aria-describedby="emailHelp">
                         </c:if>
                         <c:if test="${empty invalidLogin}">
-                            <input type="password" class="form-control" id="inputPassword" name="inputPassword">
+                            <input type="text" class="form-control" id="inputPassword" name="inputEmail">
                         </c:if>
                     </div>
                     <div class="form-group">

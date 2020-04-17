@@ -16,12 +16,15 @@ public class ServletLogin extends HttpServlet {
         Brand brand = new Brand(request.getParameter("inputEmail"), request.getParameter("inputEmail"), request.getParameter("inputPassword"));
 
         //Comprobamos que coincidan usuario y contraseña
-        if (DAOBrands.checkLogin(brand)) {
+         String username = DAOBrands.checkLogin(brand);
+        if (username != null) {
             request.getSession().setAttribute("invalidLogin", false);
+            request.getSession().setAttribute("username", username);
+            request.getRequestDispatcher("/servletEditarPerfil").forward(request, response);
 
         } else {
             request.getSession().setAttribute("invalidLogin", true);
-            request.getRequestDispatcher("/iniciar-sesion.jsp").forward(request, response);
+            request.getRequestDispatcher("/error.jsp").forward(request, response);
         }
     }
 

@@ -18,7 +18,7 @@
     <title>Kosmetics</title>
 </head>
 <body>
-<html:include page="nav.jsp"/>
+<jsp:include page="nav.jsp"/>
 <!--Aquí va la parte del kosmetics para empresas-->
 <div class="container">
     <div class="kosmetics">

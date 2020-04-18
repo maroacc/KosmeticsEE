@@ -19,7 +19,7 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     </form>
     <nav class="my-2 my-md-0 mr-md-3 ml-auto">
-        <a class="btn btn-outline-primary" href="#">Añadir productos</a>
+        <a class="btn btn-outline-primary" href="./addProduct.jsp">Añadir productos</a>
     </nav>
     <div class="vl"></div>
     <img id="logoEmpresa" src="assets/images/pruebaLogoEmpresa.png">

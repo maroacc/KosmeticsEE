@@ -16,7 +16,12 @@ public class ServletProducto extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        new Product(request.getParameter("inputNombre"), request.getParameter("validationTextarea"), request.getParameter("exampleCategoria"), Float.parseFloat(request.getParameter("inputPrecio")), Integer.parseInt(request.getParameter("inputDescuento")), 0);
+        Product product = new Product(request.getParameter("inputNombre"), request.getParameter("validationTextarea"), request.getParameter("exampleCategoria"), 12, 5, 0);
+        if(DAO.DAOProducts.addProduct(product))
+            request.getRequestDispatcher("/mainPage.jsp").forward(request, response);
+        else
+            request.getRequestDispatcher("/typesProducts.jsp").forward(request, response);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

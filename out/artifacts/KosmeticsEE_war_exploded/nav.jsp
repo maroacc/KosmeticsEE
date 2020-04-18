@@ -22,7 +22,7 @@
         <a class="btn btn-outline-primary" href="./addProduct.jsp">Añadir productos</a>
     </nav>
     <div class="vl"></div>
-    <img id="logoEmpresa" src="assets/images/pruebaLogoEmpresa.png">
+    <a href="profile.jsp"><img id="logoEmpresa" src="assets/images/pruebaLogoEmpresa.png"></a>
 </div>
 </body>
 </html>

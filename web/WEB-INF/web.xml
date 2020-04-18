@@ -34,6 +34,22 @@
         <url-pattern>/servletLogin</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>servletEditarPerfil</servlet-name>
+        <servlet-class>Servlets.ServletEditarPerfil</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletEditarPerfil</servlet-name>
+        <url-pattern>/servletEditarPerfil</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>servletActualizarPerfil</servlet-name>
+        <servlet-class>Servlets.ServletActualizarPerfil</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletActualizarPerfil</servlet-name>
+        <url-pattern>/servletActualizarPerfil</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>checkoutJSP</servlet-name>
         <jsp-file>/checkout.jsp</jsp-file>
     </servlet>
@@ -49,6 +65,15 @@
     <servlet-mapping>
         <servlet-name>errorJSP</servlet-name>
         <url-pattern>/error</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>editProfileJSP</servlet-name>
+        <jsp-file>/editar-perfil.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>editProfileJSP</servlet-name>
+        <url-pattern>/edit-profile</url-pattern>
     </servlet-mapping>
 
     <servlet>

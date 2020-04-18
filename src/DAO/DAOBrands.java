@@ -129,8 +129,8 @@ public class DAOBrands {
         return unique;
     }
 
-    public static boolean checkLogin(Brand brand) {
-        boolean ok = false;
+    public static String checkLogin(Brand brand) {
+        String username = null;
         PreparedStatement pstmt = null;
         try {
             pstmt = conBD.getConnection().prepareStatement("SELECT * FROM brands WHERE username = ? AND password = ?");
@@ -138,7 +138,7 @@ public class DAOBrands {
             pstmt.setNString(2, brand.getPassword());
             ResultSet rs = pstmt.executeQuery();
             if(rs.next()){
-                ok= true;
+                username = rs.getNString(3);
             }
             else {
                 pstmt = conBD.getConnection().prepareStatement("SELECT * FROM brands WHERE userEmail = ? AND password = ?");
@@ -146,13 +146,46 @@ public class DAOBrands {
                 pstmt.setNString(2, brand.getPassword());
                 ResultSet rs2 = pstmt.executeQuery();
                 if(rs2.next()){
-                    ok= true;
+                    username = rs.getNString(3);
                 }
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
 
-        return ok;
+        return username;
+    }
+
+    public static Brand getBrand(String username) {
+        Brand brand = new Brand();
+        brand.setUsername(username);
+        PreparedStatement pstmt = null;
+
+        try {
+            pstmt = conBD.getConnection().prepareStatement("SELECT * FROM brands WHERE username = ?");
+            pstmt.setNString(1, brand.getUsername());
+            ResultSet rs = pstmt.executeQuery();
+            if(rs.next()){
+                brand.setName(rs.getNString("brandName"));
+                brand.setUserEmail(rs.getNString("userEmail"));
+                brand.setDescription(rs.getNString("description"));
+                brand.setWebAddress(rs.getNString("webAddress"));
+                brand.setLogo(rs.getNString("logo"));
+                brand.getCompany().setName(rs.getNString("companyName"));
+                brand.getCompany().setCIF(rs.getNString("CIF"));
+                brand.getCompany().setFiscalAddress(rs.getNString("fiscalAddress"));
+                brand.getContact().setName(rs.getNString("contactName"));
+                brand.getContact().setEmail(rs.getNString("contactEmail"));
+                brand.getContact().setTelephone(rs.getNString("contactTelephone"));
+                brand.getContact().setAddress(rs.getNString("contactAddress"));
+                brand.getPayment().setPaymentType(rs.getNString("tipoPago"));
+                brand.getPayment().setAutomaticPayment(rs.getBoolean("pagoAutomatico"));
+                username = rs.getNString(3);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return brand;
     }
 }

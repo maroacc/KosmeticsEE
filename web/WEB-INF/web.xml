@@ -8,7 +8,6 @@
     <welcome-file-list>
         <welcome-file>iniciar-sesion.jsp</welcome-file>
     </welcome-file-list>
-
     <servlet>
         <servlet-name>servletRegistro</servlet-name>
         <servlet-class>Servlets.ServletRegistro</servlet-class>
@@ -16,6 +15,14 @@
     <servlet-mapping>
         <servlet-name>servletRegistro</servlet-name>
         <url-pattern>/registro</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>servletProducto</servlet-name>
+        <servlet-class>Servlets.ServletProducto</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletProducto</servlet-name>
+        <url-pattern>/nuevoProducto</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>servletCheckout</servlet-name>

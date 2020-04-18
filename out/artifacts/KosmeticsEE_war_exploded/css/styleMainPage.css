@@ -1,0 +1,132 @@
+#logo{
+    height: 24px;
+    position: relative;
+}
+
+.vl{
+    height: 40px;
+    width: 2px;
+    background-color: gray;
+    margin-left: 10px;
+    margin-right: 10px;
+    opacity: 50%;
+}
+
+#logoEmpresa{
+    height: 40px;
+    width: 40px;
+}
+
+.kosmetics{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+}
+@media screen and (max-width: 345px) {
+    .btn-outline-primary{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 576px) {
+    #titulo {
+        font-size: 60px;
+    }
+    #paraEmpresas {
+        font-size: 10px;
+    }
+    #exito{
+        font-size: 15px;
+    }
+}
+@media screen and (min-width: 576px) {
+    #titulo {
+        font-size: 90px;
+    }
+    #paraEmpresas {
+        font-size: 15px;
+    }
+    #exito{
+        font-size: 22px;
+    }
+}
+@media screen and (min-width: 992px){
+    #titulo{
+        font-size: 120px;
+    }
+    #paraEmpresas{
+        font-size: 20px;
+    }
+    #exito{
+        font-size: 30px;
+    }
+}
+
+.exito{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 72px;
+}
+
+.fotos{
+    width: 200px;
+    height: 200px;
+}
+#estadGlobales{
+    position: center;
+    background-image: url("images/estadGlobales.jpg");
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    background-size: 200%;
+    background-position: center;
+}
+
+#estadCateg{
+    position: center;
+    background-image: url("images/pintalabios.jpg");
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    background-size: 100%;
+    background-position: center;
+}
+
+#estadIndividuales{
+    position: center;
+    width: 200px;
+    height: 200px;
+}
+
+/*.card-img-top{
+    height: 200px;
+}*/
+
+#competencia{
+    position: center;
+    width: 200px;
+    height: 200px;
+}
+
+#coloretes{
+    position: center;
+    width: 200px;
+    height: 200px;
+}
+
+#sombras{
+    position: center;
+    width: 200px;
+    height: 200px;
+}
+
+#bases{
+    position: center;
+    width: 200px;
+    height: 200px;
+}
+
+.bases{
+    width: 200px;
+    text-align: center;
+}

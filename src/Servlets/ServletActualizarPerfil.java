@@ -1,6 +1,6 @@
 package Servlets;
 
-import DAO.DAOBrands;
+import DAO.BrandsDAO;
 import Dominio.Brand;
 
 import javax.servlet.ServletException;
@@ -71,12 +71,12 @@ public class ServletActualizarPerfil extends HttpServlet {
 
 //Primero comprobamos que el usuario no esté repetido
         Brand brandAnt = (Brand) request.getSession().getAttribute("brand");
-        if (!DAOBrands.checkBrandNameUnique(brand) && !brand.getName().equals(brandAnt.getName())) {
+        if (!BrandsDAO.checkBrandNameUnique(brand) && !brand.getName().equals(brandAnt.getName())) {
             request.getSession().setAttribute("brandUnique", false);
             request.getRequestDispatcher("/editar-perfil.jsp").forward(request, response);
 
         } else {
-            if (DAOBrands.updateBrand(brand)) {
+            if (BrandsDAO.updateBrand(brand)) {
                 request.getSession().setAttribute("brandUnique", true);
                 request.getSession().setAttribute("username", brand.getUsername());
                 request.getSession().setAttribute("brand", brand);

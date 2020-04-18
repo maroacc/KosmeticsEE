@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class DAOBrands {
+public class BrandsDAO {
     public static ConnectionDAO conBD;
 
     static {

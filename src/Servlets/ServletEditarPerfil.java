@@ -1,6 +1,6 @@
 package Servlets;
 
-import DAO.DAOBrands;
+import DAO.BrandsDAO;
 import Dominio.Brand;
 
 import javax.servlet.ServletException;
@@ -14,7 +14,7 @@ import java.io.IOException;
 public class ServletEditarPerfil extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = (String) request.getSession().getAttribute("username");
-        Brand brand = DAOBrands.getBrand(username);
+        Brand brand = BrandsDAO.getBrand(username);
         if (brand != null){
             request.getSession().setAttribute("brand", brand);
             request.getRequestDispatcher("/editar-perfil.jsp").forward(request, response);

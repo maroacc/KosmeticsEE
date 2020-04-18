@@ -1,6 +1,6 @@
 package Servlets;
 
-import DAO.DAOBrands;
+import DAO.BrandsDAO;
 import Dominio.Brand;
 
 import javax.servlet.ServletException;
@@ -72,12 +72,12 @@ public class ServletCheckout extends HttpServlet {
 
 
 //Primero comprobamos que el usuario no esté repetido
-        if (!DAOBrands.checkBrandNameUnique(brand)) {
+        if (!BrandsDAO.checkBrandNameUnique(brand)) {
             request.getSession().setAttribute("brandUnique", false);
             request.getRequestDispatcher("/checkout.jsp").forward(request, response);
 
         } else {
-            if (DAOBrands.updateBrand(brand)) {
+            if (BrandsDAO.updateBrand(brand)) {
                 request.getSession().setAttribute("brandUnique", true);
                 request.getSession().setAttribute("username", brand.getUsername());
                 request.getRequestDispatcher("/checkout.jsp").forward(request, response);

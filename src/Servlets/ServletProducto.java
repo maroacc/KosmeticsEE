@@ -16,7 +16,7 @@ public class ServletProducto extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        new Product(request.getParameter("inputNombre"), request.getParameter("validationTextarea"), request.getParameter("exampleCategoria"), Float.parseFloat(request.getParameter("inputPrecio")), Integer.parseInt(request.getParameter("inputDescuento")));
+        new Product(request.getParameter("inputNombre"), request.getParameter("validationTextarea"), request.getParameter("exampleCategoria"), Float.parseFloat(request.getParameter("inputPrecio")), Integer.parseInt(request.getParameter("inputDescuento")), 0);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -1,6 +1,6 @@
 package Servlets;
 
-import DAO.DAOBrands;
+import DAO.BrandsDAO;
 import Dominio.Brand;
 
 import javax.servlet.ServletException;
@@ -16,7 +16,7 @@ public class ServletLogin extends HttpServlet {
         Brand brand = new Brand(request.getParameter("inputEmail"), request.getParameter("inputEmail"), request.getParameter("inputPassword"));
 
         //Comprobamos que coincidan usuario y contraseña
-         String username = DAOBrands.checkLogin(brand);
+         String username = BrandsDAO.checkLogin(brand);
         if (username != null) {
             request.getSession().setAttribute("invalidLogin", false);
             request.getSession().setAttribute("username", username);

@@ -1,10 +1,3 @@
-
-import DAO.DAOBrands;
-import Dominio.Brand;
-
-import java.sql.PreparedStatement;
-import java.util.Scanner;
-
 public class AppAddBrand {
     public static void main(String[] args) {
             System.out.println("El programa se está ejecutando...");

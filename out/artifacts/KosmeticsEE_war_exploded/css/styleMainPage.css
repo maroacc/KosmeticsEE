@@ -26,16 +26,10 @@
     .btn-outline-primary{
         font-size: 12px;
     }
-    .textografica{
-        text-align: justify;
-    }
 }
 @media screen and (max-width: 576px) {
     #titulo {
         font-size: 60px;
-    }
-    #titulillo {
-        font-size: 40px;
     }
     #paraEmpresas {
         font-size: 10px;
@@ -43,16 +37,10 @@
     #exito{
         font-size: 15px;
     }
-    .textografica{
-        text-align: justify;
-    }
 }
 @media screen and (min-width: 576px) {
     #titulo {
         font-size: 90px;
-    }
-    #titulillo {
-        font-size: 60px;
     }
     #paraEmpresas {
         font-size: 15px;
@@ -60,29 +48,16 @@
     #exito{
         font-size: 22px;
     }
-    .textografica{
-        text-align: justify;
-        position: absolute;
-        top: 220px;
-    }
 }
 @media screen and (min-width: 992px){
     #titulo{
         font-size: 120px;
-    }
-    #titulillo {
-        font-size: 90px;
     }
     #paraEmpresas{
         font-size: 20px;
     }
     #exito{
         font-size: 30px;
-    }
-    .textografica{
-        text-align: justify;
-        position: absolute;
-        top: 220px;
     }
 }
 
@@ -93,17 +68,65 @@
     line-height: 72px;
 }
 
+.fotos{
+    width: 200px;
+    height: 200px;
+}
+#estadGlobales{
+    position: center;
+    background-image: url("images/estadGlobales.jpg");
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    background-size: 200%;
+    background-position: center;
+}
+
+#estadCateg{
+    position: center;
+    background-image: url("images/pintalabios.jpg");
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    background-size: 100%;
+    background-position: center;
+}
+
+#estadIndividuales{
+    position: center;
+    width: 200px;
+    height: 200px;
+}
+
+/*.card-img-top{
+    height: 200px;
+}*/
+
+#competencia{
+    position: center;
+    width: 200px;
+    height: 200px;
+}
+
+#coloretes{
+    position: center;
+    width: 200px;
+    height: 200px;
+}
+
+#sombras{
+    position: center;
+    width: 200px;
+    height: 200px;
+}
+
+#bases{
+    position: center;
+    width: 200px;
+    height: 200px;
+}
+
 .bases{
     width: 200px;
     text-align: center;
-}
-
-.progress-bar{
-    background-color: #84DCC6;
-    color: black;
-}
-
-#puntuacion{
-    text-align: center;
-    padding-top: 50px;
 }

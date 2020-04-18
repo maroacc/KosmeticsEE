@@ -53,6 +53,16 @@
         height: 80px;
         position: relative;
     }
+    #brand-sm{
+        font-size: 100px;
+    }
+    #logo-grande{
+        height: 120px;
+        position: relative;
+    }
+    .title {
+        font-size: 60px;
+    }
     #body-landing-page{
         height: 100vh;
     }
@@ -89,6 +99,10 @@
     }
     .title {
         font-size: 60px;
+    }
+    #logo-grande{
+        height: 70px;
+        position: relative;
     }
     #body-landing-page{
         height: 100vh;

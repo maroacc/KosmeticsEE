@@ -5,10 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class DAOProducts {
+public class ProductsDAO {
     public static ConnectionDAO conBD;
 
-    public DAOProducts() {
+    public ProductsDAO() {
     }
 
     public static boolean addProduct(Product product) {

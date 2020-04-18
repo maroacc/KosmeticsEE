@@ -1,6 +1,6 @@
 package Servlets;
 
-import DAO.DAOBrands;
+import DAO.BrandsDAO;
 import Dominio.Brand;
 
 import javax.servlet.ServletException;
@@ -16,13 +16,13 @@ public class ServletRegistro extends HttpServlet {
         Brand brand = new Brand(request.getParameter("inputEmail"), request.getParameter("inputUsername"), request.getParameter("inputPassword"));
 
         //Primero comprobamos que el usuario no esté repetido
-        if (!DAOBrands.checkEmailUnique(brand)) {
+        if (!BrandsDAO.checkEmailUnique(brand)) {
             request.getSession().setAttribute("emailUnique", false);
-            if(!DAOBrands.checkUsernameUnique(brand))
+            if(!BrandsDAO.checkUsernameUnique(brand))
                 request.getSession().setAttribute("usernameUnique", false);
             request.getRequestDispatcher("/registrarse.jsp").forward(request, response);
         } else {
-            if (DAOBrands.addBrand(brand)) {
+            if (BrandsDAO.addBrand(brand)) {
                 request.getSession().setAttribute("emailUnique", true);
                 request.getSession().setAttribute("usernameUnique", true);
                 request.getSession().setAttribute("username", brand.getUsername());

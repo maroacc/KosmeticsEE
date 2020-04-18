@@ -43,7 +43,7 @@ public class DAOProducts {
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
-                product = new Product(rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"));
+                product = new Product(rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getInt("freeDeliver"));
             }
         } catch (SQLException var4) {
             var4.printStackTrace();
@@ -52,12 +52,33 @@ public class DAOProducts {
         return product;
     }
 
+    public static boolean updateBrand(Product product) {
+        boolean ok = true;
+        try {
+            PreparedStatement pstmt = conBD.getConnection().prepareStatement("UPDATE products SET name = ?, description = ?, productCategory = ?, " +
+                    "price = ?, offer = ? , freeDeliver = ? WHERE name = ?");
+            pstmt.setNString(1, product.getName());
+            pstmt.setNString(2, product.getDescription());
+            pstmt.setNString(3, product.getProductCategory());
+            pstmt.setFloat(4, product.getPrice());
+            pstmt.setInt(5, product.getOffer());
+            pstmt.setInt(6, product.getFreeDelivery());
+            pstmt.executeUpdate();
+
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            ok = false;
+        }
+
+        return ok;
+    }
+
     static {
         try {
             conBD = ConnectionDAO.getInstance();
         } catch (ClassNotFoundException | SQLException var1) {
             var1.printStackTrace();
         }
-
     }
 }

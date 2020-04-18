@@ -6,16 +6,18 @@ public class Product {
     private String productCategory;
     private float price;
     private int offer;
+    private int freeDeliver;
 
     public Product() {
     }
 
-    public Product(String name, String description, String productCategory, float price, int offer) {
+    public Product(String name, String description, String productCategory, float price, int offer, int freeDeliver) {
         this.name = name;
         this.description = description;
         this.productCategory = productCategory;
         this.price = price;
         this.offer = offer;
+        this.freeDeliver = freeDeliver;
     }
 
     public String getName() {
@@ -36,5 +38,9 @@ public class Product {
 
     public int getOffer() {
         return this.offer;
+    }
+
+    public int getFreeDelivery() {
+        return freeDeliver;
     }
 }

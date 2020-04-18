@@ -5,6 +5,7 @@ import Dominio.Brand;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class BrandsDAO {
     public static ConnectionDAO conBD;
@@ -166,21 +167,7 @@ public class BrandsDAO {
             pstmt.setNString(1, brand.getUsername());
             ResultSet rs = pstmt.executeQuery();
             if(rs.next()){
-                brand.setName(rs.getNString("brandName"));
-                brand.setUserEmail(rs.getNString("userEmail"));
-                brand.setDescription(rs.getNString("description"));
-                brand.setWebAddress(rs.getNString("webAddress"));
-                brand.setLogo(rs.getNString("logo"));
-                brand.getCompany().setName(rs.getNString("companyName"));
-                brand.getCompany().setCIF(rs.getNString("CIF"));
-                brand.getCompany().setFiscalAddress(rs.getNString("fiscalAddress"));
-                brand.getContact().setName(rs.getNString("contactName"));
-                brand.getContact().setEmail(rs.getNString("contactEmail"));
-                brand.getContact().setTelephone(rs.getNString("contactTelephone"));
-                brand.getContact().setAddress(rs.getNString("contactAddress"));
-                brand.getPayment().setPaymentType(rs.getNString("tipoPago"));
-                brand.getPayment().setAutomaticPayment(rs.getBoolean("pagoAutomatico"));
-                username = rs.getNString(3);
+                brand = BrandsDAO.fillBrand(rs);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -188,4 +175,44 @@ public class BrandsDAO {
 
         return brand;
     }
-}
+
+    public static ArrayList <Brand> getLatestBrands() {
+        ArrayList <Brand> brands = new ArrayList();
+        PreparedStatement pstmt = null;
+
+        try {
+            pstmt = conBD.getConnection().prepareStatement("SELECT * FROM brands ORDER BY idBrands DESC LIMIT 4");
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()){
+                brands.add(BrandsDAO.fillBrand(rs));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return brands;
+    }
+
+
+    public static Brand fillBrand(ResultSet rs) throws SQLException {
+        Brand brand = new Brand();
+        brand.setName(rs.getNString("brandName"));
+        brand.setUsername(rs.getNString("username"));
+        brand.setUserEmail(rs.getNString("userEmail"));
+        brand.setDescription(rs.getNString("description"));
+        brand.setWebAddress(rs.getNString("webAddress"));
+        brand.setLogo(rs.getNString("logo"));
+        brand.getCompany().setName(rs.getNString("companyName"));
+        brand.getCompany().setCIF(rs.getNString("CIF"));
+        brand.getCompany().setFiscalAddress(rs.getNString("fiscalAddress"));
+        brand.getContact().setName(rs.getNString("contactName"));
+        brand.getContact().setEmail(rs.getNString("contactEmail"));
+        brand.getContact().setTelephone(rs.getNString("contactTelephone"));
+        brand.getContact().setAddress(rs.getNString("contactAddress"));
+        brand.getPayment().setPaymentType(rs.getNString("tipoPago"));
+        brand.getPayment().setAutomaticPayment(rs.getBoolean("pagoAutomatico"));
+
+        return brand;
+    }
+
+    }

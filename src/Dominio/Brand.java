@@ -1,12 +1,31 @@
 package Dominio;
 
-public class Brand {
+import java.io.Serializable;
+
+public class Brand implements Serializable {
     private String name;
     private String username;
     private String userEmail;
     private String password;
     private String webAddress;
     private String description;
+
+    @Override
+    public String toString() {
+        return "Brand{" +
+                "name='" + name + '\'' +
+                ", username='" + username + '\'' +
+                ", userEmail='" + userEmail + '\'' +
+                ", password='" + password + '\'' +
+                ", webAddress='" + webAddress + '\'' +
+                ", description='" + description + '\'' +
+                ", logo='" + logo + '\'' +
+                ", company=" + company +
+                ", contact=" + contact +
+                ", payment=" + payment +
+                '}';
+    }
+
     private String logo; //Probablemente no sea string
     private Company company = new Company();
     private Contact contact = new Contact();

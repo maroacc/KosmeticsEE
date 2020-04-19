@@ -93,6 +93,14 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>adminValidarBrandJSP</servlet-name>
+        <jsp-file>/admin-validar-brand.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>adminValidarBrandJSP</servlet-name>
+        <url-pattern>/adminValidarBrandJSP</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>lucasJSP</servlet-name>
         <jsp-file>/lucas.jsp</jsp-file>
     </servlet>

@@ -16,7 +16,7 @@ public class ServletProducto extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Product product = new Product(request.getParameter("inputNombre"), request.getParameter("validationTextarea"), request.getParameter("exampleCategoria"), 12, 5, 0);
+        Product product = new Product(request.getParameter("inputNombre"), request.getParameter("validationTextarea"), request.getParameter("categoria"), Float.parseFloat(request.getParameter("precio")), Integer.parseInt(request.getParameter("descuento")), 0);
         if(DAO.ProductsDAO.addProduct(product))
             request.getRequestDispatcher("/mainPage.jsp").forward(request, response);
         else

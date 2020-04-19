@@ -18,14 +18,14 @@ public class ProductsDAO {
 
         try {
             ConnectionDAO var10000 = conBD;
-            PreparedStatement pstmt = ConnectionDAO.getConnection().prepareStatement("INSERT INTO products (name, description, productCategory, price, offer, idProducts, freeDeliver) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement pstmt = ConnectionDAO.getConnection().prepareStatement("INSERT INTO products (name, description, productCategory, price, offer, freeDeliver, Brands_idBrands) VALUES (?, ?, ?, ?, ?, ?, ?)");
             pstmt.setNString(1, product.getName());
             pstmt.setNString(2, product.getDescription());
             pstmt.setNString(3, product.getProductCategory());
             pstmt.setFloat(4, product.getPrice());
             pstmt.setInt(5, product.getOffer());
-            pstmt.setInt(6, 16);
-            pstmt.setInt(7, 0);
+            pstmt.setInt(6, 0);
+            pstmt.setInt(7, 17);
             pstmt.executeUpdate();
         } catch (SQLException var3) {
             ok = false;

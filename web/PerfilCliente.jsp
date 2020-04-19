@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Nico
+  Date: 19/04/2020
+  Time: 16:43
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en" xmlns:html="http://java.sun.com/JSP/Page">
 <head>
@@ -11,7 +19,7 @@
     <title>Kosmetics</title>
 </head>
 <body>
-<html:include page="nav.jsp"/>
+<jsp:include page="nav.jsp"/>
 <!--Aquí va la parte de "Perfil del cliente"-->
 <div class="container">
     <div class="kosmetics">

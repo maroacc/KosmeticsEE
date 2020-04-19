@@ -43,7 +43,7 @@
 
         <div class="form-group">
             <label for="exampleCategoria">Categoría</label>
-            <select class="form-control" id="exampleCategoria">
+            <select class="form-control" id="exampleCategoria" name="categoria">
                 <option>Base</option>
                 <option>Cejas</option>
                 <option>Colorete</option>
@@ -64,14 +64,14 @@
                 <div class="input-group col-lg-6 mb-3">
                     <label for="inputDescuento" class="sr-only">Porcentaje de descuento</label>
                     <label for="inputPrecio" class="sr-only">Precio en euros</label>
-                    <input type="text" class="form-control" id="inputPrecio" aria-describedby="emailHelp" placeholder="Precio en euros" required>
+                    <input type="text" class="form-control" id="inputPrecio" name="precio" aria-describedby="emailHelp" placeholder="Precio en euros" required>
                     <div class="input-group-append">
                         <span class="input-group-text">€</span>
                     </div>
                 </div>
                 <div class="input-group col-lg-6 mb-3">
 
-                    <input type="text" class="form-control" id="inputDescuento" aria-describedby="emailHelp" placeholder="Porcentaje de descuento" required>
+                    <input type="text" class="form-control" id="inputDescuento" name="descuento" aria-describedby="emailHelp" placeholder="Porcentaje de descuento" required>
                     <div class="input-group-append">
                         <span class="input-group-text">%</span>
                     </div>

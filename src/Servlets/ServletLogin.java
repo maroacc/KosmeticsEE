@@ -24,7 +24,7 @@ public class ServletLogin extends HttpServlet {
         if (username != null) {
             request.getSession().setAttribute("invalidLogin", false);
             request.getSession().setAttribute("username", username);
-            request.getRequestDispatcher("/servletEditarPerfil").forward(request, response);
+            request.getRequestDispatcher("/mainPage.jsp").forward(request, response);
 
         } else if (AdminDAO.checkLogin(admin) != null){
             request.getRequestDispatcher("/ServletAdminMainPage").forward(request, response);

@@ -21,7 +21,7 @@
 </head>
 <body id="">
 <div id="body-landing-page" class="pb-5">
-    <jsp:include page="nav.jsp"/>
+    <jsp:include page="navLogin.jsp"/>
     <div class="mt-5 d-flex justify-content-center">
         <div class="mr-lg-3 ml-xl-auto mt-lg-5 pr-xl-5">
             <p class="h1" id="brand"><strong>Kosmetics.</strong></p>

@@ -20,7 +20,7 @@ public class ServletProducto extends HttpServlet {
         if(DAO.ProductsDAO.addProduct(product))
             request.getRequestDispatcher("/mainPage.jsp").forward(request, response);
         else
-            request.getRequestDispatcher("/typesProducts.jsp").forward(request, response);
+            request.getRequestDispatcher("/error.jsp").forward(request, response);
 
     }
 

@@ -1,9 +1,11 @@
 package DAO;
 
+import Dominio.Brand;
 import Dominio.Product;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ProductsDAO {
     public static ConnectionDAO conBD;
@@ -72,6 +74,23 @@ public class ProductsDAO {
         }
 
         return ok;
+    }
+
+    public static ArrayList<Product> getLatestProducts() {
+        ArrayList <Product> products = new ArrayList();
+        PreparedStatement pstmt = null;
+
+        try {
+            pstmt = conBD.getConnection().prepareStatement("SELECT * FROM products ORDER BY idProducts DESC LIMIT 4");
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()){
+                products.add(new Product(rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getInt("freeDeliver")));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return products;
     }
 
     static {

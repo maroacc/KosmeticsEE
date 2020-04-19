@@ -33,10 +33,26 @@
     </nav>
     <a class="btn btn-outline-primary" href="#">Unirse</a>
 </div>
-<c:forEach var="brand" items="${latestBrands}">
-</c:forEach>
+
 
 <div class="container">
+    <c:if test="${(not empty param.validate) && (param.validate)}">
+        <div class="alert alert-success alert-dismissible fade show my-3 mx-3" role="alert">
+            La marca se ha validado con éxito.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </c:if>
+
+    <c:if test="${(not empty param.validate) && (not param.validate)}">
+        <div class="alert alert-warning alert-dismissible fade show my-3 mx-3" role="alert">
+            La marca se ha invalidado con éxito.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </c:if>
     <div class="my-3 p-3 bg-white rounded shadow-sm m-lg-5">
         <h6 class="border-bottom border-gray pb-2 mb-0">Marcas añadidas recientemente</h6>
         <c:forEach var="brand" items="${latestBrands}">

@@ -110,11 +110,11 @@
             </div>
             <div class="form-row mb-5">
                 <div class="col-lg-6">
-                    <button class="btn btn-outline-success btn-lg btn-block mt-5" type="submit">Validar el perfil</button>
+                    <a class="btn btn-outline-success btn-lg btn-block mt-5" href="admin-main-page.jsp?validate=true">Validar el perfil</a>
 
                 </div>
                 <div class="col-lg-6">
-                    <button class="btn btn-outline-danger btn-lg btn-block mt-5" type="submit">Invalidar el perfil</button>
+                    <a class="btn btn-outline-danger btn-lg btn-block mt-5" href="admin-main-page.jsp?validate=false" >Invalidar el perfil</a>
                 </div>
             </div>
 

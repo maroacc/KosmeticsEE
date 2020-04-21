@@ -54,7 +54,7 @@ public class ProductsDAO {
         return product;
     }
 
-    public static boolean updateBrand(Product product) {
+    public static boolean updateProduct(Product product) {
         boolean ok = true;
         try {
             PreparedStatement pstmt = conBD.getConnection().prepareStatement("UPDATE products SET name = ?, description = ?, productCategory = ?, " +

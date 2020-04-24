@@ -108,5 +108,13 @@
         <servlet-name>lucasJSP</servlet-name>
         <url-pattern>/lucas</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>servletCarrito</servlet-name>
+        <servlet-class>Servlets.ServletCarrito</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletCarrito</servlet-name>
+        <url-pattern>/carrito</url-pattern>
+    </servlet-mapping>
 
 </web-app>

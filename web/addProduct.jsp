@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,7 +17,7 @@
 </div>
 
 <div class="d-flex justify-content-center mb-5 " >
-    <form class="col-10 col-lg-8 col-xl-6 needs-validation" id="form" onsubmit="return validate();" action="nuevoProducto" method="post" novalidate>
+    <form class="col-10 col-lg-8 col-xl-6 needs-validation" id="form" onsubmit="return validate();" action="carrito" method="post" novalidate>
         <h4 class="my-3">Información general</h4>
         <div class="form-group">
             <label for="exampleNombreProducto">Nombre del producto</label>
@@ -32,7 +34,7 @@
 
         <div class="my-3">
             <label for="validationTextarea" class="sr-only">Descripción del producto</label>
-            <textarea class="form-control" id="validationTextarea" placeholder="Descripción del producto" aria-describedby="descriptionHelpBlock" required></textarea>
+            <input type="text" class="form-control" id="validationTextarea" name="description" placeholder="Descripción del producto" aria-describedby="descriptionHelpBlock" required>
             <small id="descriptionHelpBlock" class="form-text text-muted">
                 La descripción debe contener al menos 100 caracteres y un máximo de 300
             </small>
@@ -173,13 +175,10 @@
                             Especifique el color en hexadecimal
                         </small>
                     </div>
-
-                    <button class="btn btn-link my-0 mx-2 p-0"><h4>+</h4></button>
                 </div>
             </div>
-
         </div>
-        <button class="btn btn-primary btn-lg btn-block mt-5" onclick="validate();" type="submit">Añadir producto</button>
+        <button class="btn btn-primary btn-lg btn-block mt-5" onclick="validate();" type="submit">Añadir al carrito</button>
     </form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

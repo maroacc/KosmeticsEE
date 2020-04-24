@@ -51,11 +51,11 @@
                 </div>
                 <br/>
                 <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">2</div>
+                    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">2</div>
                 </div>
                 <br/>
                 <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">1</div>
+                    <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">1</div>
                 </div>
             </div>
         </div>
@@ -130,7 +130,7 @@
         chart.draw(view, options);
 
         var data = google.visualization.arrayToDataTable([
-            ["Month", "Sales"],
+            ["Month", "Estrellas"],
             ["1", 3],
             ["2", 4],
             ["3", 3],

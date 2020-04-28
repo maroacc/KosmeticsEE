@@ -41,8 +41,27 @@ public class ProductsDAO {
 
         try {
             ConnectionDAO var10000 = conBD;
-            pstmt = ConnectionDAO.getConnection().prepareStatement("SELECT * FROM products WHERE idProducts = ?");
+            pstmt = ConnectionDAO.getConnection().prepareStatement("SELECT 1 FROM products WHERE idProducts = ?");
             pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                product = new Product(rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getInt("freeDeliver"));
+            }
+        } catch (SQLException var4) {
+            var4.printStackTrace();
+        }
+
+        return product;
+    }
+
+    public static Product getProduct(String nombre) {
+        PreparedStatement pstmt = null;
+        Product product = new Product();
+
+        try {
+            ConnectionDAO var10000 = conBD;
+            pstmt = ConnectionDAO.getConnection().prepareStatement("SELECT 1 FROM products WHERE name = ?");
+            pstmt.setNString(1, nombre);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
                 product = new Product(rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getInt("freeDeliver"));
@@ -99,6 +118,24 @@ public class ProductsDAO {
 
         try {
             pstmt = conBD.getConnection().prepareStatement("SELECT * FROM products WHERE Brands_idBrands = ? ORDER BY idProducts DESC LIMIT 4");
+            pstmt.setInt(1, idBrand);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()){
+                products.add(new Product(rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getInt("freeDeliver")));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return products;
+    }
+
+    public static ArrayList<Product> getProducts(int idBrand) {
+        ArrayList <Product> products = new ArrayList();
+        PreparedStatement pstmt = null;
+
+        try {
+            pstmt = conBD.getConnection().prepareStatement("SELECT * FROM products WHERE Brands_idBrands = ?");
             pstmt.setInt(1, idBrand);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()){

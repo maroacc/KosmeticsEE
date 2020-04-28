@@ -8,6 +8,18 @@ public class Product {
     private int offer;
     private int freeDeliver;
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", productCategory='" + productCategory + '\'' +
+                ", price=" + price +
+                ", offer=" + offer +
+                ", freeDeliver=" + freeDeliver +
+                '}';
+    }
+
     public Product() {
     }
 

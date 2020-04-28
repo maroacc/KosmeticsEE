@@ -118,6 +118,14 @@
         <url-pattern>/lucas</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>infoProductoJSP</servlet-name>
+        <jsp-file>/info-producto.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>infoProductoJSP</servlet-name>
+        <url-pattern>/info-producto</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>servletCarrito</servlet-name>
         <servlet-class>Servlets.ServletCarrito</servlet-class>
     </servlet>

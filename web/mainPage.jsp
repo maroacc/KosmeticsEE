@@ -49,7 +49,7 @@
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4 mb-5">
             <div class="card" style="width: 200px;">
-                <a class="fotos" href="EstadProducto.jsp"><img src="assets/images/estadIndividuales.jpg" class="card-img-top"></a>
+                <a class="fotos" href="ServletListaProductos"><img src="assets/images/estadIndividuales.jpg" class="card-img-top"></a>
                 <p style="padding-left: 15px">Estadísticas individuales</p>
             </div>
         </div>

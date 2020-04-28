@@ -41,7 +41,7 @@ public class ProductsDAO {
 
         try {
             ConnectionDAO var10000 = conBD;
-            pstmt = ConnectionDAO.getConnection().prepareStatement("SELECT 1 FROM products WHERE idProducts = ?");
+            pstmt = ConnectionDAO.getConnection().prepareStatement("SELECT * FROM products WHERE idProducts = ?");
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
@@ -60,7 +60,7 @@ public class ProductsDAO {
 
         try {
             ConnectionDAO var10000 = conBD;
-            pstmt = ConnectionDAO.getConnection().prepareStatement("SELECT 1 FROM products WHERE name = ?");
+            pstmt = ConnectionDAO.getConnection().prepareStatement("SELECT * FROM products WHERE name = ? LIMIT 1");
             pstmt.setNString(1, nombre);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {

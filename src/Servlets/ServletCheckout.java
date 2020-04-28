@@ -74,7 +74,7 @@ public class ServletCheckout extends HttpServlet {
 //Primero comprobamos que el usuario no esté repetido
         if (!BrandsDAO.checkBrandNameUnique(brand)) {
             request.getSession().setAttribute("brandUnique", false);
-            request.getRequestDispatcher("/checkout.jsp").forward(request, response);
+            //request.getRequestDispatcher("/checkout.jsp").forward(request, response);
 
         } else {
             if (BrandsDAO.updateBrand(brand)) {
@@ -89,7 +89,7 @@ public class ServletCheckout extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        this.doPost(request, response);
     }
 
 

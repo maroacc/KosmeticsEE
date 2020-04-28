@@ -18,7 +18,7 @@ public class ServletInfoProducto extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Product product = ProductsDAO.getProduct(request.getParameter("producto"));
-        request.setAttribute("product", product);
+        request.setAttribute("producto", product);
         request.getRequestDispatcher("/info-producto").forward(request, response);
 
 

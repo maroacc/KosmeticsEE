@@ -40,50 +40,51 @@
 <%--
 <form onsubmit="return validate()" class="needs-validation" method="post" action="servletCheckout" novalidate>
 --%>
-
-<div class="row d-flex justify-content-center">
-    <div class="col-10 col-lg-8 col-xl-6">
-        <h3 class="mb-4">Información General</h3>
-        <div class="form-group">
-            <label for="inputNombreMarca">Nombre de la marca*</label>
-            <% if (request.getSession().getAttribute("brandUnique") != null) {
-                if (!(boolean) request.getSession().getAttribute("brandUnique")) {
-            %>
-            <input type="text" class="form-control is-invalid" id="inputNombreMarca" name="inputNombreMarca"
-                   aria-describedby="nombreMarcaHelpBlock" required>
-            <small id="nombreMarcaHelpBlock" class="form-text text-muted col-12 px-0 is-invalid">
-                Especifique el nombre tal y como quiere que lo vean los clientes
-            </small>
-            <div class="invalid-feedback">
-                Ya existe una marca registrada con el nombre especificado
+<div id="form-div">
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 col-lg-8 col-xl-6">
+            <h3 class="mb-4">Información General</h3>
+            <div class="form-group">
+                <label for="inputNombreMarca">Nombre de la marca*</label>
+                <% if (request.getSession().getAttribute("brandUnique") != null) {
+                    if (!(boolean) request.getSession().getAttribute("brandUnique")) {
+                %>
+                <input type="text" class="form-control is-invalid" id="inputNombreMarca" name="inputNombreMarca"
+                       aria-describedby="nombreMarcaHelpBlock" required>
+                <small id="nombreMarcaHelpBlock" class="form-text text-muted col-12 px-0 is-invalid">
+                    Especifique el nombre tal y como quiere que lo vean los clientes
+                </small>
+                <div class="invalid-feedback">
+                    Ya existe una marca registrada con el nombre especificado
+                </div>
+                <%} else { %>
+                <input type="text" class="form-control" id="inputNombreMarca" name="inputNombreMarca"
+                       aria-describedby="nombreMarcaHelpBlock" required>
+                <small id="nombreMarcaHelpBlock" class="form-text text-muted col-12 px-0">
+                    Especifique el nombre tal y como quiere que lo vean los clientes
+                </small>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio
+                </div>
+                <% }
+                } else {
+                %>
+                <input type="text" class="form-control" id="inputNombreMarca" name="inputNombreMarca"
+                       aria-describedby="nombreMarcaHelpBlock" required>
+                <small id="nombreMarcaHelpBlock" class="form-text text-muted col-12 px-0">
+                    Especifique el nombre tal y como quiere que lo vean los clientes
+                </small>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio
+                </div>
+                <%
+                    }
+                %>
             </div>
-            <%} else { %>
-            <input type="text" class="form-control" id="inputNombreMarca" name="inputNombreMarca"
-                   aria-describedby="nombreMarcaHelpBlock" required>
-            <small id="nombreMarcaHelpBlock" class="form-text text-muted col-12 px-0">
-                Especifique el nombre tal y como quiere que lo vean los clientes
-            </small>
-            <div class="invalid-feedback">
-                Este campo es obligatorio
-            </div>
-            <% }
-            } else {
-            %>
-            <input type="text" class="form-control" id="inputNombreMarca" name="inputNombreMarca"
-                   aria-describedby="nombreMarcaHelpBlock" required>
-            <small id="nombreMarcaHelpBlock" class="form-text text-muted col-12 px-0">
-                Especifique el nombre tal y como quiere que lo vean los clientes
-            </small>
-            <div class="invalid-feedback">
-                Este campo es obligatorio
-            </div>
-            <%
-                }
-            %>
         </div>
     </div>
+
 </div>
-<div id="form-div">
     <div class="row d-flex justify-content-center">
 
         <div class="col-10 col-lg-8 col-xl-6">
@@ -338,12 +339,11 @@
             </div>
 
             <button class="btn btn-primary btn-lg btn-block mt-5" type="submit"
-                    onclick="getDatos('servletCheckout', 'form-div')">Finalizar la compra
+                    onclick="getDatos('./servletCheckout', 'form-div')">Finalizar la compra
             </button>
 
         </div>
     </div>
-</div>
 <%--
 </form>
 --%>

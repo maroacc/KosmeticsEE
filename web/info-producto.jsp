@@ -66,11 +66,17 @@
         </div>
         <div class="col d-md-block">
             <div class="p-3 py-lg-5">
-                <h1>Nombre del producto</h1>
+                <div class="d-flex my-3 justify-content-between">
+                    <h1>${producto.name}</h1>
+                    <form action="editar-producto" method="post">
+                        <button type="submit" class="btn btn-outline-dark my-1">Editar Producto</button>
+                    </form>
+                </div>
+
                 <div class="d-inline-flex">
                     <ul class="list-inline my-3">
-                        <li class="list-inline-item text-danger h4"><del>Precio</del></li>
-                        <li class="list-inline-item">Precio rebajado</li>
+                        <li class="list-inline-item text-danger h4"><del>${producto.price}</del></li>
+                        <li class="list-inline-item">${producto.offer}</li>
                     </ul>
 
                 </div>

@@ -93,6 +93,24 @@ public class ProductsDAO {
         return products;
     }
 
+    public static ArrayList<Product> getLatestProducts(int idBrand) {
+        ArrayList <Product> products = new ArrayList();
+        PreparedStatement pstmt = null;
+
+        try {
+            pstmt = conBD.getConnection().prepareStatement("SELECT * FROM products WHERE Brands_idBrands = ? ORDER BY idProducts DESC LIMIT 4");
+            pstmt.setInt(1, idBrand);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()){
+                products.add(new Product(rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getInt("freeDeliver")));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return products;
+    }
+
     static {
         try {
             conBD = ConnectionDAO.getInstance();

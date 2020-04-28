@@ -6,7 +6,7 @@
     <display-name>KosmeticsEE</display-name>
 
     <welcome-file-list>
-        <welcome-file>landing-page.jsp</welcome-file>
+        <welcome-file>iniciar-sesion.jsp</welcome-file>
     </welcome-file-list>
     <servlet>
         <servlet-name>servletRegistro</servlet-name>

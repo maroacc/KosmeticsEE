@@ -2,6 +2,9 @@ package Servlets;
 
 import Dominio.Product;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,12 +19,20 @@ public class ServletProducto extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Product product = new Product(request.getParameter("inputNombre"), request.getParameter("validationTextarea"), request.getParameter("categoria"), Float.parseFloat(request.getParameter("precio")), Integer.parseInt(request.getParameter("descuento")), 0);
-        if(DAO.ProductsDAO.addProduct(product))
+        ArrayList<Product> productos = (ArrayList) request.getSession().getAttribute("productos");
+        int brandId = DAO.BrandsDAO.getBrandId((String) request.getSession().getAttribute("username"));
+        if(brandId != 0) {
+            Iterator<Product> it = productos.iterator();
+            while(it.hasNext()){
+                Product product = (Product) it.next();
+                if(!DAO.ProductsDAO.addProduct(product, brandId))
+                    request.getRequestDispatcher("/error.jsp").forward(request, response);
+            }
+            productos.clear();
+            request.getSession().setAttribute("productos", productos);
             request.getRequestDispatcher("/mainPage.jsp").forward(request, response);
-        else
+        } else
             request.getRequestDispatcher("/error.jsp").forward(request, response);
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -13,7 +13,7 @@ public class ProductsDAO {
     public ProductsDAO() {
     }
 
-    public static boolean addProduct(Product product) {
+    public static boolean addProduct(Product product, int brandId) {
         boolean ok = true;
 
         try {
@@ -25,7 +25,7 @@ public class ProductsDAO {
             pstmt.setFloat(4, product.getPrice());
             pstmt.setInt(5, product.getOffer());
             pstmt.setInt(6, 0);
-            pstmt.setInt(7, 17);
+            pstmt.setInt(7, brandId);
             pstmt.executeUpdate();
         } catch (SQLException var3) {
             ok = false;
@@ -54,7 +54,7 @@ public class ProductsDAO {
         return product;
     }
 
-    public static boolean updateBrand(Product product) {
+    public static boolean updateProduct(Product product) {
         boolean ok = true;
         try {
             PreparedStatement pstmt = conBD.getConnection().prepareStatement("UPDATE products SET name = ?, description = ?, productCategory = ?, " +

@@ -215,4 +215,22 @@ public class BrandsDAO {
         return brand;
     }
 
+    public static int getBrandId(String username) {
+        int brandId = 0;
+        PreparedStatement pstmt = null;
+
+        try {
+            pstmt = conBD.getConnection().prepareStatement("SELECT idBrands FROM brands WHERE username = ?");
+            pstmt.setNString(1, username);
+            ResultSet rs = pstmt.executeQuery();
+            if(rs.next()){
+                brandId = rs.getInt("idBrands");
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return brandId;
     }
+
+}

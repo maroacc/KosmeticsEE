@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!doctype html>
 <html lang="en">
@@ -9,11 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">    <title>Añadir Producto · Kosmetics</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Añadir Producto · Kosmetics</title>
 </head>
 <body>
 <div class="pricing-header px-3 py pt-md-5 pb-md-4 mx-auto text-center">
@@ -21,7 +17,7 @@
 </div>
 
 <div class="d-flex justify-content-center mb-5 " >
-    <form class="col-10 col-lg-8 col-xl-6 needs-validation" id="form" onsubmit="return validate();" action="nuevoProducto" method="post" novalidate>
+    <form class="col-10 col-lg-8 col-xl-6 needs-validation" id="form" onsubmit="return validate();" action="carrito" method="post" novalidate>
         <h4 class="my-3">Información general</h4>
         <div class="form-group">
             <label for="exampleNombreProducto">Nombre del producto</label>
@@ -38,7 +34,7 @@
 
         <div class="my-3">
             <label for="validationTextarea" class="sr-only">Descripción del producto</label>
-            <textarea class="form-control" id="validationTextarea" placeholder="Descripción del producto" aria-describedby="descriptionHelpBlock" required></textarea>
+            <input type="text" class="form-control" id="validationTextarea" name="description" placeholder="Descripción del producto" aria-describedby="descriptionHelpBlock" required>
             <small id="descriptionHelpBlock" class="form-text text-muted">
                 La descripción debe contener al menos 100 caracteres y un máximo de 300
             </small>
@@ -179,21 +175,18 @@
                             Especifique el color en hexadecimal
                         </small>
                     </div>
-
-                    <button class="btn btn-link my-0 mx-2 p-0"><h4>+</h4></button>
                 </div>
             </div>
-
         </div>
-        <button class="btn btn-primary btn-lg btn-block mt-5" onclick="validate();" type="submit">Añadir producto</button>
+        <button class="btn btn-primary btn-lg btn-block mt-5" onclick="validate();" type="submit">Añadir al carrito</button>
     </form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/validation.js"></script>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script type="text/javascript" src="js/validation.js"></script>
-<script type="text/javascript" src="js/bootstrap.bundle.js"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

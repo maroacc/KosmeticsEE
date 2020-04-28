@@ -4,6 +4,7 @@ import DAO.AdminDAO;
 import DAO.BrandsDAO;
 import Dominio.Admin;
 import Dominio.Brand;
+import Dominio.Product;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 
 @WebServlet(name = "ServletLogin")
 public class ServletLogin extends HttpServlet {
@@ -22,8 +24,10 @@ public class ServletLogin extends HttpServlet {
         String username = BrandsDAO.checkLogin(brand); //Comprobamos que sea una marca
 
         if (username != null) {
+            ArrayList productos = new ArrayList<Product>();
             request.getSession().setAttribute("invalidLogin", false);
             request.getSession().setAttribute("username", username);
+            request.getSession().setAttribute("productos", productos);
             request.getRequestDispatcher("/mainPage.jsp").forward(request, response);
 
         } else if (AdminDAO.checkLogin(admin) != null){

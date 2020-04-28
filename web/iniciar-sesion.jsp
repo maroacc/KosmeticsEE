@@ -51,7 +51,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-dark btn-block mt-5">Iniciar sesión</button>
-                    <small class="form-text text-muted mt-3">¿Aun no tienes cuenta? <a class="p-2 text-dark" href="#">¡Regístrate!</a></small>
+                    <small class="form-text text-muted mt-3">¿Aun no tienes cuenta? <a class="p-2 text-dark" href="registrarse.jsp">¡Regístrate!</a></small>
 
                 </form>
             </div>

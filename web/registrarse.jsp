@@ -99,7 +99,7 @@
 
 
                     <button type="submit" class="btn btn-dark btn-block mt-5">Crear cuenta</button>
-                    <small class="form-text text-muted mt-3">¿Ya tienes cuenta? <a class="p-2 text-dark" href="#">¡Inicia sesión!</a></small>
+                    <small class="form-text text-muted mt-3">¿Ya tienes cuenta? <a class="p-2 text-dark" href="iniciar-sesion.jsp">¡Inicia sesión!</a></small>
 
                 </form>
             </div>

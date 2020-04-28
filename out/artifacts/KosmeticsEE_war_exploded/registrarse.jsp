@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!doctype html>
 <html lang="es-es">
 <head>
@@ -18,6 +20,8 @@
 
     <title>Crear cuenta · Kosmetics</title>
 </head>
+<% response.addCookie( new Cookie("plan", request.getParameter("plan"))); %>
+
 <body>
 <div class="container-fluid">
     <div class="row p-0 justify-content-center">
@@ -27,7 +31,7 @@
                 <h1 class="text-center pt-4">Nueva cuenta de empresa</h1>
                 <h4 class="text-center text-muted py-3">¡Descubre lo que opinan tus clientes!</h4>
                 <form onsubmit="return validate()" action="registro" method="post" class="needs-validation" novalidate>
-                    <div class="form-group">
+                <%--    <div class="form-group">
 
                         <label for="inputEmail">Correo electrónico</label>
                         <% if(request.getSession().getAttribute("emailUnique")!=null){
@@ -52,25 +56,37 @@
                         </div>
                         <%}
                         %>
+                    </div>--%>
+                    <div class="form-group">
+                        <label for="inputUsername">Correo electrónico</label>
+                        <c:if test="${(not empty emailUnique) && (not emailUnique)}">
+                            <input type="email" class="form-control is-invalid" id="inputEmail" name="inputEmail" maxlength="45" required>
+                            <div class="invalid-feedback">
+                                Ya existe una cuenta con el email especificado
+                            </div>
+                        </c:if>
+                        <c:if test="${(empty emailUnique) || (emailUnique)}">
+                            <input type="email" class="form-control" id="inputEmail" name="inputEmail" maxlength="45" required>
+                            <div class="invalid-feedback">
+                                Campo obligatorio
+                            </div>
+                        </c:if>
                     </div>
 
                     <div class="form-group">
                         <label for="inputUsername">Nombre de usuario</label>
-                        <% if(request.getSession().getAttribute("emailUnique")!=null){
-                            if(!(boolean) request.getSession().getAttribute("emailUnique")){
-                        %>
-                        <input type="text" class="form-control is-invalid" id="inputUsername" name="inputUsername" maxlength="45" required>
-                        <div class="invalid-feedback">
-                            Ya existe una cuenta con el nombre de ususario especificado
-                        </div>
-                        <%}} else{
-                        %>
-                        <input type="text" class="form-control" id="inputUsername" name="inputUsername" maxlength="45" required>
-                        <div class="invalid-feedback">
-                            Campo obligatorio
-                        </div>
-                        <%}
-                        %>
+                        <c:if test="${(not empty usernameUnique) && (not usernameUnique)}">
+                            <input type="text" class="form-control is-invalid" id="inputUsername" name="inputUsername" maxlength="45" required>
+                            <div class="invalid-feedback">
+                                Ya existe una cuenta con el nombre de ususario especificado
+                            </div>
+                        </c:if>
+                        <c:if test="${(empty usernameUnique) || (usernameUnique)}">
+                            <input type="text" class="form-control" id="inputUsername" name="inputUsername" maxlength="45" required>
+                            <div class="invalid-feedback">
+                                Campo obligatorio
+                            </div>
+                        </c:if>
                     </div>
 
                     <div class="form-group">

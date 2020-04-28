@@ -6,7 +6,7 @@
     <display-name>KosmeticsEE</display-name>
 
     <welcome-file-list>
-        <welcome-file>addProduct.jsp</welcome-file>
+        <welcome-file>landing-page.jsp</welcome-file>
     </welcome-file-list>
     <servlet>
         <servlet-name>servletRegistro</servlet-name>
@@ -63,6 +63,15 @@
     <servlet-mapping>
         <servlet-name>checkoutJSP</servlet-name>
         <url-pattern>/checkout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>infoJSP</servlet-name>
+        <jsp-file>/info.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>infoJSP</servlet-name>
+        <url-pattern>/info</url-pattern>
     </servlet-mapping>
 
     <servlet>

@@ -26,7 +26,7 @@
         <div class="mr-lg-3 ml-xl-auto mt-lg-5 pr-xl-5">
             <p class="h1" id="brand"><strong>Kosmetics.</strong></p>
             <small class="h4 pl-3 d-block mb-5 mb-lg-3">Para empresas</small>
-            <a href="" class="btn btn-dark ml-3 mt-3 m-lg-1">¡Descubre las ventajas!</a>
+            <a href="info.jsp" class="btn btn-dark ml-3 mt-3 m-lg-1">¡Descubre las ventajas!</a>
         </div>
     </div>
 </div>

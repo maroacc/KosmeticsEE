@@ -125,5 +125,13 @@
         <servlet-name>servletCarrito</servlet-name>
         <url-pattern>/carrito</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>servletGraficas</servlet-name>
+        <servlet-class>Servlets.ServletGraficas</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletGraficas</servlet-name>
+        <url-pattern>/graficas</url-pattern>
+    </servlet-mapping>
 
 </web-app>

@@ -102,6 +102,10 @@
         </div>
     </div>
 
+    <form action="graficas" method="post">
+        <button class="btn btn-primary btn-lg btn-block mt-5" type="submit">Gráfica</button>
+    </form>
+
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

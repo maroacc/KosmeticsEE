@@ -1,6 +1,10 @@
 .background-white{
     background-color: white;
 }
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    filter: invert(1);
+}
 #logo{
     height: 24px;
     position: relative;

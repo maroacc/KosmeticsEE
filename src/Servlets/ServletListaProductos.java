@@ -17,7 +17,7 @@ public class ServletListaProductos extends HttpServlet {
         String username = (String) request.getSession().getAttribute("username");
         int brandId = DAO.BrandsDAO.getBrandId((String) request.getSession().getAttribute("username"));
         ArrayList productos = ProductsDAO.getProducts(brandId);
-        request.getSession().setAttribute("productos", productos);
+        request.getSession().setAttribute("listaProductos", productos);
         request.getRequestDispatcher("/lista-productos.jsp").forward(request, response);
     }
 
@@ -25,10 +25,10 @@ public class ServletListaProductos extends HttpServlet {
         String username = (String) request.getSession().getAttribute("username");
         int brandId = DAO.BrandsDAO.getBrandId((String) request.getSession().getAttribute("username"));
         ArrayList productos = ProductsDAO.getProducts(brandId);
-        request.getSession().setAttribute("productos", productos);
+        request.getSession().setAttribute("listaProductos", productos);
         //Falta añadir que si no hay productos, te ponga un mensaje :)
         System.out.println("productos: " + productos);
-        System.out.println("session: " + request.getSession().getAttribute("productos"));
+        System.out.println("session: " + request.getSession().getAttribute("listaProductos"));
         System.out.println("session: " + request.getSession().getAttribute("username"));
         request.getRequestDispatcher("/lista-productos.jsp").forward(request, response);
 

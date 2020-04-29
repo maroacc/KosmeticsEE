@@ -36,7 +36,7 @@
 </div>
 
 <div class="row px-lg-5 bg-light py-5">
-<c:forEach var="producto" items="${productos}">
+<c:forEach var="producto" items="${listaProductos}">
     <div class="col-12 col-md-4 col-lg-3 bg-light">
         <!-- Card -->
         <div class="card mb-7 bg-light border-0">

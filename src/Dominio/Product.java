@@ -48,11 +48,16 @@ public class Product {
         return this.price;
     }
 
-    public int getOffer() {
-        return this.offer;
-    }
+    public int getOffer() { return this.offer; }
 
     public int getFreeDelivery() {
         return freeDeliver;
+    }
+
+    public float getNuevoPrecio(){
+        float precio = this.getPrice();
+        int oferta = this.getOffer();
+        precio = precio * (100 - oferta)/100;
+        return precio;
     }
 }

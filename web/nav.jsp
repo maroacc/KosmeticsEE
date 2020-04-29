@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="assets/styleMainPage.css">
+    <link rel="stylesheet" type="text/css" href="css/styleMainPage.css">
     <title>Kosmetics</title>
 </head>
 <body>
@@ -19,6 +19,7 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     </form>
     <nav class="my-2 my-md-0 mr-md-3 ml-auto">
+        <a class="p-2 text-dark" href="cargarProductos.jsp">Cargar productos</a>
         <a class="btn btn-outline-primary" href="./addProduct.jsp">Añadir productos</a>
     </nav>
     <div class="vl"></div>

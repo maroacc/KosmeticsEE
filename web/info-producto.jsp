@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -67,7 +68,7 @@
         <div class="col d-md-block">
             <div class="p-3 py-lg-5">
                 <div class="d-flex my-3 justify-content-between">
-                    <h1>${producto.name}</h1>
+                    <h1><c:out value="${producto.name}"></c:out></h1>
                     <form action="editar-producto" method="post">
                         <button type="submit" class="btn btn-outline-dark my-1">Editar Producto</button>
                     </form>
@@ -75,8 +76,8 @@
 
                 <div class="d-inline-flex">
                     <ul class="list-inline my-3">
-                        <li class="list-inline-item text-danger h4"><del>${producto.price}</del></li>
-                        <li class="list-inline-item">${producto.offer}</li>
+                        <li class="list-inline-item text-danger h4"><del><c:out value="${producto.price}"></c:out></del></li>
+                        <li class="list-inline-item"><c:out value="${producto.offer}"></c:out></li>
                     </ul>
 
                 </div>

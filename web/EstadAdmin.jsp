@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <!DOCTYPE html>
 <html lang="en" xmlns:html="http://java.sun.com/JSP/Page">
 <head>
@@ -15,7 +14,7 @@
 <body>
 <div class="container">
     <div class="kosmetics">
-        <p id="titulillo">Estadísticas administrador</p>
+        <p id="titulillo">Informe administrador</p>
     </div>
 </div>
 <div class="container">
@@ -48,16 +47,16 @@
 
         var data = google.visualization.arrayToDataTable([
             ['Contrato', 'numero'],
-            ['Contrato 1', contrato1],
-            ['Contrato 2', contrato2],
-            ['Contrato 3', contrato3]
+            ['Plan Free', contrato1],
+            ['Plan Extended', contrato2],
+            ['Plan Pro', contrato3]
         ]);
 
         var options = {
             colors: ['#84DCC6', '#828282', '#F1F1F1'],
             slices: {2: {textStyle: {color: 'black'}}},
             pieSliceText: 'label',
-            title: 'Contratos más vendidos'
+            title: 'Contratos vendidos'
         };
         var chart = new google.visualization.PieChart(document.getElementById('Prod'));
 

@@ -4,6 +4,11 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <display-name>KosmeticsEE</display-name>
+    <session-config>
+        <cookie-config>
+            <http-only>true</http-only>
+        </cookie-config>
+    </session-config>
 
     <welcome-file-list>
         <welcome-file>landing-page.jsp</welcome-file>

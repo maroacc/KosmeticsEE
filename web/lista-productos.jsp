@@ -52,7 +52,7 @@
             <!-- Body -->
             <div class="card-body font-weight-bold text-center">
                 <a class="text-body" href="#"><c:out value="${producto.name}"></c:out></a>
-                <div class="text-muted"><del><c:out value="${producto.price}"></c:out>  <c:out value="${producto.offer}"></c:out></del></div>
+                <div class="text-muted"><del><c:out value="${producto.price}"></c:out>  € </del><c:out value="${producto.offer}"></c:out> €</div>
             </div>
 
         </div>

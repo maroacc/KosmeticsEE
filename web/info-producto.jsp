@@ -70,14 +70,15 @@
                 <div class="d-flex my-3 justify-content-between">
                     <h1><c:out value="${producto.name}"></c:out></h1>
                     <form action="editar-producto" method="post">
-                        <button type="submit" class="btn btn-outline-dark my-1">Editar Producto</button>
+                        <button type="submit" class="btn btn-outline-dark my-1 d-none d-lg-inline">Editar Producto</button>
+                        <button type="submit" class="btn btn-outline-dark my-1 d-lg-none">Editar</button>
                     </form>
                 </div>
 
                 <div class="d-inline-flex">
                     <ul class="list-inline my-3">
-                        <li class="list-inline-item text-danger h4"><del><c:out value="${producto.price}"></c:out></del></li>
-                        <li class="list-inline-item"><c:out value="${producto.offer}"></c:out></li>
+                        <li class="list-inline-item text-danger h4"><del><c:out value="${producto.price}"></c:out> €</del></li>
+                        <li class="list-inline-item"><c:out value="${producto.offer}"></c:out> €</li>
                     </ul>
 
                 </div>

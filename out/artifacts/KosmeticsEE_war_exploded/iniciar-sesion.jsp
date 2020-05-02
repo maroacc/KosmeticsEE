@@ -61,6 +61,7 @@
     </div>
 
 </div>
+<script type="text/javascript" src="js/validation.js"></script>
 
 <!-- Optional JavaScript -->
 <script type="text/javascript" src="js/validation.js"></script>

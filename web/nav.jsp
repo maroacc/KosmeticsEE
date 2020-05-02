@@ -20,7 +20,7 @@
     </form>
     <nav class="my-2 my-md-0 mr-md-3 ml-auto">
         <a class="p-2 text-dark" href="cargarProductos.jsp">Cargar productos</a>
-        <a class="btn btn-outline-primary" href="./addProduct.jsp">Añadir productos</a>
+        <a class="btn btn-outline-primary" href="addProduct.jsp">Añadir productos</a>
     </nav>
     <div class="vl"></div>
     <a href="profile.jsp"><img id="logoEmpresa" src="assets/images/pruebaLogoEmpresa.png"></a>

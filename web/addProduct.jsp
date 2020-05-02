@@ -178,7 +178,7 @@
                 </div>
             </div>
         </div>
-        <button class="btn btn-primary btn-lg btn-block mt-5" onclick="validate();" type="submit">Añadir al carrito</button>
+        <button class="btn btn-primary btn-lg btn-block mt-5" onclick="validate();" type="submit">Añadir producto</button>
     </form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

@@ -30,20 +30,20 @@
                 <form onsubmit="return validate()" action="servletLogin" method="post" class="needs-validation" novalidate>
                     <div class="form-group">
                         <label for="inputEmail">Nombre de usuario / correo electrónico</label>
-                        <c:if test="${not empty invalidLogin}">
-                            <input type="text" class="form-control is-invalid" id="inputEmail" name="inputEmail" aria-describedby="emailHelp">
+                        <c:if test="${(not empty invalidLogin) && (invalidLogin)}">
+                            <input type="text" class="form-control is-invalid" id="inputEmail" name="inputEmail" aria-describedby="emailHelp" required>
                         </c:if>
-                        <c:if test="${empty invalidLogin}">
-                            <input type="text" class="form-control" id="inputPassword" name="inputEmail">
+                        <c:if test="${(empty invalidLogin) || (not invalidLogin)}">
+                            <input type="text" class="form-control" id="inputPassword" name="inputEmail" required>
                         </c:if>
                     </div>
                     <div class="form-group">
                         <label for="inputPassword">Contraseña</label>
-                        <c:if test="${not empty invalidLogin}">
-                            <input type="password" class="form-control is-invalid" id="inputPassword" name="inputPassword">
+                        <c:if test="${(not empty invalidLogin) && (invalidLogin)}">
+                            <input type="password" class="form-control is-invalid" id="inputPassword" name="inputPassword" required>
                         </c:if>
-                        <c:if test="${empty invalidLogin}">
-                            <input type="password" class="form-control" id="inputPassword" name="inputPassword">
+                        <c:if test="${(empty invalidLogin) || (not invalidLogin)}">
+                            <input type="password" class="form-control" id="inputPassword" name="inputPassword" required>
                         </c:if>
                         <div class="invalid-feedback">
                             El nombre de usuario o la contraseña son erróneos.
@@ -63,6 +63,7 @@
 </div>
 
 <!-- Optional JavaScript -->
+<script type="text/javascript" src="js/validation.js"></script>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

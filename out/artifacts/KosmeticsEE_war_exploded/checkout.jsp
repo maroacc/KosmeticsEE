@@ -21,6 +21,9 @@
     <title>Checkout · Kosmetics</title>
 </head>
 <body>
+<%  String contrato = request.getParameter("contrato");
+    request.getSession().setAttribute("tipoContrato", contrato);
+%>
 <div id="body-landing-page" class="pb-0">
     <div class="d-flex flex-md-row align-items-center p-3 px-md-4 mb-0 bg-white border-bottom shadow-sm">
         <h5 class="my-0 mr-md-auto font-weight-normal">Kosmetics</h5>
@@ -37,9 +40,9 @@
 <div class="pricing-header px-3 py pt-4 pb-4 mx-auto text-center">
     <h1 class="display-4">Checkout</h1>
 </div>
-<%--
+
 <form onsubmit="return validate()" class="needs-validation" method="post" action="servletCheckout" novalidate>
---%>
+
 <div id="form-div">
     <div class="row d-flex justify-content-center">
         <div class="col-10 col-lg-8 col-xl-6">
@@ -338,15 +341,13 @@
                 </div>
             </div>
 
-            <button class="btn btn-primary btn-lg btn-block mt-5" type="submit"
-                    onclick="getDatos('./servletCheckout', 'form-div')">Finalizar la compra
-            </button>
+            <button class="btn btn-primary btn-lg btn-block mt-5" type="submit">Finalizar la compra</button>
 
         </div>
     </div>
-<%--
+
 </form>
---%>
+
 
 <script type="text/javascript" src="js/prevent-refreshing.js"></script>
 <script type="text/javascript" src="js/validation.js"></script>

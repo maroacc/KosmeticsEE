@@ -33,7 +33,7 @@ public class ServletRegistro extends HttpServlet {
                 request.getSession().setAttribute("username", brand.getUsername());
 
 
-                request.getRequestDispatcher("/checkout.jsp").forward(request, response); //Llama a la pantalla de checkout
+                request.getRequestDispatcher("/elegirPlan.jsp").forward(request, response); //Llama a la pantalla de plan
 
             } else { //La marca no se crea correctamente
                 request.getRequestDispatcher("/error.jsp").forward(request, response); //Llama a la pantalla de error

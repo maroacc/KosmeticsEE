@@ -69,6 +69,9 @@ public class ServletCheckout extends HttpServlet {
 
         brand.getPayment().setPaymentType(request.getParameter("inputTipoPago"));
         brand.getPayment().setAutomaticPayment(true);
+        String contrato = (String) request.getSession().getAttribute("tipoContrato");
+        System.out.println(contrato.toString() + "hola");
+        brand.setContract(contrato);
 
 
 //Primero comprobamos que el usuario no esté repetido
@@ -80,7 +83,7 @@ public class ServletCheckout extends HttpServlet {
             if (BrandsDAO.updateBrand(brand)) {
                 request.getSession().setAttribute("brandUnique", true);
                 request.getSession().setAttribute("username", brand.getUsername());
-                request.getRequestDispatcher("/checkout.jsp").forward(request, response);
+                request.getRequestDispatcher("/mainPage.jsp").forward(request, response);
 
             } else {
                 request.getRequestDispatcher("/error.jsp").forward(request, response);

@@ -27,57 +27,41 @@
     <h1 class="display-4">Planes</h1>
     <p class="lead">Elige el plan que mejor convenga para el futuro de tu empresa</p>
 </div>
-
+<div class="container">
+    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan1.txt', 'contrato1')">Plan 1</button>
+    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan2.txt', 'contrato2')">Plan 2</button>
+    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan3.txt', 'contrato3')">Plan 3</button>
+</div>
+<br/><br/>
 <div class="container">
     <div class="card-deck mb-3 text-center">
         <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Free</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>Cuenta de empresa</li>
-                    <li>Opiniones de clientes</li>
-                    <li>Características mejor valoradas</li>
-                    <li>Soporte 24 h</li>
-                </ul>
-                <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
-            </div>
-        </div>
-        <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Pro</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>Cuenta de empresa</li>
-                    <li>Opiniones de clientes</li>
-                    <li>Estadísticas mensuales</li>
-                    <li>Soporte 24 h</li>
-                </ul>
-                <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
-            </div>
-        </div>
-        <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Enterprise</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>Cuenta de empresa</li>
-                    <li>Estadísticas mensuales</li>
-                    <li>Análisis de la competencia</li>
-                    <li>Soporte 24 h</li>
-                </ul>
-                <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
+            <div id="ajax">
+                <p>Elija un plan.</p>
             </div>
         </div>
     </div>
-
+</div>
 <!-- Optional JavaScript -->
+    <script>
+        var XHRObject = false;
+        if (window.XMLHttpRequest) {
+            XHRObject = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            XHRObject = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        function muestraPlan(plan, tipoPlan) {
+            if (XHRObject) {
+                var obj = document.getElementById("ajax");
+                XHRObject.open("GET", plan);
+                XHRObject.onreadystatechange = function(){
+                    obj.innerHTML = XHRObject.responseText;
+                }
+                XHRObject.send();
+
+            }
+        }
+    </script>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

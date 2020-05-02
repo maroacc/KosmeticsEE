@@ -64,7 +64,7 @@
 
             <div class="my-3">
                 <label for="descripcionTextarea">Descripción de la marca</label>
-                <textarea class="form-control" id="descripcionTextarea" name="descripcionTextarea" aria-describedby="descriptionHelpBlock" required>${brand.description}</textarea>
+                <textarea class="form-control" id="descripcionTextarea" name="descripcionTextarea" aria-describedby="descriptionHelpBlock" required><c:out value="${brand.description}"></c:out></textarea>
                 <small id="descriptionHelpBlock" class="form-text text-muted ml-0">
                     La descripción debe contener al menos 100 caracteres y un máximo de 300
                 </small>

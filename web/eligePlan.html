@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Elegir Plan · Kosmetics</title>
+    <script>
+        var XHRObject = false;
+        if (window.XMLHttpRequest) {
+            XHRObject = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            XHRObject = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        function muestraPlan(plan) {
+            if (XHRObject) {
+                var obj = document.getElementById("ajax");
+                XHRObject.open("GET", plan);
+                XHRObject.onreadystatechange = function(){
+                    obj.innerHTML = XHRObject.responseText;
+                }
+                XHRObject.send();
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Planes</h1>
+    <p class="lead">Elige el plan que mejor convenga para el futuro de tu empresa</p>
+</div>
+<div class="container">
+    <li><button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan1.txt')">Plan 1</button></li>
+    <li><button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan2.txt')">Plan 2</button></li>
+    <li><button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan3.txt')">Plan 3</button></li>
+</div>
+<div id="ajax">
+    <p>Elija un plan.</p>
+</div>
+
+</body>
+</html>

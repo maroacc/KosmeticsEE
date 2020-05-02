@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Nico
+  Date: 02/05/2020
+  Time: 17:53
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,9 +36,9 @@
     <p class="lead">Elige el plan que mejor convenga para el futuro de tu empresa</p>
 </div>
 <div class="container">
-    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan1.txt', 'contrato1')">Plan 1</button>
-    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan2.txt', 'contrato2')">Plan 2</button>
-    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan3.txt', 'contrato3')">Plan 3</button>
+    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan1.txt')">Free</button>
+    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan2.txt')">Pro</button>
+    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan3.txt')">Enterprise</button>
 </div>
 <br/><br/>
 <div class="container">
@@ -43,25 +51,24 @@
     </div>
 </div>
 <!-- Optional JavaScript -->
-    <script>
-        var XHRObject = false;
-        if (window.XMLHttpRequest) {
-            XHRObject = new XMLHttpRequest();
-        } else if (window.ActiveXObject) {
-            XHRObject = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        function muestraPlan(plan, tipoPlan) {
-            if (XHRObject) {
-                var obj = document.getElementById("ajax");
-                XHRObject.open("GET", plan);
-                XHRObject.onreadystatechange = function(){
-                    obj.innerHTML = XHRObject.responseText;
-                }
-                XHRObject.send();
-
+<script>
+    var XHRObject = false;
+    if (window.XMLHttpRequest) {
+        XHRObject = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        XHRObject = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    function muestraPlan(plan) {
+        if (XHRObject) {
+            var obj = document.getElementById("ajax");
+            XHRObject.open("GET", plan);
+            XHRObject.onreadystatechange = function(){
+                obj.innerHTML = XHRObject.responseText;
             }
+            XHRObject.send();
         }
-    </script>
+    }
+</script>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

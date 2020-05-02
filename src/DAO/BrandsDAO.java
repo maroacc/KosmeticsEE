@@ -58,7 +58,7 @@ public class BrandsDAO {
         try {
             PreparedStatement pstmt = conBD.getConnection().prepareStatement("UPDATE brands SET brandName = ?, description = ?, webAddress = ?, " +
                     "companyName = ?, CIF = ? , fiscalAddress = ? , contactEmail = ?, contactName = ?, contactTelephone = ?, contactAddress = ?," +
-                    "tipoPago = ?, pagoAutomatico = ? WHERE username = ?");
+                    "tipoPago = ?, pagoAutomatico = ?, tipoContrato = ? WHERE username = ?");
             pstmt.setNString(1, brand.getName());
             pstmt.setNString(2, brand.getDescription());
             pstmt.setNString(3, brand.getWebAddress());
@@ -71,8 +71,9 @@ public class BrandsDAO {
             pstmt.setNString(10, brand.getContact().getAddress());
             pstmt.setNString(11, brand.getPayment().getPaymentType());
             pstmt.setBoolean(12, brand.getPayment().isAutomaticPayment());
+            pstmt.setNString(13, brand.getContract());
 
-            pstmt.setNString(13, brand.getUsername());
+            pstmt.setNString(14, brand.getUsername());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

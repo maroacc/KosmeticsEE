@@ -18,7 +18,8 @@
 </head>
 <body>
 <div class="d-flex flex-md-row align-items-center p-3 px-md-4 mb-0 bg-white border-bottom shadow-sm" style="border-bottom: 0;">
-    <h5 class="my-0 mr-md-auto font-weight-normal">Kosmetics</h5>
+    <img id="logo" src="assets/images/LogoBueno.svg">
+    <h5 class="my-0 mr-md-auto font-weight-bold">osmetics</h5>
     <div class="form-inline my-2 my-lg-0 mr-md-auto d-none d-lg-block">
         <input class="form-control mr-sm-2 d-none d-lg" type="search" placeholder="Search" aria-label="Search">
     </div>

@@ -9,6 +9,7 @@ public class Brand implements Serializable {
     private String password;
     private String webAddress;
     private String description;
+    private String contract;
 
     @Override
     public String toString() {
@@ -23,6 +24,7 @@ public class Brand implements Serializable {
                 ", company=" + company +
                 ", contact=" + contact +
                 ", payment=" + payment +
+                ", contract=" + contract +
                 '}';
     }
 
@@ -134,6 +136,14 @@ public class Brand implements Serializable {
 
     public void setPayment(Payment payment) {
         this.payment = payment;
+    }
+
+    public String getContract() {
+        return contract;
+    }
+
+    public void setContract(String contract) {
+        this.contract = contract;
     }
 
 }

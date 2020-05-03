@@ -64,16 +64,17 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-            <div class="d-block">
-                <div class="d-flex justify-content-between my-3">
-                    <div class="p-1"><a class="btn btn-outline-success btn-lg btn-block"
-                                        href="admin-main-page.jsp?validate=true">Validar el producto</a></div>
-                    <div class="p-1"><a class="btn btn-outline-danger btn-lg btn-block"
-                                        href="admin-main-page.jsp?validate=false">Invalidar el producto</a></div>
+            <c:if test="${param.a}">
+                <div class="d-block">
+                    <div class="d-flex justify-content-between my-3">
+                        <div class="p-1"><a class="btn btn-outline-success btn-lg btn-block"
+                                            href="admin-main-page.jsp?validate=true">Validar el producto</a></div>
+                        <div class="p-1"><a class="btn btn-outline-danger btn-lg btn-block"
+                                            href="admin-main-page.jsp?validate=false">Invalidar el producto</a></div>
 
+                    </div>
                 </div>
-            </div>
-
+            </c:if>
 
         </div>
         <div class="col d-md-block">

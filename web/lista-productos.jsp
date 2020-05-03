@@ -34,6 +34,12 @@
     </nav>
     <a class="btn btn-outline-primary" href="#">Unirse</a>
 </div>
+<c:if test="${empty listaProductos}">
+    <div class="d-flex justify-content-center row mt-5">
+        <h5 class="col-12 text-center mb-3" style="color:#888888" >Parece que aún no hay productos...</h5>
+        <img src="assets/icons/nature.svg" height="128" width="128">
+    </div>
+</c:if>
 
 <div class="row px-lg-5 bg-light py-5">
 <c:forEach var="producto" items="${listaProductos}">

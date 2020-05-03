@@ -38,7 +38,7 @@
 <div class="container">
     <c:if test="${(not empty param.validate) && (param.validate)}">
         <div class="alert alert-success alert-dismissible fade show my-3 mx-3" role="alert">
-            La marca se ha validado con éxito.
+            La validación se ha llevado a cabo con éxito.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -47,7 +47,7 @@
 
     <c:if test="${(not empty param.validate) && (not param.validate)}">
         <div class="alert alert-warning alert-dismissible fade show my-3 mx-3" role="alert">
-            La marca se ha invalidado con éxito.
+            La invalidación se ha llevado a cabo con éxito.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -68,40 +68,22 @@
         </div>
         </c:forEach>
     </div>
+
     <div class="my-3 p-3 bg-white rounded shadow-sm m-lg-5">
         <h6 class="border-bottom border-gray pb-2 mb-0">Productos añadidos recientemente</h6>
-        <div class="media text-muted pt-3">
-            <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
-            <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                <div class="d-flex justify-content-between align-items-center w-100">
-                    <strong class="text-gray-dark">Full Name</strong>
-                    <a href="#">Follow</a>
+        <c:forEach var="product" items="${latestProducts}">
+            <div class="media text-muted pt-3">
+                <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#84DCC6"></rect></svg>
+                <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <strong class="text-gray-dark"><c:out value="${product.name}"></c:out></strong>
+                        <a href="ServletInfoProducto?producto=${product.name}" class="text-info">Ver info</a>
+                    </div>
+                    <span class="d-block"><c:out value="${product.productCategory}"></c:out></span>
                 </div>
-                <span class="d-block">@username</span>
             </div>
-        </div>
-        <div class="media text-muted pt-3">
-            <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
-            <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                <div class="d-flex justify-content-between align-items-center w-100">
-                    <strong class="text-gray-dark">Full Name</strong>
-                    <a href="#">Follow</a>
-                </div>
-                <span class="d-block">@username</span>
-            </div>
-        </div>
-        <div class="media text-muted pt-3">
-            <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
-            <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                <div class="d-flex justify-content-between align-items-center w-100">
-                    <strong class="text-gray-dark">Full Name</strong>
-                    <a href="#">Follow</a>
-                </div>
-                <span class="d-block">@username</span>
-            </div>
-        </div>
+        </c:forEach>
     </div>
-
     <form action="graficas" method="post">
         <button class="btn btn-primary btn-lg btn-block mt-5" type="submit">Gráfica</button>
     </form>

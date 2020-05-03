@@ -48,8 +48,8 @@
             </div>
 
             <div class="my-3">
-                <label for="descripcionTextarea">Descripción de la marca</label>
-                <textarea class="form-control-plaintext" id="descripcionTextarea" aria-describedby="descriptionHelpBlock" placeholder="${brand.description}"readonly></textarea>
+                <label >Descripción de la marca</label>
+                <p class="text-muted"><c:out value="${brand.description}"></c:out></p>
             </div>
 
         </div>

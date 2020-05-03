@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(
-        name = "ServletProducto"
-)
+@WebServlet(name = "ServletProducto", urlPatterns = "/ServletProducto")
 public class ServletProducto extends HttpServlet {
     public ServletProducto() {
     }

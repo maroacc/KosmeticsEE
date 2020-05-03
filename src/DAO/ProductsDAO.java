@@ -159,6 +159,24 @@ public class ProductsDAO {
         return products;
     }
 
+    public static void setFeatures(int productId, String[] idFeatures) {
+        try {
+            for (String feature : idFeatures) {
+
+                int featureId = Integer.parseInt(feature);
+                PreparedStatement pstmt = conBD.getConnection().prepareStatement("INSERT INTO products_features (Products_idProducts,Features_idFeatures) VALUES(?,?)");
+                pstmt.setInt(1, productId);
+                pstmt.setInt(2, featureId);
+
+                pstmt.executeUpdate();
+            }
+
+        } catch (SQLException sqle) {
+            System.out.println(sqle.getMessage());
+            sqle.printStackTrace();
+        }
+    }
+
     public static int checkImg(int id) {
         int retorno = 0;
         PreparedStatement pstmt = null;

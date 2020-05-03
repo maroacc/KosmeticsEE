@@ -88,67 +88,11 @@
         </div>
         <div class="form-group form-grid">
             <h4 class="my-3">Características</h4>
-            <div class="form-row">
-                <div class="col-lg-4">
-                    <div class="form-check m-1 m-lg-2">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" >
-                        <label class="form-check-label" for="defaultCheck1">
-                            Larga Duración
-                        </label>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="form-check m-1 m-lg-2">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
-                        <label class="form-check-label" for="defaultCheck2">
-                            Larga Duración
-                        </label>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="form-check m-1 m-lg-2">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck3" >
-                        <label class="form-check-label" for="defaultCheck3">
-                            Larga Duración
-                        </label>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="form-check m-1 m-lg-2">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck4" >
-                        <label class="form-check-label" for="defaultCheck4">
-                            Larga Duración
-                        </label>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="form-check m-1 m-lg-2">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck5" >
-                        <label class="form-check-label" for="defaultCheck5">
-                            Larga Duración
-                        </label>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="form-check m-1 m-lg-2">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck6" >
-                        <label class="form-check-label" for="defaultCheck6">
-                            Larga Duración
-                        </label>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="form-check m-1 m-lg-2">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck7" >
-                        <label class="form-check-label" for="defaultCheck7">
-                            Larga Duración
-                        </label>
-                    </div>
-                </div>
-            </div>
+            <select id="productCaracteristicas" class="selectpicker form-control" multiple data-live-search="true" multiple data-max-options="5" multiple data-selected-text-format="count" name="features">
+                <c:forEach var="feature" items="${sessionScope.features}">
+                    <option value="${feature.key}" ><c:out value ="${feature.value}"/> </option>
+                </c:forEach>
+            </select>
             <div class="form-group">
                 <h4 class="my-3">Galería</h4>
                 <div class="form-row">
@@ -196,5 +140,13 @@
 <script type="text/javascript" src="js/validation.js"></script>
 <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
+<script>
+    $('#upload-files').on('change',function(){
+        //get the file name
+        var fileName = $(this).val();
+        //replace the "Choose a file" label
+        $(this).next('.custom-file-label').html(fileName);
+    })
+</script>
 </body>
 </html>

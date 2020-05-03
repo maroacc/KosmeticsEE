@@ -37,32 +37,38 @@
     <section class="main row">
         <div class="col-xs-12 col-md-6 col-lg-4 mb-5">
             <div class="card" style="width: 200px;">
+                <a href="ServletListaProductos?estad=false"><img src="assets/images/the-honest-company-8BrGzxqRDt0-unsplash.jpg" class="card-img-top"></a>
+                <p style="padding-left: 20px" class="mt-2">Catálogo</p>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-4 mb-5">
+            <div class="card" style="width: 200px;">
                 <a href="EstadGlobales.jsp"><img src="assets/images/estadGlobales.jpg" class="card-img-top"></a>
-                <p style="padding-left: 20px">Estadísticas globales</p>
+                <p style="padding-left: 20px" class="mt-2">Estadísticas globales</p>
             </div>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4 mb-5">
             <div class="card" style="width: 200px;">
                 <a href="EstadCateg.jsp"><img src="assets/images/pintalabios.jpg" class="card-img-top"></a>
-                <p style="padding-left: 10px">Estadísticas por categoría</p>
+                <p style="padding-left: 10px" class="mt-2">Estadísticas por categoría</p>
             </div>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4 mb-5">
             <div class="card" style="width: 200px;">
-                <a class="fotos" href="ServletListaProductos"><img src="assets/images/estadIndividuales.jpg" class="card-img-top"></a>
-                <p style="padding-left: 15px">Estadísticas individuales</p>
+                <a class="fotos" href="ServletListaProductos?estad=true"><img src="assets/images/estadIndividuales.jpg" class="card-img-top"></a>
+                <p style="padding-left: 15px" class="mt-2">Estadísticas individuales</p>
             </div>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4 mb-5">
             <div class="card" style="width: 200px;">
                 <a href="PerfilCliente.jsp"><img src="assets/images/perfilCliente.jpg" class="card-img-top"></a>
-                <p style="padding-left: 40px">Perfil de cliente</p>
+                <p style="padding-left: 40px" class="mt-2">Perfil de cliente</p>
             </div>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4 mb-5">
             <div class="card" style="width: 200px;">
                 <a class="fotos" href="#"><img src="assets/images/competencia.jpg" class="card-img-top"></a>
-                <p style="padding-left: 50px">Competencia</p>
+                <p style="padding-left: 50px" class="mt-2">Competencia</p>
             </div>
         </div>
     </section>

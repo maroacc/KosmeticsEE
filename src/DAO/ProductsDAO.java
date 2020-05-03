@@ -2,6 +2,8 @@ package DAO;
 
 import Dominio.Brand;
 import Dominio.Product;
+
+import java.io.InputStream;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,6 +11,14 @@ import java.util.ArrayList;
 
 public class ProductsDAO {
     public static ConnectionDAO conBD;
+
+    static {
+        try {
+            conBD = ConnectionDAO.getInstance();
+        } catch (ClassNotFoundException | SQLException var1) {
+            var1.printStackTrace();
+        }
+    }
 
     public ProductsDAO() {
     }
@@ -148,11 +158,48 @@ public class ProductsDAO {
         return products;
     }
 
-    static {
+    public static int checkImg(int id) {
+        int retorno = 0;
+        PreparedStatement pstmt = null;
+
         try {
-            conBD = ConnectionDAO.getInstance();
-        } catch (ClassNotFoundException | SQLException var1) {
-            var1.printStackTrace();
+            pstmt = conBD.getConnection().prepareStatement("SELECT productImg FROM products WHERE idProducts = ?");
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()){
+                if(rs.getBlob(1)!= null){
+                    retorno = 1;
+                }            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return retorno;
+    }
+
+    public static void uploadImg(int id, InputStream imagen, int i) {
+        PreparedStatement pstmt = null;
+
+        if(i==0){
+            try {
+                pstmt = conBD.getConnection().prepareStatement("UPDATE products SET productImg = ? WHERE idProducts = ?");
+                pstmt.setBlob(1, imagen);
+                pstmt.setInt(2, id);
+                pstmt.executeUpdate();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        } else {
+            try {
+                pstmt = conBD.getConnection().prepareStatement("INSERT INTO productimages (productImg,Products_idProducts) values(?,?)");
+                pstmt.setBlob(1, imagen);
+                pstmt.setInt(2, id);
+
+                pstmt.executeUpdate();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
     }
+
 }

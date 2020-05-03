@@ -35,7 +35,7 @@ public class ServletLogin extends HttpServlet {
         }
         else {
             request.getSession().setAttribute("invalidLogin", true);
-            request.getRequestDispatcher("/error.jsp").forward(request, response);
+            request.getRequestDispatcher("/iniciar-sesion.jsp").forward(request, response);
         }
     }
 

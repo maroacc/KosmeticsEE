@@ -63,7 +63,12 @@
             <!-- Body -->
             <div class="card-body font-weight-bold text-center">
                 <a class="text-body" href="#"><c:out value="${producto.name}"></c:out></a>
-                <div class="text-muted"><del><c:out value="${producto.price}"></c:out>  € </del><c:out value="${producto.offer}"></c:out> €</div>
+                <c:if test="${producto.offer != 0}">
+                    <div class="text-muted"><del><c:out value="${producto.price}"></c:out>  € </del><c:out value="${producto.nuevoPrecio}"></c:out> €</div>
+                </c:if>
+                <c:if test="${producto.offer == 0}">
+                    <div class="text-muted"><c:out value="${producto.price}"></c:out>  €</div>
+                </c:if>
             </div>
 
         </div>

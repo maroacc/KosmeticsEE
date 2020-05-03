@@ -1,6 +1,7 @@
 package Dominio;
 
 public class Product {
+    private int id;
     private String name;
     private String description;
     private String productCategory;
@@ -30,6 +31,20 @@ public class Product {
         this.price = price;
         this.offer = offer;
         this.freeDeliver = freeDeliver;
+    }
+
+    public Product(int id, String name, String description, String productCategory, float price, int offer, int freeDeliver) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.productCategory = productCategory;
+        this.price = price;
+        this.offer = offer;
+        this.freeDeliver = freeDeliver;
+    }
+
+    public int getId() {
+        return this.id;
     }
 
     public String getName() {

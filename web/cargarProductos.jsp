@@ -68,8 +68,13 @@
 
                 <div class="d-inline-flex">
                     <ul class="list-inline my-3">
-                        <li class="list-inline-item text-danger h4"><del><c:out value="${product.price}"></c:out></del></li>
-                        <li class="list-inline-item"><c:out value="${product.nuevoPrecio}"></c:out></li>
+                        <c:if test="${product.offer != 0}">
+                            <li class="list-inline-item text-danger h4"><del><c:out value="${product.price}"></c:out> €</del></li>
+                            <li class="list-inline-item"><c:out value="${product.nuevoPrecio}"></c:out> €</li>
+                        </c:if>
+                        <c:if test="${product.offer == 0}">
+                            <li class="list-inline-item text-danger h4"><c:out value="${product.price}"></c:out> €</li>
+                        </c:if>
                     </ul>
 
                 </div>
@@ -102,9 +107,14 @@
         </div>
     </div>
     </c:forEach>
+    <c:if test="${empty sessionScope.productos}">
+        <h2>Aún no ha añadido ningún producto</h2>
+    </c:if>
+    <c:if test="${not empty sessionScope.productos}">
     <form action="nuevoProducto" method="post">
         <button class="btn btn-primary btn-lg btn-block mt-5" type="submit">Cargar Productos</button>
     </form>
+    </c:if>
     <br/><br/>
 </div>
 

@@ -83,7 +83,7 @@ public class ServletCheckout extends HttpServlet {
             if (BrandsDAO.updateBrand(brand)) {
                 request.getSession().setAttribute("brandUnique", true);
                 request.getSession().setAttribute("username", brand.getUsername());
-                request.getRequestDispatcher("/mainPage.jsp").forward(request, response);
+                request.getRequestDispatcher("/landing-page.jsp").forward(request, response);
 
             } else {
                 request.getRequestDispatcher("/error.jsp").forward(request, response);

@@ -64,7 +64,7 @@
             <p style="padding-top: 25px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu laoreet elit. Curabitur vel convallis sapien. Cras eu eleifend diam. Praesent vestibulum eleifend vehicula. Suspendisse suscipit nibh at dictum lobortis. Aenean augue urna, egestas ac varius sed, feugiat eget risus.</p>
         </div>
         <div class="col-xs-12 col-md-12 col-lg-12">
-            <div id="columnchart_values" style="width: 1000px; height: 500px;"></div>
+            <div id="columnchart_values"></div>
         </div>
         <div class="col-xs-12 col-md-12 col-lg-12">
             <p>Productos más vendidos:</p>
@@ -79,7 +79,7 @@
             <img src="assets/images/pintalabios.jpg" style="width: 50%">
         </div>
         <div class="col-xs-12 col-md-12 col-lg-12">
-            <div id="valoraciones" style="width: 1000px; height: 500px;"></div>
+            <div id="valoraciones"></div>
         </div>
     </section>
 </div>
@@ -121,8 +121,6 @@
 
         var options = {
             title: "Ventas en el último año:",
-            width: 1000,
-            height: 500,
             colors: ['#84DCC6'],
             bar: {groupWidth: "85%"},
             legend: { position: "none" },
@@ -156,8 +154,6 @@
 
         var options = {
             title: "Valoración de las características:",
-            width: 1000,
-            height: 500,
             colors: ['#84DCC6'],
             bar: {groupWidth: "85%"},
             legend: { position: "none" },

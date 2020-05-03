@@ -89,8 +89,13 @@
 
                 <div class="d-inline-flex">
                     <ul class="list-inline my-3">
-                        <li class="list-inline-item text-danger h4"><del><c:out value="${producto.price}"></c:out> €</del></li>
-                        <li class="list-inline-item"><c:out value="${producto.offer}"></c:out> €</li>
+                        <c:if test="${producto.offer != 0}">
+                            <li class="list-inline-item text-danger h4"><del><c:out value="${producto.price}"></c:out> €</del></li>
+                            <li class="list-inline-item"><c:out value="${producto.nuevoPrecio}"></c:out> €</li>
+                        </c:if>
+                        <c:if test="${producto.offer == 0}">
+                            <li class="list-inline-item text-danger h4"><c:out value="${producto.price}"></c:out> €</li>
+                            </c:if>
                     </ul>
 
                 </div>

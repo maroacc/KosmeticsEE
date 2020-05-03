@@ -87,13 +87,14 @@ public class ProductsDAO {
         boolean ok = true;
         try {
             PreparedStatement pstmt = conBD.getConnection().prepareStatement("UPDATE products SET name = ?, description = ?, productCategory = ?, " +
-                    "price = ?, offer = ? , freeDeliver = ? WHERE name = ?");
+                    "price = ?, offer = ? , freeDeliver = ? WHERE idProducts = ?");
             pstmt.setNString(1, product.getName());
             pstmt.setNString(2, product.getDescription());
             pstmt.setNString(3, product.getProductCategory());
             pstmt.setFloat(4, product.getPrice());
             pstmt.setInt(5, product.getOffer());
             pstmt.setInt(6, product.getFreeDelivery());
+            pstmt.setInt(7, product.getId());
             pstmt.executeUpdate();
 
         }
@@ -113,7 +114,7 @@ public class ProductsDAO {
             pstmt = conBD.getConnection().prepareStatement("SELECT * FROM products ORDER BY idProducts DESC LIMIT 4");
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()){
-                products.add(new Product(rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getInt("freeDeliver")));
+                products.add(new Product(rs.getInt("idProducts"), rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getInt("freeDeliver")));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -131,7 +132,7 @@ public class ProductsDAO {
             pstmt.setInt(1, idBrand);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()){
-                products.add(new Product(rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getInt("freeDeliver")));
+                products.add(new Product(rs.getInt("idProducts"), rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getInt("freeDeliver")));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -149,7 +150,7 @@ public class ProductsDAO {
             pstmt.setInt(1, idBrand);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()){
-                products.add(new Product(rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getInt("freeDeliver")));
+                products.add(new Product(rs.getInt("idProducts"), rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getInt("freeDeliver")));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

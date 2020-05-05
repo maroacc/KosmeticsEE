@@ -108,7 +108,10 @@
     </div>
     </c:forEach>
     <c:if test="${empty sessionScope.productos}">
-        <h2>Aún no ha añadido ningún producto</h2>
+        <div class="d-flex justify-content-center row mt-5">
+            <h5 class="col-12 text-center mb-3" style="color:#888888; font-family:Montserrat" >Parece que aún no has añadido ningún producto...</h5>
+            <img src="assets/icons/nature.svg" height="128" width="128">
+        </div>
     </c:if>
     <c:if test="${not empty sessionScope.productos}">
     <form action="nuevoProducto" method="post">

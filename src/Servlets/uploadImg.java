@@ -12,7 +12,7 @@ import java.nio.file.Paths;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-@WebServlet(name = "subirImg", urlPatterns = "/subirImg")
+//@WebServlet(name = "subirImg", urlPatterns = "/subirImg")
 @MultipartConfig(
         fileSizeThreshold=1024 * 1024,
         maxFileSize=1024 * 1024 * 5,
@@ -20,6 +20,9 @@ import java.util.stream.Collectors;
 )
 public class uploadImg extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("inputNombre" + request.getParameter("inputNombre"));
+        System.out.println("inputPrecio: " + request.getParameter("inputPrecio"));
+
         Collection<Part> files = request.getParts();
         int id = this.getIdCookie(request);
 

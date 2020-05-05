@@ -34,7 +34,7 @@
 
         <div class="my-3">
             <label for="validationTextarea" class="sr-only">Descripción del producto</label>
-            <input type="text" class="form-control" id="validationTextarea" name="description" placeholder="Descripción del producto" aria-describedby="descriptionHelpBlock" required>
+            <input type="text" class="form-control" id="validationTextarea" maxlength="300" name="description" placeholder="Descripción del producto" aria-describedby="descriptionHelpBlock" required>
             <small id="descriptionHelpBlock" class="form-text text-muted">
                 La descripción debe contener al menos 100 caracteres y un máximo de 300
             </small>

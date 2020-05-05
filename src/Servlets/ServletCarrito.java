@@ -1,5 +1,6 @@
 package Servlets;
 
+import DAO.ProductsDAO;
 import Dominio.Product;
 
 import javax.servlet.ServletException;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 @WebServlet(name = "ServletCarrito")
 public class ServletCarrito extends HttpServlet {

@@ -17,7 +17,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:300,400,600,700&amp;lang=en" rel="stylesheet">
     <title>Hello, world!</title>
 </head>
 <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -36,7 +36,7 @@
 </div>
 <c:if test="${empty listaProductos}">
     <div class="d-flex justify-content-center row mt-5">
-        <h5 class="col-12 text-center mb-3" style="color:#888888" >Parece que aún no hay productos...</h5>
+        <h5 class="col-12 text-center mb-3" style="color:#888888; font-family:Montserrat" >Parece que aún no hay productos...</h5>
         <img src="assets/icons/nature.svg" height="128" width="128">
     </div>
 </c:if>

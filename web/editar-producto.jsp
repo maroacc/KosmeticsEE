@@ -13,7 +13,13 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">    <title>Añadir Producto · Kosmetics</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+    <title>Añadir Producto · Kosmetics</title>
 </head>
 <% response.addCookie(new Cookie("id", "24")); %>
 <body>
@@ -22,12 +28,12 @@
 </div>
 
 <div class="d-flex justify-content-center mb-5 " >
-    <form class="col-10 col-lg-8 col-xl-6 needs-validation" enctype="multipart/form-data" id="form" onsubmit="return validate();" action="subirImg" method="post" novalidate>
+    <form class="col-10 col-lg-8 col-xl-6 needs-validation" enctype="multipart/form-data" id="form" onsubmit="return validate();" action="ServletEditarProducto" method="post" novalidate>
         <h4 class="my-3">Información general</h4>
         <div class="form-group">
             <label for="exampleNombreProducto">Nombre del producto</label>
             <label for="inputNombre" class="sr-only">Nombre del producto</label>
-            <input type="text" class="form-control" id="inputNombre" name="inputNombre" aria-describedby="nombreHelpBlock" value="${producto.name}" required>
+            <input type="text" class="form-control-plaintext" id="inputNombre" name="inputNombre" aria-describedby="nombreHelpBlock" value="${producto.name}" readonly>
             <small id="nombreHelpBlock" class="form-text text-muted">
                 Nombre con el que se verá el producto en la aplicación
             </small>
@@ -71,14 +77,14 @@
                 <div class="input-group col-lg-6 mb-3">
                     <label for="inputDescuento" class="sr-only">Porcentaje de descuento</label>
                     <label for="inputPrecio" class="sr-only">Precio en euros</label>
-                    <input type="text" class="form-control" id="inputPrecio" name="precio" aria-describedby="emailHelp" placeholder="Precio en euros" required>
+                    <input type="text" class="form-control" id="inputPrecio" name="precio" aria-describedby="emailHelp" value="${producto.price}" required>
                     <div class="input-group-append">
                         <span class="input-group-text">€</span>
                     </div>
                 </div>
                 <div class="input-group col-lg-6 mb-3">
 
-                    <input type="text" class="form-control" id="inputDescuento" name="descuento" aria-describedby="emailHelp" placeholder="Porcentaje de descuento" required>
+                    <input type="text" class="form-control" id="inputDescuento" name="descuento" aria-describedby="emailHelp" value="${producto.offer}" required>
                     <div class="input-group-append">
                         <span class="input-group-text">%</span>
                     </div>
@@ -90,7 +96,12 @@
             <h4 class="my-3">Características</h4>
             <select id="productCaracteristicas" class="selectpicker form-control" multiple data-live-search="true" multiple data-max-options="5" multiple data-selected-text-format="count" name="features">
                 <c:forEach var="feature" items="${sessionScope.features}">
-                    <option value="${feature.key}" ><c:out value ="${feature.value}"/> </option>
+                    <c:if test="${feature.key==23}">
+                        <option value="${feature.key}" selected><c:out value ="${feature.value}"/> </option>
+                    </c:if>
+                    <c:if test="${not (feature.key==23)}">
+                        <option value="${feature.key}" > <c:out value ="${feature.value}"/> </option>
+                    </c:if>
                 </c:forEach>
             </select>
             <div class="form-group">
@@ -119,13 +130,15 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1">#</span>
                         </div>
-                        <input type="text" class="form-control" id="exampleNombreProducto" aria-describedby="colorHexHelpBlock" placeholder="Hex" required>
+                        <input type="text" class="form-control" id="inputColor" name="inputColor" aria-describedby="colorHexHelpBlock" placeholder="#FFFFFF" required>
                         <small id="colorHexHelpBlock" class="form-text text-muted col-12 px-0">
                             Especifique el color en hexadecimal
                         </small>
                     </div>
 
+<%--
                     <button class="btn btn-link my-0 mx-2 p-0"><h4>+</h4></button>
+--%>
                 </div>
             </div>
 

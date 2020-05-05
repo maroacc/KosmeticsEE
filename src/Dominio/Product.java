@@ -1,6 +1,9 @@
 package Dominio;
 
-public class Product {
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class Product implements Serializable {
     private int id;
     private String name;
     private String description;
@@ -8,18 +11,10 @@ public class Product {
     private float price;
     private int offer;
     private int freeDeliver;
+    private ArrayList<String> features = new ArrayList<String>();
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", productCategory='" + productCategory + '\'' +
-                ", price=" + price +
-                ", offer=" + offer +
-                ", freeDeliver=" + freeDeliver +
-                '}';
-    }
+
+
 
     public Product() {
     }
@@ -69,6 +64,25 @@ public class Product {
         return freeDeliver;
     }
 
+    public ArrayList<String> getFeatures() {
+        return features;
+    }
+
+    public void setFeatures(ArrayList<String> features) {
+        this.features = features;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", productCategory='" + productCategory + '\'' +
+                ", price=" + price +
+                ", offer=" + offer +
+                ", freeDeliver=" + freeDeliver +
+                '}';
+    }
     public float getNuevoPrecio(){
         float precio = this.getPrice();
         int oferta = this.getOffer();

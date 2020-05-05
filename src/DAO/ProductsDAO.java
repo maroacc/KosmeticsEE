@@ -2,6 +2,7 @@ package DAO;
 
 import Dominio.Brand;
 import Dominio.Product;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.InputStream;
 import java.sql.PreparedStatement;
@@ -81,6 +82,23 @@ public class ProductsDAO {
         }
 
         return product;
+    }
+
+    public static int getProductID(String name) {
+        int id = -1;
+
+        try {
+            PreparedStatement pstmt = ConnectionDAO.getConnection().prepareStatement("SELECT idProducts FROM  products WHERE name = ?");
+            pstmt.setString(1,name);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                id = rs.getInt(1);
+            }
+        } catch (SQLException sqle) {
+            System.out.println(sqle.getMessage());
+            sqle.printStackTrace();
+        }
+        return id;
     }
 
     public static boolean updateProduct(Product product) {
@@ -218,6 +236,24 @@ public class ProductsDAO {
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
+        }
+    }
+
+    public static void uploadColors(int productId, String colores) {
+        try {
+            String[] coloresSplit = colores.split(";");
+            for (String color: coloresSplit
+            ) {
+                PreparedStatement pst = conBD.getConnection().prepareStatement("INSERT INTO productcolor (color,Products_idProducts) values(?,?)");
+                pst.setString(1,color);
+                pst.setInt(2, productId);
+
+                pst.executeUpdate();
+            }
+
+        } catch (SQLException sqle) {
+            System.out.println(sqle.getMessage());
+            sqle.printStackTrace();
         }
     }
 

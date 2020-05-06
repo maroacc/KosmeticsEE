@@ -85,16 +85,16 @@
                 <p>Productos más vendidos:</p>
             </div>
             <div class="col-xs-12 col-md-5 col-lg-3">
-                <img src="assets/images/estadGlobales.jpg" style="width: 50%">
+                <img src="assets/images/estadGlobales.jpg" style="width: 50%" class="rounded">
             </div>
             <div class="col-xs-12 col-md-5 col-lg-3">
                 <img src="assets/images/bases.jpg" style="width: 50%">
             </div>
             <div class="col-xs-12 col-md-5 col-lg-3">
-                <img src="assets/images/pintalabios.jpg" style="width: 50%">
+                <img src="assets/images/pintalabios.jpg" style="width: 50%" class="rounded">
             </div>
             <br/>
-            <div class="col-xs-12 col-md-12 col-lg-12">
+            <div class="col-xs-12 col-md-12 col-lg-12" class="rounded">
                 <div id="valoraciones"></div>
             </div>
         </section>

@@ -38,37 +38,37 @@
         <div class="col-xs-12 col-md-6 col-lg-4 mb-5 d-flex justify-content-center">
             <div class="card" style="width: 200px;">
                 <a href="ServletListaProductos?estad=false"><img src="assets/images/the-honest-company-8BrGzxqRDt0-unsplash.jpg" class="card-img-top"></a>
-                <p style="padding-left: 20px" class="mt-2">Catálogo</p>
+                <p class="text-center my-2">Catálogo</p>
             </div>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4 mb-5 d-flex justify-content-center">
             <div class="card" style="width: 200px;">
                 <a href="estadisticas?est=globales"><img src="assets/images/estadGlobales.jpg" class="card-img-top"></a>
-                <p style="padding-left: 20px" class="mt-2">Estadísticas globales</p>
+                <p class="text-center my-2">Estadísticas globales</p>
             </div>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4 mb-5 d-flex justify-content-center">
             <div class="card" style="width: 200px;">
                 <a href="estadisticas?est=categorias"><img src="assets/images/pintalabios.jpg" class="card-img-top"></a>
-                <p style="padding-left: 10px" class="mt-2">Estadísticas por categoría</p>
+                <p class="text-center my-2" >Estadísticas por categoría</p>
             </div>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4 mb-5 d-flex justify-content-center">
             <div class="card" style="width: 200px;">
                 <a class="fotos" href="ServletListaProductos?estad=true"><img src="assets/images/estadIndividuales.jpg" class="card-img-top"></a>
-                <p style="padding-left: 15px" class="mt-2">Estadísticas individuales</p>
+                <p class="text-center my-2" >Estadísticas individuales</p>
             </div>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4 mb-5 d-flex justify-content-center">
             <div class="card" style="width: 200px;">
                 <a href="estadisticas?est=cliente"><img src="assets/images/perfilCliente.jpg" class="card-img-top"></a>
-                <p style="padding-left: 40px" class="mt-2">Perfil de cliente</p>
+                <p class="text-center my-2" >Perfil de cliente</p>
             </div>
         </div>
         <div class="col-xs-12 col-md-6 col-lg-4 mb-5 d-flex justify-content-center">
             <div class="card" style="width: 200px;">
                 <a class="fotos" href="competencia.html"><img src="assets/images/competencia.jpg" class="card-img-top"></a>
-                <p style="padding-left: 50px" class="mt-2">Competencia</p>
+                <p class="text-center my-2" >Competencia</p>
             </div>
         </div>
     </section>

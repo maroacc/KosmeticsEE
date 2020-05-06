@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Nico
@@ -24,67 +25,82 @@
 <div class="container">
     <div class="kosmetics">
         <p id="titulillo">Estadísticas por categoría</p>
+    <c:if test="${listaProductos.size() >= 5}">
         <h2>Bases y primers</h2>
         <p id="paraEmpresas">Valoración global de la marca:</p>
+    </c:if>
+
     </div>
 </div>
 <br/>
-<!--Puntuación-->
-<div class="container">
-    <section class="main row">
-        <div class="col-xs-2 col-md-2 col-lg-2">
-            <div id="puntuacion" style="width: 200px;">
-                <h2 id="valor">2.5</h2><p>(73 reviews)</p>
-            </div>
-        </div>
-        <div class="col-xs-10 col-md-5 col-lg-5">
-            <div>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">5</div>
-                </div>
-                <br/>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">4</div>
-                </div>
-                <br/>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">3</div>
-                </div>
-                <br/>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">2</div>
-                </div>
-                <br/>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">1</div>
+
+<c:if test="${listaProductos.size() < 5}">
+    <div class="d-flex justify-content-center row mt-3">
+        <h5 class="col-12 text-center mb-5" style="color:#888888; font-family:Montserrat" >Publica al menos 5 productos para poder acceder a estadísticas según la categoría</h5>
+        <svg class="bi bi-bar-chart" width="5em" height="5em" viewBox="0 0 16 16" fill="#AAAAAA" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5h-2v12h2V2zm-2-1a1 1 0 00-1 1v12a1 1 0 001 1h2a1 1 0 001-1V2a1 1 0 00-1-1h-2zM6 7a1 1 0 011-1h2a1 1 0 011 1v7a1 1 0 01-1 1H7a1 1 0 01-1-1V7zm-5 4a1 1 0 011-1h2a1 1 0 011 1v3a1 1 0 01-1 1H2a1 1 0 01-1-1v-3z" clip-rule="evenodd"/>
+        </svg>    </div>
+</c:if>
+
+<c:if test="${listaProductos.size() >= 5}">
+    <!--Puntuación-->
+    <div class="container">
+        <section class="main row">
+            <div class="col-xs-2 col-md-2 col-lg-2">
+                <div id="puntuacion" style="width: 200px;">
+                    <h2 id="valor">2.5</h2><p>(73 reviews)</p>
                 </div>
             </div>
-        </div>
-        <div class="col-xs-12 col-md-5 col-lg-5">
-            <p style="padding-top: 25px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu laoreet elit. Curabitur vel convallis sapien. Cras eu eleifend diam. Praesent vestibulum eleifend vehicula. Suspendisse suscipit nibh at dictum lobortis. Aenean augue urna, egestas ac varius sed, feugiat eget risus.</p>
-        </div>
-        <br/>
-        <div class="col-xs-12 col-md-12 col-lg-12">
-            <div id="columnchart_values"></div>
-        </div>
-        <div class="col-xs-12 col-md-12 col-lg-12">
-            <p>Productos más vendidos:</p>
-        </div>
-        <div class="col-xs-12 col-md-5 col-lg-3">
-            <img src="assets/images/estadGlobales.jpg" style="width: 50%">
-        </div>
-        <div class="col-xs-12 col-md-5 col-lg-3">
-            <img src="assets/images/bases.jpg" style="width: 50%">
-        </div>
-        <div class="col-xs-12 col-md-5 col-lg-3">
-            <img src="assets/images/pintalabios.jpg" style="width: 50%">
-        </div>
-        <br/>
-        <div class="col-xs-12 col-md-12 col-lg-12">
-            <div id="valoraciones"></div>
-        </div>
-    </section>
-</div>
+            <div class="col-xs-10 col-md-5 col-lg-5">
+                <div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">5</div>
+                    </div>
+                    <br/>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">4</div>
+                    </div>
+                    <br/>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">3</div>
+                    </div>
+                    <br/>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">2</div>
+                    </div>
+                    <br/>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">1</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <p style="padding-top: 25px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu laoreet elit. Curabitur vel convallis sapien. Cras eu eleifend diam. Praesent vestibulum eleifend vehicula. Suspendisse suscipit nibh at dictum lobortis. Aenean augue urna, egestas ac varius sed, feugiat eget risus.</p>
+            </div>
+            <br/>
+            <div class="col-xs-12 col-md-12 col-lg-12">
+                <div id="columnchart_values"></div>
+            </div>
+            <div class="col-xs-12 col-md-12 col-lg-12">
+                <p>Productos más vendidos:</p>
+            </div>
+            <div class="col-xs-12 col-md-5 col-lg-3">
+                <img src="assets/images/estadGlobales.jpg" style="width: 50%">
+            </div>
+            <div class="col-xs-12 col-md-5 col-lg-3">
+                <img src="assets/images/bases.jpg" style="width: 50%">
+            </div>
+            <div class="col-xs-12 col-md-5 col-lg-3">
+                <img src="assets/images/pintalabios.jpg" style="width: 50%">
+            </div>
+            <br/>
+            <div class="col-xs-12 col-md-12 col-lg-12">
+                <div id="valoraciones"></div>
+            </div>
+        </section>
+    </div>
+</c:if>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Nico
@@ -27,42 +28,54 @@
     </div>
 </div>
 
-<!--Primera línea de fotos-->
-<div class="container">
-    <section class="main row">
-        <div class="col-xs-12 col-md-6 col-lg-6">
-            <div id="Genero" style="width:600px;height:600px;"></div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-6">
-            <div class="textografica" style="height: 250px;">
-                <p style="padding-left: 10px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu laoreet elit. Curabitur vel convallis sapien. Cras eu eleifend diam. Praesent vestibulum eleifend vehicula. Suspendisse suscipit nibh at dictum lobortis. Aenean augue urna, egestas ac varius sed, feugiat eget risus.</p>
+<c:if test="${listaProductos.size() < 5}">
+    <div class="d-flex justify-content-center row mt-3">
+        <h5 class="col-12 text-center mb-5" style="color:#888888; font-family:Montserrat" >Publica al menos 5 productos para poder acceder a estadísticas según la categoría</h5>
+        <svg class="bi bi-bar-chart" width="5em" height="5em" viewBox="0 0 16 16" fill="#AAAAAA" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5h-2v12h2V2zm-2-1a1 1 0 00-1 1v12a1 1 0 001 1h2a1 1 0 001-1V2a1 1 0 00-1-1h-2zM6 7a1 1 0 011-1h2a1 1 0 011 1v7a1 1 0 01-1 1H7a1 1 0 01-1-1V7zm-5 4a1 1 0 011-1h2a1 1 0 011 1v3a1 1 0 01-1 1H2a1 1 0 01-1-1v-3z" clip-rule="evenodd"/>
+        </svg>    </div>
+</c:if>
+
+<c:if test="${listaProductos.size() >= 5}">
+    <!--Primera línea de fotos-->
+    <div class="container">
+        <section class="main row">
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div id="Genero" style="width:600px;height:600px;"></div>
             </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-6">
-            <div class="textografica" style="height: 200px;">
-                <p style="padding-left: 10px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu laoreet elit. Curabitur vel convallis sapien. Cras eu eleifend diam. Praesent vestibulum eleifend vehicula. Suspendisse suscipit nibh at dictum lobortis. Aenean augue urna, egestas ac varius sed, feugiat eget risus.</p>
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="textografica" style="height: 250px;">
+                    <p style="padding-left: 10px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu laoreet elit. Curabitur vel convallis sapien. Cras eu eleifend diam. Praesent vestibulum eleifend vehicula. Suspendisse suscipit nibh at dictum lobortis. Aenean augue urna, egestas ac varius sed, feugiat eget risus.</p>
+                </div>
             </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-6">
-            <div id="Edad" style="width:600px;height:600px;"></div>
-        </div>
-        <div class="col-xs-12 col-md-5 col-lg-5">
-            <br/>
-            <p>Productos más vendidos:</p>
-        </div>
-        <div class="col-xs-12 col-md-12 col-lg-12">
-            <div id="chart_div" style="width: 900px; height: 450px; padding-left: 150px"></div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-6">
-            <div id="Productos" style="width:600px;height:600px;"></div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-6">
-            <div class="textografica" style="height: 100px;">
-                <p style="padding-left: 10px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu laoreet elit. Curabitur vel convallis sapien. Cras eu eleifend diam. Praesent vestibulum eleifend vehicula. Suspendisse suscipit nibh at dictum lobortis. Aenean augue urna, egestas ac varius sed, feugiat eget risus.</p>
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="textografica" style="height: 200px;">
+                    <p style="padding-left: 10px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu laoreet elit. Curabitur vel convallis sapien. Cras eu eleifend diam. Praesent vestibulum eleifend vehicula. Suspendisse suscipit nibh at dictum lobortis. Aenean augue urna, egestas ac varius sed, feugiat eget risus.</p>
+                </div>
             </div>
-        </div>
-    </section>
-</div>
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div id="Edad" style="width:600px;height:600px;"></div>
+            </div>
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <br/>
+                <p>Productos más vendidos:</p>
+            </div>
+            <div class="col-xs-12 col-md-12 col-lg-12">
+                <div id="chart_div" style="width: 900px; height: 450px; padding-left: 150px"></div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div id="Productos" style="width:600px;height:600px;"></div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="textografica" style="height: 100px;">
+                    <p style="padding-left: 10px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu laoreet elit. Curabitur vel convallis sapien. Cras eu eleifend diam. Praesent vestibulum eleifend vehicula. Suspendisse suscipit nibh at dictum lobortis. Aenean augue urna, egestas ac varius sed, feugiat eget risus.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</c:if>
+
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

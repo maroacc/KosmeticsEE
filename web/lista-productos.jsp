@@ -52,7 +52,7 @@
 
                 <!-- Image -->
                 <c:if test="${param.estad}">
-                    <a href="EstadProducto.jsp"><img class="card-img-top" src="assets/images/honest-beauty-mascara.jpg" alt="..."></a>
+                    <a href="estadisticas?est=producto"><img class="card-img-top" src="assets/images/honest-beauty-mascara.jpg" alt="..."></a>
                 </c:if>
                 <c:if test="${not param.estad}">
                     <a href="ServletInfoProducto?producto=${producto.name}"><img class="card-img-top" src="assets/images/honest-beauty-mascara.jpg" alt="..."></a>

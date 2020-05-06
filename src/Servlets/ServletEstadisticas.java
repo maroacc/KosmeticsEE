@@ -21,7 +21,16 @@ public class ServletEstadisticas extends HttpServlet {
         int brandId = DAO.BrandsDAO.getBrandId((String) request.getSession().getAttribute("username"));
         ArrayList productos = ProductsDAO.getProducts(brandId);
         request.getSession().setAttribute("listaProductos", productos);
-        request.getRequestDispatcher("/EstadGlobales.jsp").forward(request, response);
+        if(request.getParameter("est").equals("globales"))
+            request.getRequestDispatcher("/EstadGlobales.jsp").forward(request, response);
+        else if (request.getParameter("est").equals("categorias"))
+            request.getRequestDispatcher("/EstadCateg.jsp").forward(request, response);
+        else if (request.getParameter("est").equals("producto"))
+            request.getRequestDispatcher("/EstadProducto.jsp").forward(request, response);
+        else if (request.getParameter("est").equals("cliente"))
+            request.getRequestDispatcher("/PerfilCliente.jsp").forward(request, response);
+        else
+            request.getRequestDispatcher("/error.jsp").forward(request, response);
 
     }
 }

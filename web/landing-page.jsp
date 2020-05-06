@@ -22,7 +22,7 @@
 <body id="">
 <jsp:include page="navLogin.jsp"/>
 <div id="body-landing-page" class="pb-5">
-    <div class="mt-5 d-flex justify-content-center">
+    <div class="d-flex justify-content-center">
         <div class="mr-lg-3 ml-xl-auto mt-lg-5 pr-xl-5">
             <p class="h1" id="brand"><strong>Kosmetics.</strong></p>
             <small class="h4 pl-3 d-block mb-5 mb-lg-3">Para empresas</small>

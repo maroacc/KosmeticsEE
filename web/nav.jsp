@@ -12,18 +12,39 @@
     <title>Kosmetics</title>
 </head>
 <body>
-<div class="d-flex flex-md-row align-items-center p-3 px-md-4 mb-0 bg-white border-bottom shadow-sm">
-    <img id="logo" src="assets/images/LogoBueno.svg">
-    <h5 class="my-0 mr-md-auto font-weight-bold">osmetics</h5>
- <%--   <form class="form-inline my-2 my-lg-0 mr-md-auto d-none d-lg-block">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    </form>--%>
-    <nav class="my-2 my-md-0 mr-md-3 ml-auto">
-        <a class="p-2 text-dark" href="addProduct.jsp">Añadir producto</a>
-        <a class="btn btn-outline-info py-1" href="cargarProductos.jsp">Publicar</a>
-    </nav>
-    <div class="vl"></div>
-    <a href="profile.jsp"><img id="logoEmpresa" src="assets/images/pruebaLogoEmpresa.png"></a>
-</div>
+<nav class="navbar navbar-expand-lg navbar-light order-bottom shadow-sm">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand d-none d-lg-block" href="#">
+            <ul class="list-inline d-flex align-baseline">
+                <li class="list-inline-item mx-0 px-0">
+                    <img id="logo" src="assets/images/LogoBueno.svg" height="32px">
+                </li>
+                <li class="list-inline-item mx-0 pb-0 align-self-baseline">
+                    <h5 class="font-weight-bold mb-0 align-self-baseline">osmetics</h5>
+                </li>
+            </ul>
+        </a>
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item d-lg-none">
+                <a class="p-2 text-dark nav-link" href="profile.jsp">Perfil</a>
+            </li>
+            <li class="nav-item active">
+                <a class="p-2 text-dark nav-link" href="addProduct.jsp">Añadir producto</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-outline-info m-2 my-lg-1 py-1" href="cargarProductos.jsp">Publicar</a>
+            </li>
+            <li class="nav-item mx-2 d-none d-lg-block">
+                <div class="vl" style="height: 40px; width: 2px; background-color: gainsboro"></div>
+            </li>
+            <li class="nav-item d-none d-lg-block">
+                <a href="profile.jsp"><img height="32px" id="logoEmpresa" src="assets/images/pruebaLogoEmpresa.png"></a>
+            </li>
+        </ul>
+    </div>
+</nav>
 </body>
 </html>

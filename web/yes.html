@@ -1,12 +1,5 @@
-<%--
-Created by IntelliJ IDEA.
-User: Nico
-Date: 04/04/2020
-Time: 11:42
-To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="en" xmlns:html="http://java.sun.com/JSP/Page">
+<!doctype html>
+<html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -14,66 +7,49 @@ To change this template use File | Settings | File Templates.
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/styleMainPage.css">
-    <title>Kosmetics</title>
+
+    <title>Hello, world!</title>
 </head>
 <body>
-<html:include page="nav.jsp"/>
-<!--Aquí va la parte del kosmetics para empresas-->
-<div class="container">
-    <div class="kosmetics">
-        <p id="titulo">Kosmetics</p>
-        <small class="h4 pl-3 d-block mb-5 mb-lg-3">Para empresas</small>
+<nav class="navbar navbar-expand-lg navbar-light order-bottom shadow-sm">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand d-none d-lg-block" href="#">
+            <ul class="list-inline d-flex align-baseline">
+                <li class="list-inline-item mx-0 px-0">
+                    <img id="logo" src="assets/images/LogoBueno.svg" height="32px">
+                </li>
+                <li class="list-inline-item mx-0 pb-0 align-self-baseline">
+                    <h5 class="font-weight-bold mb-0 align-self-baseline">osmetics</h5>
+                </li>
+            </ul>
+        </a>
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item d-lg-none">
+                <a class="p-2 text-dark nav-link" href="profile.jsp">Perfil</a>
+            </li>
+            <li class="nav-item active">
+                <a class="p-2 text-dark nav-link" href="addProduct.jsp">Añadir producto</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-outline-info my-2 my-lg-1 py-1" href="cargarProductos.jsp">Publicar</a>
+            </li>
+            <li class="nav-item mx-3 d-none d-lg-block">
+                <div class="vl" style="height: 40px; width: 2px; background-color: gainsboro"></div>
+            </li>
+            <li class="nav-item d-none d-lg-block">
+                <a href="profile.jsp"><img height="32px" id="logoEmpresa" class="mt-1" src="assets/images/pruebaLogoEmpresa.png"></a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-        <%--    <p id="paraEmpresas">Para empresas</p>--%>
-    </div>
-</div>
-<!--Aquí lo de descubre el éxito de tu empresa-->
-<div class="container">
-    <div class="exito">
-        <p id="exito">Descubre el éxito de tu empresa</p>
-    </div>
-</div>
-<!--Primera línea de fotos-->
-<div class="container">
-    <section class="main row">
-        <div class="col-xs-12 col-md-6 col-lg-4">
-            <div class="card" style="width: 200px;">
-                <a href="EstadGlobales.jsp"><img src="assets/images/estadGlobales.jpg" class="card-img-top"></a>
-                <p style="padding-left: 20px">Estadísticas globales</p>
-            </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-4">
-            <div class="card" style="width: 200px;">
-                <a href="EstadCateg.jsp"><img src="assets/images/pintalabios.jpg" class="card-img-top"></a>
-                <p style="padding-left: 10px">Estadísticas por categoría</p>
-            </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-4">
-            <div class="card" style="width: 200px;">
-                <a class="fotos" href="EstadProducto.jsp"><img src="assets/images/estadIndividuales.jpg" class="card-img-top"></a>
-                <p style="padding-left: 15px">Estadísticas individuales</p>
-            </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-4">
-            <div class="card" style="width: 200px;">
-                <a href="PerfilCliente.jsp"><img src="assets/images/perfilCliente.jpg" class="card-img-top"></a>
-                <p style="padding-left: 40px">Perfil de cliente</p>
-            </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-4">
-            <div class="card" style="width: 200px;">
-                <a class="fotos" href="#"><img src="assets/images/competencia.jpg" class="card-img-top"></a>
-                <p style="padding-left: 50px">Competencia</p>
-            </div>
-        </div>
-    </section>
-</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
 </body>
 </html>

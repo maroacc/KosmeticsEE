@@ -19,8 +19,8 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     </form>
     <nav class="my-2 my-md-0 mr-md-3 ml-auto">
-        <a class="p-2 text-dark" href="cargarProductos.jsp">Cargar productos</a>
-        <a class="btn btn-outline-primary" href="addProduct.jsp">Añadir productos</a>
+        <a class="p-2 text-dark" href="addProduct.jsp">Añadir producto</a>
+        <a class="btn btn-outline-info py-1" href="cargarProductos.jsp">Publicar</a>
     </nav>
     <div class="vl"></div>
     <a href="profile.jsp"><img id="logoEmpresa" src="assets/images/pruebaLogoEmpresa.png"></a>

@@ -17,7 +17,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand d-none d-lg-block" href="#">
+        <a class="navbar-brand d-none d-lg-block" href="mainPage.jsp">
             <ul class="list-inline d-flex align-baseline">
                 <li class="list-inline-item mx-0 px-0">
                     <img id="logo" src="assets/images/LogoBueno.svg" height="32px">

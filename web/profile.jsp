@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -37,7 +39,49 @@
             </div>
         </div>
     </div>
+    <c:if test="${empty latestBrandProducts}">
+        <div class="d-flex justify-content-center row mt-5">
+            <h5 class="col-12 text-center mb-3" style="color:#888888" >Parece que aún no hay productos...</h5>
+            <img src="assets/icons/nature.svg" height="128" width="128">
+        </div>
+    </c:if>
 
+    <div class="row px-lg-5 bg-light py-5">
+        <c:forEach var="producto" items="${latestBrandProducts}">
+            <div class="col-12 col-md-4 col-lg-3 bg-light">
+                <!-- Card -->
+                <div class="card mb-7 bg-light border-0">
+
+                    <!-- Image -->
+                    <div class="card-img">
+
+                        <!-- Image -->
+                        <c:if test="${param.estad}">
+                            <a href="EstadProducto.jsp"><img class="card-img-top" src="assets/images/honest-beauty-mascara.jpg" alt="..."></a>
+                        </c:if>
+                        <c:if test="${not param.estad}">
+                            <a href="ServletInfoProducto?producto=${producto.name}"><img class="card-img-top" src="assets/images/honest-beauty-mascara.jpg" alt="..."></a>
+                        </c:if>
+
+                    </div>
+
+                    <!-- Body -->
+                    <div class="card-body font-weight-bold text-center">
+                        <a class="text-body" href="#"><c:out value="${producto.name}"></c:out></a>
+                        <c:if test="${producto.offer != 0}">
+                            <div class="text-muted"><del><c:out value="${producto.price}"></c:out>  € </del><c:out value="${producto.nuevoPrecio}"></c:out> €</div>
+                        </c:if>
+                        <c:if test="${producto.offer == 0}">
+                            <div class="text-muted"><c:out value="${producto.price}"></c:out>  €</div>
+                        </c:if>
+                    </div>
+
+                </div>
+
+            </div>
+        </c:forEach>
+
+    </div>
 </div>
 
 <!-- Optional JavaScript -->

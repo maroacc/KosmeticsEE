@@ -1,3 +1,4 @@
+<div class="card-deck mb-3 text-center">
 <div class="card mb-4 shadow-sm">
 <div class="card-header">
 <h4 class="my-0 font-weight-normal">Pro</h4>
@@ -11,5 +12,6 @@
 <li>Soporte 24 h</li>
 </ul>
 <a href="checkout.jsp?contrato=contrato2"><button type="button" class="btn btn-lg btn-block btn-primary">Continuar con "Pro"</button></a>
+</div>
 </div>
 </div>

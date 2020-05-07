@@ -5,6 +5,7 @@ import Dominio.Brand;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -70,22 +71,30 @@ public class ServletCheckout extends HttpServlet {
         brand.getPayment().setPaymentType(request.getParameter("inputTipoPago"));
         brand.getPayment().setAutomaticPayment(true);
         String contrato = (String) request.getSession().getAttribute("tipoContrato");
-        System.out.println(contrato.toString() + "hola");
         brand.setContract(contrato);
 
 
 //Primero comprobamos que el usuario no esté repetido
         if (!BrandsDAO.checkBrandNameUnique(brand)) {
             request.getSession().setAttribute("brandUnique", false);
-            //request.getRequestDispatcher("/checkout.jsp").forward(request, response);
+            /*Cookie error = new Cookie("error", "true");
+            System.out.println(error);
+            response.addCookie(error);*/
+            request.getRequestDispatcher("/checkout.jsp").forward(request, response);
 
         } else {
             if (BrandsDAO.updateBrand(brand)) {
                 request.getSession().setAttribute("brandUnique", true);
                 request.getSession().setAttribute("username", brand.getUsername());
-                request.getRequestDispatcher("/landing-page.jsp").forward(request, response);
+                /*Cookie error = new Cookie("error", "false");
+                System.out.println(error);
+                response.addCookie(error);*/
+                request.getRequestDispatcher("/mainPage.jsp").forward(request, response);
 
             } else {
+                /*Cookie error = new Cookie("error", "true");
+                System.out.println(error);
+                response.addCookie(error);*/
                 request.getRequestDispatcher("/error.jsp").forward(request, response);
             }
         }

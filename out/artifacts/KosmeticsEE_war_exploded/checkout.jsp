@@ -22,6 +22,7 @@
 </head>
 <body>
 <%  String contrato = request.getParameter("contrato");
+    if(contrato != null)
     request.getSession().setAttribute("tipoContrato", contrato);
 %>
 <div id="body-landing-page" class="pb-0">

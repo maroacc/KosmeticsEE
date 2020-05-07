@@ -5,6 +5,8 @@ function validate() {
     for ( var i = 0; i < inputs.length; i++ ) {
         //inputs[i].classList.add("is-invalid");
         var inpObj = inputs[i];
+        var nico = inpObj.value()
+        alert(inpObj.value());
         if (!inpObj.checkValidity()) {
             inpObj.classList.add("is-invalid");
             ok = false;

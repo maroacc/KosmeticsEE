@@ -18,6 +18,7 @@ public class ServletEliminaCarrito extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        boolean eliminado = false;
         ArrayList<Product> productos = (ArrayList) request.getSession().getAttribute("productos");
         String name = request.getParameter("name");
         Iterator<Product> it = productos.iterator();
@@ -26,10 +27,12 @@ public class ServletEliminaCarrito extends HttpServlet {
             if(product.getName().equals(name))
             {
                 productos.remove(product);
-                request.getSession().setAttribute("productos", productos);
-                request.getRequestDispatcher("/cargarProductos.jsp").forward(request, response);
+                eliminado = true;
+                break;
             }
         }
+        if(eliminado)
+            request.getSession().setAttribute("productos", productos);
         request.getRequestDispatcher("/cargarProductos.jsp").forward(request, response);
     }
 }

@@ -73,7 +73,7 @@
                 </div>
                 <div class="input-group col-lg-6 mb-3">
 
-                    <input type="text" class="form-control" id="inputDescuento" name="descuento" aria-describedby="emailHelp" placeholder="Porcentaje de descuento" required>
+                    <input type="text" class="form-control" id="inputDescuento" name="descuento" aria-describedby="emailHelp" placeholder="Porcentaje de descuento" value="0" required>
                     <div class="input-group-append">
                         <span class="input-group-text">%</span>
                     </div>

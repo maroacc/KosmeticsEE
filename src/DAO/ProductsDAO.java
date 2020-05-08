@@ -2,7 +2,7 @@ package DAO;
 
 import Dominio.Brand;
 import Dominio.Product;
-import org.jetbrains.annotations.NotNull;
+//import org.jetbrains.annotations.NotNull;
 
 import java.io.InputStream;
 import java.sql.PreparedStatement;

@@ -33,6 +33,14 @@
         <url-pattern>/nuevoProducto</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>servletLastProducts</servlet-name>
+        <servlet-class>Servlets.ServletLastProducts</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletLastProducts</servlet-name>
+        <url-pattern>/lastProducts</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>servletCheckout</servlet-name>
         <servlet-class>Servlets.ServletCheckout</servlet-class>
     </servlet>
@@ -149,6 +157,14 @@
     <servlet-mapping>
         <servlet-name>servletCarrito</servlet-name>
         <url-pattern>/carrito</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>servletEliminaCarrito</servlet-name>
+        <servlet-class>Servlets.ServletEliminaCarrito</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletEliminaCarrito</servlet-name>
+        <url-pattern>/elimina</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>servletGraficas</servlet-name>

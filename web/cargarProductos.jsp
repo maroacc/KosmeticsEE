@@ -61,9 +61,9 @@
             <div class="p-3 py-lg-5">
                 <div class="d-flex my-3 justify-content-between">
                     <h1><c:out value="${product.name}"></c:out></h1>
-                    <form action="editar-producto" method="post">
-                        <button type="submit" class="btn btn-outline-dark my-1">Editar Producto</button>
-                    </form>
+                    <%--<form action="editar-producto" method="post">--%>
+                        <a href="elimina?name=${product.name}">Eliminar Producto</a>
+                    <%--</form>--%>
                 </div>
 
                 <div class="d-inline-flex">

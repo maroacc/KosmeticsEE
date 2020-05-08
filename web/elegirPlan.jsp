@@ -36,17 +36,19 @@
     <p class="lead">Elige el plan que mejor convenga para el futuro de tu empresa</p>
 </div>
 <div class="container">
-    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan1')">Free</button>
-    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan2')">Pro</button>
-    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan3')">Enterprise</button>
+    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan1')">Free
+    </button>
+    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan2')">Pro
+    </button>
+    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan3')">
+        Enterprise
+    </button>
 </div>
 <br/><br/>
-<div class="container">
+<div class="container" id="ajax">
     <div class="card-deck mb-3 text-center">
         <div class="card mb-4 shadow-sm">
-            <div id="ajax">
-                <p>Elija un plan.</p>
-            </div>
+            <p>Elija un plan.</p>
         </div>
     </div>
 </div>

@@ -1,0 +1,16 @@
+<div class="row d-flex justify-content-center">
+<div class="col-10 col-lg-8 col-xl-6">
+<h3 class="mb-4">Información General</h3>
+<div class="form-group">
+<label for="inputNombreMarca">Nombre de la marca*</label>
+<input type="text" class="form-control is-invalid" id="inputNombreMarca" name="inputNombreMarca"
+aria-describedby="nombreMarcaHelpBlock" required>
+<small id="nombreMarcaHelpBlock" class="form-text text-muted col-12 px-0 is-invalid">
+Especifique el nombre tal y como quiere que lo vean los clientes
+</small>
+<div class="invalid-feedback">
+Ya existe una marca registrada con el nombre especificado
+sgijgigidjeifjiwefjifj
+</div>
+</div>
+</div>

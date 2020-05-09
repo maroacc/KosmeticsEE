@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:html="http://java.sun.com/JSP/Page">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -20,6 +20,7 @@
     <title>Consigue Kosmetics!</title>
 </head>
 <body id="body-info">
+<jsp:include page="navLogin.jsp"/>
 <div class=" d-flex flex-md-row align-items-center p-3 px-md-4 mb-0 bg-white border-bottom shadow-sm">
     <img id="logo" src="assets/images/LogoBueno.svg" alt="logo">
     <h5 class="my-0 mr-md-auto font-weight-bold">osmetics</h5>

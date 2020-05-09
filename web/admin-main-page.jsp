@@ -23,7 +23,18 @@
     <title>Admin · Kosmetics</title>
 </head>
 <body class="bg-light">
-<jsp:include page="navAdmin.jsp"/>
+<div class="d-flex flex-md-row align-items-center p-3 px-md-4 mb-0 bg-white border-bottom shadow-sm">
+    <img id="logo" src="assets/images/LogoBueno.svg">
+    <h5 class="my-0 mr-md-auto font-weight-bold">osmetics</h5>
+    <form class="form-inline my-2 my-lg-0 mr-md-auto d-none d-lg-block">
+        <input class="form-control mr-sm-2 d-none d-lg" type="search" placeholder="Search" aria-label="Search">
+    </form>
+    <nav class="my-2 my-md-0 mr-md-3 ml-auto">
+        <a class="p-2 text-dark" href="#">Iniciar sesión</a>
+    </nav>
+    <a class="btn btn-outline-primary" href="#">Unirse</a>
+</div>
+
 
 <div class="container">
     <c:if test="${(not empty param.validate) && (param.validate)}">
@@ -63,7 +74,7 @@
         <h6 class="border-bottom border-gray pb-2 mb-0">Productos añadidos recientemente</h6>
         <c:forEach var="product" items="${latestProducts}">
             <div class="media text-muted pt-3">
-                <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#A5FFD6"></rect></svg>
+                <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#84DCC6"></rect></svg>
                 <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
                     <div class="d-flex justify-content-between align-items-center w-100">
                         <strong class="text-gray-dark"><c:out value="${product.name}"></c:out></strong>
@@ -90,23 +101,8 @@
         </c:forEach>
     </div>
 
-    <div class="my-3 p-3 bg-white rounded shadow-sm m-lg-5">
-        <h6 class="border-bottom border-gray pb-2 mb-0">Número de compras</h6>
-        <c:forEach var="invoice" items="${countInvoicesPerDate}">
-            <div class="media text-muted pt-3">
-                <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#A5FFD6"></rect></svg>
-                <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                    <div class="d-flex justify-content-between align-items-center w-100">
-                        <strong class="text-gray-dark"><c:out value="${invoice.key}"></c:out></strong>
-                    </div>
-                    <span class="d-block"><c:out value="${invoice.value}"></c:out></span>
-                </div>
-            </div>
-        </c:forEach>
-    </div>
-
-    <form action="graficas" class="mb-5" method="post">
-        <button class="btn btn-info btn-lg btn-block mt-5" type="submit">Gráfica</button>
+    <form action="graficas" method="post">
+        <button class="btn btn-primary btn-lg btn-block mt-5" type="submit">Gráfica</button>
     </form>
 
 </div>

@@ -44,7 +44,7 @@
   <nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-dark" href="#">Iniciar sesión</a>
   </nav>
-  <a class="btn btn-outline-info" href="#">Unirse</a>
+  <a class="btn btn-outline-primary" href="#">Unirse</a>
 </div>
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
@@ -66,7 +66,7 @@
           <li>Características mejor valoradas</li>
           <li>Soporte 24 h</li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-outline-info">Sign up for free</button>
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
@@ -81,7 +81,7 @@
           <li>Estadísticas mensuales</li>
           <li>Soporte 24 h</li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-info">Get started</button>
+        <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
       </div>
     </div>
     <div class="card mb-4 shadow-sm">
@@ -96,7 +96,7 @@
           <li>Análisis de la competencia</li>
           <li>Soporte 24 h</li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-info">Contact us</button>
+        <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
       </div>
     </div>
   </div>

@@ -4,6 +4,7 @@ import DAO.ProductsDAO;
 import Dominio.Product;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 @WebServlet(name = "ServletCarrito")
+@MultipartConfig(
+        fileSizeThreshold=1024 * 1024,
+        maxFileSize=1024 * 1024 * 5,
+        maxRequestSize=1024 * 1024 * 5 * 5
+)
 public class ServletCarrito extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int descuento = 0;

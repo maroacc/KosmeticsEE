@@ -32,7 +32,7 @@
                 <a class="p-2 text-dark nav-link" href="profile.jsp">Perfil</a>
             </li>
             <li class="nav-item active">
-                <a class="p-2 text-dark nav-link" href="addProduct.jsp">Añadir producto</a>
+                <a class="p-2 text-dark nav-link" href="ServletAddProduct">Añadir producto</a>
             </li>
             <li class="nav-item">
                 <a class="btn btn-outline-info m-2 my-lg-1 py-1" href="cargarProductos.jsp">Publicar</a>

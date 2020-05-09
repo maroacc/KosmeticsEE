@@ -12,7 +12,7 @@
     <title>Kosmetics</title>
 </head>
 <body>
-<nav class="navbar navbar-light order-bottom shadow-sm">
+<nav class="navbar navbar-light border-bottom shadow-sm">
 
         <a class="navbar-brand d-none d-lg-block" href="mainPage.jsp">
             <ul class="list-inline d-flex align-baseline">

@@ -34,7 +34,7 @@
         <nav class="my-2 my-md-0 mr-md-3 ml-auto">
             <a class="p-2 text-dark" href="#">Iniciar sesión</a>
         </nav>
-        <a class="btn btn-outline-primary" href="#">Unirse</a>
+        <a class="btn btn-outline-info" href="#">Unirse</a>
     </div>
 </div>
 
@@ -342,7 +342,7 @@
                 </div>
             </div>
 
-            <button class="btn btn-primary btn-lg btn-block mt-5" type="submit">Finalizar la compra</button>
+            <button class="btn btn-info btn-lg btn-block mt-5" type="submit">Finalizar la compra</button>
 
         </div>
     </div>

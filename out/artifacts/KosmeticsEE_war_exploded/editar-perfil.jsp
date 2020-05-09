@@ -160,7 +160,7 @@
                 <label class="form-check-label" for="checkboxPagoAutomatico">Activar el pago automático de la subscripción</label>
             </div>
 
-            <button class="btn btn-primary btn-lg btn-block mt-5" type="submit">Actualizar el perfil</button>
+            <button class="btn btn-info btn-lg btn-block mt-5" type="submit">Actualizar el perfil</button>
 
         </div>
     </div>

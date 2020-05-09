@@ -16,10 +16,11 @@ import java.util.ArrayList;
 @WebServlet(name = "ServletAdminMainPage", urlPatterns = "/ServletAdminMainPage")
 public class ServletAdminMainPage extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println(InvoiceDAO.getInvoices());
         request.getSession().setAttribute("latestBrands", BrandsDAO.getLatestBrands());
         request.getSession().setAttribute("latestProducts", ProductsDAO.getLatestProducts());
         request.getSession().setAttribute("latestInvoices", InvoiceDAO.getInvoices());
+        System.out.println(InvoiceDAO.countInvoicesPerDay());
+        request.getSession().setAttribute("countInvoicesPerDate", InvoiceDAO.countInvoicesPerDay());
 
         request.getRequestDispatcher("/admin-main-page.jsp").forward(request, response);
     }

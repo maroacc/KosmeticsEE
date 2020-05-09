@@ -23,7 +23,7 @@
     font-size: 20px;
 }
 @media screen and (max-width: 345px) {
-    .btn-outline-primary{
+    .btn-outline-info{
         font-size: 12px;
     }
     .textografica{

@@ -90,8 +90,23 @@
         </c:forEach>
     </div>
 
-    <form action="graficas" method="post">
-        <button class="btn btn-primary btn-lg btn-block mt-5" type="submit">Gráfica</button>
+    <div class="my-3 p-3 bg-white rounded shadow-sm m-lg-5">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Número de compras</h6>
+        <c:forEach var="invoice" items="${countInvoicesPerDate}">
+            <div class="media text-muted pt-3">
+                <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32"><title>Placeholder</title><rect width="100%" height="100%" fill="#A5FFD6"></rect></svg>
+                <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <strong class="text-gray-dark"><c:out value="${invoice.key}"></c:out></strong>
+                    </div>
+                    <span class="d-block"><c:out value="${invoice.value}"></c:out></span>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
+
+    <form action="graficas" class="mb-5" method="post">
+        <button class="btn btn-info btn-lg btn-block mt-5" type="submit">Gráfica</button>
     </form>
 
 </div>

@@ -29,7 +29,7 @@
     <nav class="my-2 my-md-0 mr-md-3 ml-auto">
         <a class="p-2 text-dark" href="#">Iniciar sesión</a>
     </nav>
-    <a class="btn btn-outline-primary" href="#">Unirse</a>
+    <a class="btn btn-outline-info" href="#">Unirse</a>
 </div>
 <div class="container-fluid mx-0 p-0">
     <div class="d-flex flex-row justify-content-center pt-4 pb-5 background-white">

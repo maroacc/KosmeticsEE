@@ -26,7 +26,7 @@
     <nav class="my-2 my-md-0 mr-md-3 ml-auto">
         <a class="p-2 text-dark" href="iniciar-sesion.jsp">Iniciar sesión</a>
     </nav>
-    <a class="btn btn-outline-primary" href="registrarse.jsp">Unirse</a>
+    <a class="btn btn-outline-info" href="registrarse.jsp">Unirse</a>
 </div>
 
 </body>

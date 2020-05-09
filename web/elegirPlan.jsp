@@ -28,7 +28,7 @@
         <nav class="my-2 my-md-0 mr-md-3 ml-auto">
             <a class="p-2 text-dark" href="#">Iniciar sesión</a>
         </nav>
-        <a class="btn btn-outline-primary" href="#">Unirse</a>
+        <a class="btn btn-outline-info" href="#">Unirse</a>
     </div>
 </div>
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
@@ -36,11 +36,11 @@
     <p class="lead">Elige el plan que mejor convenga para el futuro de tu empresa</p>
 </div>
 <div class="container">
-    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan1')">Free
+    <button type="button" class="btn btn-lg btn-block btn-info" onclick="muestraPlan('assets/txt/Plan1')">Free
     </button>
-    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan2')">Pro
+    <button type="button" class="btn btn-lg btn-block btn-info" onclick="muestraPlan('assets/txt/Plan2')">Pro
     </button>
-    <button type="button" class="btn btn-lg btn-block btn-primary" onclick="muestraPlan('assets/txt/Plan3')">
+    <button type="button" class="btn btn-lg btn-block btn-info" onclick="muestraPlan('assets/txt/Plan3')">
         Enterprise
     </button>
 </div>

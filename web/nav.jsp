@@ -41,7 +41,7 @@
                 <div class="vl" style="height: 40px; width: 2px; background-color: gainsboro"></div>
             </li>
             <li class="nav-item d-none d-lg-block">
-                <a href="profile.jsp"><img height="32px" id="logoEmpresa" src="assets/images/pruebaLogoEmpresa.png"></a>
+                <a href="ServletPerfil"><img height="32px" id="logoEmpresa" src="assets/images/pruebaLogoEmpresa.png"></a>
             </li>
         </ul>
     </div>

@@ -57,14 +57,6 @@
         <url-pattern>/servletLogin</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>servletEditarPerfil</servlet-name>
-        <servlet-class>Servlets.ServletEditarPerfil</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>servletEditarPerfil</servlet-name>
-        <url-pattern>/servletEditarPerfil</url-pattern>
-    </servlet-mapping>
-    <servlet>
         <servlet-name>servletActualizarPerfil</servlet-name>
         <servlet-class>Servlets.ServletActualizarPerfil</servlet-class>
     </servlet>

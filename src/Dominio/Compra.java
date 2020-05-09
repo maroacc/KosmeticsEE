@@ -31,8 +31,8 @@ public class Compra {
         this.product = product;
     }
 
-    public Date getDate() {
-        return date;
+    public String getDate() {
+        return date.toString().replace("00:00:00 CEST ", "");
     }
 
     public void setDate(Date date) {

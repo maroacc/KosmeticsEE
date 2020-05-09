@@ -27,13 +27,13 @@
     <div class="row d-flex justify-content-center">
         <div class="col-8">
             <div class="row">
-                <img class="img-fluid rounded logo mt-3" src="assets/images/honest-beauty-logo.jpg">
+                <img class="img-fluid rounded logo my-3" src="assets/images/honest-beauty-logo.jpg">
                 <div class="row">
-                    <h1 class="col-12 col-xl-9">Honest Beauty</h1>
+                    <h1 class="col-12 col-xl-9"><c:out value="${brand.name}"></c:out></h1>
                     <div class="col-12 col-xl-3 my-2">
-                        <button class="mx-1 m-md-0 col-12 btn btn-outline-info ">Editar perfil</button>
+                        <a class="mx-1 m-md-0 col-12 btn btn-outline-info" href="ServletEditarPerfil">Editar perfil</a>
                     </div>
-                    <p class="col-12">Download free, beautiful high-quality photos curated by Honest beauty</p>
+                    <p class="col-12"><c:out value="${brand.description}"></c:out></p>
                 </div>
 
             </div>
@@ -46,11 +46,12 @@
         </div>
     </c:if>
 
-    <div class="row px-lg-5 bg-light py-5">
+<c:if test="${not empty latestBrandProducts}">
+    <div class="row px-lg-5 py-5">
         <c:forEach var="producto" items="${latestBrandProducts}">
-            <div class="col-12 col-md-4 col-lg-3 bg-light">
+            <div class="col-12 col-md-4 col-lg-3">
                 <!-- Card -->
-                <div class="card mb-7 bg-light border-0">
+                <div class="card mb-7 border-0">
 
                     <!-- Image -->
                     <div class="card-img">
@@ -82,6 +83,8 @@
         </c:forEach>
 
     </div>
+</c:if>
+
 </div>
 
 <!-- Optional JavaScript -->

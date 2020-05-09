@@ -12,9 +12,9 @@
     <title>Kosmetics</title>
 </head>
 <body>
-<nav class="navbar navbar-light border-bottom shadow-sm">
+<nav class="navbar navbar-light order-bottom shadow-sm bg-white">
 
-        <a class="navbar-brand d-none d-lg-block" href="mainPage.jsp">
+        <a class="navbar-brand" href="admin-main-page.jsp">
             <ul class="list-inline d-flex align-baseline">
                 <li class="list-inline-item mx-0 px-0">
                     <img id="logo" src="assets/images/LogoBueno.svg" height="32px">

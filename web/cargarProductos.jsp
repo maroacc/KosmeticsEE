@@ -115,7 +115,7 @@
     </c:if>
     <c:if test="${not empty sessionScope.productos}">
     <form action="nuevoProducto" method="post">
-        <button class="btn btn-info btn-lg btn-block mt-5" type="submit">Cargar Productos</button>
+        <button class="btn btn-primary btn-lg btn-block mt-5" type="submit">Cargar Productos</button>
     </form>
     </c:if>
     <br/><br/>

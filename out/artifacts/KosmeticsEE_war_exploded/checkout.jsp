@@ -270,7 +270,7 @@
             <ul class="form-group pl-0">
                 <li class="list-group-item d-flex justify-content-between lh-condensed list-group-item-info">
 
-                        <c:if test="${cookie.plan.value == 1}">
+                        <c:if test="${sessionScope.tipoContrato.equals('contrato1')}">
                             <div>
                             <h6 class="my-0">Plan <b>Free</b></h6>
                             <small class="text-muted">Ideal si la empresa está comenzando</small>
@@ -278,7 +278,7 @@
 
                             <span class="text-muted">$0</span>
                         </c:if>
-                        <c:if test="${cookie.plan.value == 2}">
+                        <c:if test="${sessionScope.tipoContrato.equals('contrato2')}">
                             <div>
                                 <h6 class="my-0">Plan <b>Pro</b></h6>
                                 <small class="text-muted">Plan Free + análisis exlusivos</small>
@@ -286,7 +286,7 @@
 
                             <span class="text-muted">$15</span>
                         </c:if>
-                        <c:if test="${cookie.plan.value == 3}">
+                        <c:if test="${sessionScope.tipoContrato.equals('contrato3')}">
                             <div>
                                 <h6 class="my-0">Plan <b>Extended</b></h6>
                                 <small class="text-muted">Perfecto para empresas consolidadas con cuota de mercado</small>

@@ -62,7 +62,7 @@
             <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
                 <div class="d-flex justify-content-between align-items-center w-100">
                     <strong class="text-gray-dark"><c:out value="${brand.name}"></c:out></strong>
-                    <a href="ServletValidarMarca?username=${brand.username}" class="text-info">Ver info</a>
+                    <a href="ServletValidarMarca?username=<c:out value="${brand.username}"></c:out>class="text-info">Ver info</a>
                 </div>
                 <span class="d-block"><c:out value="${brand.username}"></c:out></span>
             </div>

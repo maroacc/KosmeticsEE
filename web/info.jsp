@@ -21,17 +21,6 @@
 </head>
 <body id="body-info">
 <jsp:include page="navLogin.jsp"/>
-<div class=" d-flex flex-md-row align-items-center p-3 px-md-4 mb-0 bg-white border-bottom shadow-sm">
-    <img id="logo" src="assets/images/LogoBueno.svg" alt="logo">
-    <h5 class="my-0 mr-md-auto font-weight-bold">osmetics</h5>
-    <form class="form-inline my-2 my-lg-0 mr-md-auto d-none d-lg-block">
-        <input class="form-control mr-sm-2 d-none d-lg" type="search" placeholder="Search" aria-label="Search">
-    </form>
-    <nav class="my-2 my-md-0 mr-md-3 ml-auto">
-        <a class="p-2 text-dark" href="#">Iniciar sesión</a>
-    </nav>
-    <a class="btn btn-outline-info" href="#">Unirse</a>
-</div>
 <div class="container-fluid mx-0 p-0">
     <div class="d-flex flex-row justify-content-center pt-4 pb-5 background-white">
         <img id="logo-grande" src="assets/images/LogoBueno.svg" alt="logo">

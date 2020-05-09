@@ -16,7 +16,7 @@ import java.util.HashMap;
 public class ServletCarrito extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int descuento = 0;
-        if(request.getParameter("descuento") != null)
+        if(request.getParameter("descuento") != "")
             descuento = Integer.parseInt(request.getParameter("descuento"));
         Product product = new Product(request.getParameter("inputNombre"), request.getParameter("description"), request.getParameter("categoria"), Float.parseFloat(request.getParameter("precio")), descuento, 0);
         ArrayList<Product> productos = (ArrayList) request.getSession().getAttribute("productos");

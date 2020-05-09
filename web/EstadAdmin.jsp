@@ -12,6 +12,7 @@
     <title>Kosmetics</title>
 </head>
 <body>
+<jsp:include page="navAdmin.jsp"/>
 <div class="container">
     <div class="kosmetics">
         <p id="titulillo">Informe administrador</p>

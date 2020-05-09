@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es-es">
+<html lang="es-es" xmlns:html="http://java.sun.com/JSP/Page">
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -39,13 +39,7 @@
   <link href="pricing.css" rel="stylesheet">
 </head>
 <body>
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-  <h5 class="my-0 mr-md-auto font-weight-normal">Kosmetics</h5>
-  <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-dark" href="#">Iniciar sesión</a>
-  </nav>
-  <a class="btn btn-outline-primary" href="#">Unirse</a>
-</div>
+<jsp:include page="navLogin.jsp"/>
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">Precios</h1>

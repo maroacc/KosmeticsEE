@@ -31,7 +31,7 @@
     <form class="col-10 col-lg-8 col-xl-6 needs-validation" enctype="multipart/form-data" id="form" onsubmit="return validate();" action="ServletEditarProducto" method="post" novalidate>
         <h4 class="my-3">Información general</h4>
         <div class="form-group">
-            <label for="exampleNombreProducto">Nombre del producto</label>
+            <label for="inputNombre">Nombre del producto</label>
             <label for="inputNombre" class="sr-only">Nombre del producto</label>
             <input type="text" class="form-control-plaintext" id="inputNombre" name="inputNombre" aria-describedby="nombreHelpBlock" value="${producto.name}" readonly>
             <small id="nombreHelpBlock" class="form-text text-muted">

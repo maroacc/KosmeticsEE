@@ -9,7 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:html="http://java.sun.com/JSP/Page">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -23,19 +23,7 @@
     <title>Admin · Kosmetics</title>
 </head>
 <body class="bg-light">
-<div class="d-flex flex-md-row align-items-center p-3 px-md-4 mb-0 bg-white border-bottom shadow-sm">
-    <img id="logo" src="assets/images/LogoBueno.svg">
-    <h5 class="my-0 mr-md-auto font-weight-bold">osmetics</h5>
-    <form class="form-inline my-2 my-lg-0 mr-md-auto d-none d-lg-block">
-        <input class="form-control mr-sm-2 d-none d-lg" type="search" placeholder="Search" aria-label="Search">
-    </form>
-    <nav class="my-2 my-md-0 mr-md-3 ml-auto">
-        <a class="p-2 text-dark" href="#">Iniciar sesión</a>
-    </nav>
-    <a class="btn btn-outline-primary" href="#">Unirse</a>
-</div>
-
-
+<jsp:include page="navAdmin.jsp"/>
 <div class="container">
     <c:if test="${(not empty param.validate) && (param.validate)}">
         <div class="alert alert-success alert-dismissible fade show my-3 mx-3" role="alert">

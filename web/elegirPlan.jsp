@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:html="http://java.sun.com/JSP/Page">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -19,18 +19,7 @@
     <title>Elegir Plan · Kosmetics</title>
 </head>
 <body>
-<div id="body-landing-page" class="pb-5">
-    <div class="d-flex flex-md-row align-items-center p-3 px-md-4 mb-0 bg-white border-bottom shadow-sm">
-        <h5 class="my-0 mr-md-auto font-weight-normal">Kosmetics</h5>
-        <form class="form-inline my-2 my-lg-0 mr-md-auto d-none d-lg-block">
-            <input class="form-control mr-sm-2 d-none d-lg " type="search" placeholder="Search" aria-label="Search">
-        </form>
-        <nav class="my-2 my-md-0 mr-md-3 ml-auto">
-            <a class="p-2 text-dark" href="#">Iniciar sesión</a>
-        </nav>
-        <a class="btn btn-outline-primary" href="#">Unirse</a>
-    </div>
-</div>
+<jsp:include page="navLogin.jsp"/>
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h1 class="display-4">Planes</h1>
     <p class="lead">Elige el plan que mejor convenga para el futuro de tu empresa</p>

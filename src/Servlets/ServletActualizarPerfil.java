@@ -10,7 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "actualizarPerfil", urlPatterns = "/actualizar-perfil")
+/*Actualiza el perfil con los nuevos valores de los campos que se deseen
+* No se puede actualizar la dirección de la empresa*/
+
+@WebServlet(name = "ServletActualizarPerfil", urlPatterns = "/actualizar-perfil")
 public class ServletActualizarPerfil extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = (String) request.getSession().getAttribute("username");

@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-@WebServlet(name = "actualizarProducto", urlPatterns = "/actualizar-producto")
+@WebServlet(name = "ServletActualizarProducto", urlPatterns = "/actualizar-producto")
 @MultipartConfig(
         fileSizeThreshold=1024 * 1024,
         maxFileSize=1024 * 1024 * 5,

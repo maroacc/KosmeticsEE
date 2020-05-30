@@ -31,7 +31,7 @@
                 <div class="row">
                     <h1 class="col-12 col-xl-9"><c:out value="${brand.name}"></c:out></h1>
                     <div class="col-12 col-xl-3 my-2">
-                        <a class="mx-1 m-md-0 col-12 btn btn-outline-info" href="ServletEditarPerfil">Editar perfil</a>
+                        <a class="mx-1 m-md-0 col-12 btn btn-outline-info" href="editar-perfil">Editar perfil</a>
                     </div>
                     <p class="col-12"><c:out value="${brand.description}"></c:out></p>
                 </div>

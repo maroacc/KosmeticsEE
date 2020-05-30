@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-@WebServlet(name = "ServletEliminaCarrito")
+@WebServlet(name = "ServletEliminaCarrito", urlPatterns = "/elimina-carrito")
 public class ServletEliminaCarrito extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

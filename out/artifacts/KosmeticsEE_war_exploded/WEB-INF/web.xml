@@ -54,7 +54,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>checkoutJSP</servlet-name>
-        <url-pattern>/checkout</url-pattern>
+        <url-pattern>/realizar-checkout</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -150,16 +150,7 @@
         <servlet-name>infoProductoJSP</servlet-name>
         <url-pattern>/info-producto</url-pattern>
     </servlet-mapping>
-
-    <servlet>
-        <servlet-name>servletEliminaCarrito</servlet-name>
-        <servlet-class>Servlets.ServletEliminaCarrito</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>servletEliminaCarrito</servlet-name>
-        <url-pattern>/elimina</url-pattern>
-    </servlet-mapping>
-
+    
     <servlet>
         <servlet-name>servletGraficas</servlet-name>
         <servlet-class>Servlets.ServletGraficas</servlet-class>

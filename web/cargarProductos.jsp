@@ -62,7 +62,7 @@
                 <div class="d-flex my-3 justify-content-between">
                     <h1><c:out value="${product.name}"></c:out></h1>
                     <%--<form action="editar-producto" method="post">--%>
-                        <a href="elimina?name=${product.name}">Eliminar Producto</a>
+                        <a href="elimina-carrito?name=${product.name}">Eliminar Producto</a>
                     <%--</form>--%>
                 </div>
 

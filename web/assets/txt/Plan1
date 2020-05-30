@@ -11,7 +11,7 @@
 <li>Características mejor valoradas</li>
 <li>Soporte 24 h</li>
 </ul>
-<a href="checkout.jsp?contrato=contrato1"><button type="button" class="btn btn-lg btn-block btn-info">Continuar con "Free"</button></a>
+<a href="realizar-checkout?contrato=contrato1"><button type="button" class="btn btn-lg btn-block btn-info">Continuar con "Free"</button></a>
 </div>
 </div>
 </div>

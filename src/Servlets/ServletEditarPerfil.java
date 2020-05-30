@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "ServletEditarPerfil", urlPatterns = "/ServletEditarPerfil")
+@WebServlet(name = "ServletEditarPerfil", urlPatterns = "/editar-perfil")
 public class ServletEditarPerfil extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

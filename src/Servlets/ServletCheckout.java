@@ -12,7 +12,7 @@ import java.io.IOException;
 /*Recoge los campos de la marca de la página de checkout
 * Hace un update de la marca que se creó en la página anterior para añadir el resto de campos de la marca
  */
-@WebServlet(name = "ServletCheckout", urlPatterns = "/realizar-checkout")
+@WebServlet(name = "ServletCheckout", urlPatterns = "/checkout")
 public class ServletCheckout extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

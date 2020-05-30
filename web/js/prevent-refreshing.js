@@ -20,7 +20,7 @@ function getDatos(fuenteDatos, divID) {
                 if(cookie == true)
                     obj.innerHTML = XHRObject.responseText;
                 else
-                    window.location = "mainPage.jsp";
+                    window.location = "tablero.jsp";
             }
         }
         XHRObject.send(null)

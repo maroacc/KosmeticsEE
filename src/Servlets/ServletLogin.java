@@ -28,7 +28,7 @@ public class ServletLogin extends HttpServlet {
             request.getSession().setAttribute("invalidLogin", false);
             request.getSession().setAttribute("username", username);
             request.getSession().setAttribute("productos", productos);
-            request.getRequestDispatcher("/mainPage.jsp").forward(request, response);
+            request.getRequestDispatcher("/tablero.jsp").forward(request, response);
 
         } else if (AdminDAO.checkLogin(admin) != null){
             request.getRequestDispatcher("/ServletAdminMainPage").forward(request, response);

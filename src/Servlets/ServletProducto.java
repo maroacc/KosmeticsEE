@@ -1,15 +1,15 @@
 package Servlets;
 
 import Dominio.Product;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 @WebServlet(name = "ServletProducto", urlPatterns = "/ServletProducto")
 public class ServletProducto extends HttpServlet {
@@ -28,7 +28,7 @@ public class ServletProducto extends HttpServlet {
             }
             productos.clear();
             request.getSession().setAttribute("productos", productos);
-            request.getRequestDispatcher("/mainPage.jsp").forward(request, response);
+            request.getRequestDispatcher("/tablero.jsp").forward(request, response);
         } else
             request.getRequestDispatcher("/error.jsp").forward(request, response);
     }

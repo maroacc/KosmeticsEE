@@ -7,14 +7,12 @@ import Dominio.Product;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.stream.Collectors;
 
 @WebServlet(name = "ServletEditarProducto", urlPatterns = "/ServletEditarProducto")
 @MultipartConfig(
@@ -50,7 +48,7 @@ public class ServletEditarProducto extends HttpServlet {
         if(brandId != 0) {
             if(!ProductsDAO.updateProduct(product))
                 request.getRequestDispatcher("/error.jsp").forward(request, response);
-            request.getRequestDispatcher("/mainPage.jsp").forward(request, response);
+            request.getRequestDispatcher("/tablero.jsp").forward(request, response);
         } else
             request.getRequestDispatcher("/error.jsp").forward(request, response);
     }

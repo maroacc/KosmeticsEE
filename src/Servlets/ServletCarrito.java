@@ -1,6 +1,5 @@
 package Servlets;
 
-import DAO.ProductsDAO;
 import Dominio.Product;
 
 import javax.servlet.ServletException;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 @WebServlet(name = "ServletCarrito")
 @MultipartConfig(
@@ -29,7 +27,7 @@ public class ServletCarrito extends HttpServlet {
         productos.add(product);
         request.getSession().setAttribute("productos", productos);
 
-        request.getRequestDispatcher("/mainPage.jsp").forward(request, response);
+        request.getRequestDispatcher("/tablero.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

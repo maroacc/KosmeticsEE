@@ -8,7 +8,6 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/styleMainPage.css">
     <title>Kosmetics</title>
 </head>
 <body>
@@ -17,15 +16,8 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand d-none d-lg-block" href="mainPage.jsp">
-            <ul class="list-inline d-flex align-baseline">
-                <li class="list-inline-item mx-0 px-0">
-                    <img id="logo" src="assets/images/LogoBueno.svg" height="32px">
-                </li>
-                <li class="list-inline-item mx-0 pb-0 align-self-baseline">
-                    <h5 class="font-weight-bold mb-0 align-self-baseline">osmetics</h5>
-                </li>
-            </ul>
+        <a class="navbar-brand d-none d-lg-block" href="tablero.jsp">
+            <img src="assets/icons/text-logo-align-vertical-center.svg" height="24">
         </a>
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item d-lg-none">

@@ -15,7 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>Editar Perfil · Kosmetics</title>
 </head>
@@ -24,7 +25,7 @@
 <div class="pricing-header px-3 py pt-4 pb-4 mx-auto text-center">
     <h1 class="display-4">Editar Perfil</h1>
 </div>
-<form onsubmit="return validate()" class="needs-validation" method="post" action="servletActualizarPerfil" novalidate>
+<form onsubmit="return validate()" class="needs-validation" method="post" action="actualizar-perfil" novalidate>
     <div class="row d-flex justify-content-center">
 
         <div class="col-10 col-lg-8 col-xl-6">

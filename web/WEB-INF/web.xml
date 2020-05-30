@@ -57,14 +57,6 @@
         <url-pattern>/servletLogin</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>servletActualizarPerfil</servlet-name>
-        <servlet-class>Servlets.ServletActualizarPerfil</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>servletActualizarPerfil</servlet-name>
-        <url-pattern>/servletActualizarPerfil</url-pattern>
-    </servlet-mapping>
-    <servlet>
         <servlet-name>checkoutJSP</servlet-name>
         <jsp-file>/checkout.jsp</jsp-file>
     </servlet>
@@ -133,6 +125,30 @@
     <servlet-mapping>
         <servlet-name>lucasJSP</servlet-name>
         <url-pattern>/lucas</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>tablero</servlet-name>
+        <jsp-file>/tablero.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>tablero</servlet-name>
+        <url-pattern>/tablero</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>audiencia</servlet-name>
+        <jsp-file>/audiencia.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>audiencia</servlet-name>
+        <url-pattern>/audiencia</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>opiniones</servlet-name>
+        <jsp-file>/opiniones.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>opiniones</servlet-name>
+        <url-pattern>/opiniones</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>infoProductoJSP</servlet-name>

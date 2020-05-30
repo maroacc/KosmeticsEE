@@ -83,7 +83,7 @@
 
     <!-- Nav Item - Catálogo Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="ServletListaProductos?estad=false">
             <i class="fas fa-fw fa-shopping-bag"></i>
             <span>Catálogo</span></a>
     </li>

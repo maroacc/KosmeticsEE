@@ -70,7 +70,7 @@
             <div class="p-3 py-lg-5">
                 <div class="d-flex my-3 justify-content-between">
                     <h1><c:out value="${producto.name}"></c:out></h1>
-                    <form action="actualizarProducto" method="post">
+                    <form action="editar-producto" method="post">
                         <button type="submit" class="btn btn-outline-dark my-1 d-none d-lg-inline">Editar Producto</button>
                         <button type="submit" class="btn btn-outline-dark my-1 d-lg-none">Editar</button>
                     </form>

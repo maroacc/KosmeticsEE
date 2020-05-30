@@ -28,12 +28,12 @@
 </div>
 
 <div class="d-flex justify-content-center mb-5 " >
-    <form class="col-10 col-lg-8 col-xl-6 needs-validation" enctype="multipart/form-data" id="form" onsubmit="return validate();" action="ServletEditarProducto" method="post" novalidate>
+    <form class="col-10 col-lg-8 col-xl-6 needs-validation" enctype="multipart/form-data" id="form" onsubmit="return validate();" action="actualizar-producto" method="post" novalidate>
         <h4 class="my-3">Información general</h4>
         <div class="form-group">
             <label for="inputNombre">Nombre del producto</label>
             <label for="inputNombre" class="sr-only">Nombre del producto</label>
-            <input type="text" class="form-control-plaintext" id="inputNombre" name="inputNombre" aria-describedby="nombreHelpBlock" value="${producto.name}" readonly>
+            <input type="text" class="form-control-plaintext text-muted" id="inputNombre" name="inputNombre" aria-describedby="nombreHelpBlock" value="<c:out value="${producto.name}"></c:out>" readonly>
             <small id="nombreHelpBlock" class="form-text text-muted">
                 Nombre con el que se verá el producto en la aplicación
             </small>

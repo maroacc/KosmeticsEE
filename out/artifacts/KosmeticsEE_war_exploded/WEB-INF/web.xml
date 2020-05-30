@@ -98,7 +98,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>editProductJSP</servlet-name>
-        <url-pattern>/editar-producto</url-pattern>
+        <url-pattern>/editar-producto-existente</url-pattern>
     </servlet-mapping>
 
     <servlet>

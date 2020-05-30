@@ -158,14 +158,7 @@
         <servlet-name>infoProductoJSP</servlet-name>
         <url-pattern>/info-producto</url-pattern>
     </servlet-mapping>
-    <servlet>
-        <servlet-name>servletCarrito</servlet-name>
-        <servlet-class>Servlets.ServletCarrito</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>servletCarrito</servlet-name>
-        <url-pattern>/carrito</url-pattern>
-    </servlet-mapping>
+
     <servlet>
         <servlet-name>servletEliminaCarrito</servlet-name>
         <servlet-class>Servlets.ServletEliminaCarrito</servlet-class>
@@ -174,6 +167,7 @@
         <servlet-name>servletEliminaCarrito</servlet-name>
         <url-pattern>/elimina</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>servletGraficas</servlet-name>
         <servlet-class>Servlets.ServletGraficas</servlet-class>

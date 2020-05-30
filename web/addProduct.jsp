@@ -84,7 +84,7 @@
                 </div>
                 <div class="input-group col-lg-6 mb-3">
 
-                    <input type="text" class="form-control" id="inputDescuento" name="descuento" aria-describedby="emailHelp" required>
+                    <input type="text" value="0" class="form-control" id="inputDescuento" name="descuento" aria-describedby="emailHelp" required>
                     <div class="input-group-append">
                         <span class="input-group-text">%</span>
                     </div>

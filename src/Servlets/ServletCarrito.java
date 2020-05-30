@@ -11,7 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "ServletCarrito")
+/*Añade al carrito un nuevo producto
+* Redirige al tablero*/
+
+@WebServlet(name = "ServletCarrito", urlPatterns = "/carrito")
 @MultipartConfig(
         fileSizeThreshold=1024 * 1024,
         maxFileSize=1024 * 1024 * 5,

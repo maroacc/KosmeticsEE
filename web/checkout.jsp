@@ -31,7 +31,7 @@
     <h1 class="display-4">Checkout</h1>
 </div>
 
-<form onsubmit="return validate()" class="needs-validation" method="post" action="servletCheckout" novalidate>
+<form onsubmit="return validate()" class="needs-validation" method="post" action="realizar-checkout" novalidate>
 
 <div id="form-div">
     <div class="row d-flex justify-content-center">
@@ -87,7 +87,7 @@
                 <label for="descripcionTextarea">Descripción de la marca</label>
                 <textarea class="form-control" id="descripcionTextarea" name="descripcionTextarea"
                           placeholder="Cuente a sus clientes los valores y los objetivos de su marca"
-                          aria-describedby="descriptionHelpBlock" required></textarea>
+                          aria-describedby="descriptionHelpBlock" maxlength="400" required></textarea>
                 <small id="descriptionHelpBlock" class="form-text text-muted ml-0">
                     La descripción debe contener al menos 100 caracteres y un máximo de 300
                 </small>

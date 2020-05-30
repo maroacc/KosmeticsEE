@@ -41,14 +41,6 @@
         <url-pattern>/lastProducts</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>servletCheckout</servlet-name>
-        <servlet-class>Servlets.ServletCheckout</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>servletCheckout</servlet-name>
-        <url-pattern>/servletCheckout</url-pattern>
-    </servlet-mapping>
-    <servlet>
         <servlet-name>servletLogin</servlet-name>
         <servlet-class>Servlets.ServletLogin</servlet-class>
     </servlet>

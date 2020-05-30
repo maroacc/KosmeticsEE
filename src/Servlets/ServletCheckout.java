@@ -9,9 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
-// Hace un update de la marca que se creó en la página anterior para añadir el resto de campos de la marca
-@WebServlet(name = "ServletCheckout")
+/*Recoge los campos de la marca de la página de checkout
+* Hace un update de la marca que se creó en la página anterior para añadir el resto de campos de la marca
+ */
+@WebServlet(name = "ServletCheckout", urlPatterns = "/realizar-checkout")
 public class ServletCheckout extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

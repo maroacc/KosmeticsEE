@@ -25,7 +25,7 @@ public class ServletCarrito extends HttpServlet {
         int descuento = 0;
         if(request.getParameter("descuento") != "")
             descuento = Integer.parseInt(request.getParameter("descuento"));
-        Product product = new Product(request.getParameter("inputNombre"), request.getParameter("description"), request.getParameter("categoria"), Float.parseFloat(request.getParameter("precio")), descuento, 0);
+        Product product = new Product(request.getParameter("inputNombre"), request.getParameter("description"), request.getParameter("categoria"), Float.parseFloat(request.getParameter("precio")), descuento, false);
         ArrayList<Product> productos = (ArrayList) request.getSession().getAttribute("productos");
         productos.add(product);
         request.getSession().setAttribute("productos", productos);

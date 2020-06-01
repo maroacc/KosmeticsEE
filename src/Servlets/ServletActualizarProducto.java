@@ -41,7 +41,7 @@ public class ServletActualizarProducto extends HttpServlet {
         int descuento = 0;
         if(request.getParameter("inputDescuento") != null)
             descuento = Integer.parseInt(request.getParameter("inputDescuento"));
-        Product product = new Product(request.getParameter("inputNombre"), request.getParameter("description"), request.getParameter("categoria"), Float.parseFloat(request.getParameter("precio")), descuento, 0);
+        Product product = new Product(request.getParameter("inputNombre"), request.getParameter("description"), request.getParameter("categoria"), Float.parseFloat(request.getParameter("precio")), descuento, false);
 
         ProductsDAO.uploadColors(productId, request.getParameter("inputColor"));
         int brandId = BrandsDAO.getBrandId((String) request.getSession().getAttribute("username"));

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -151,7 +152,8 @@
                             </div>
                             <div class="card-body">
                                 <!--Contenedor review-->
-                                <div class="card">
+                                <c:forEach var="review" items="${sessionScope.reviews}">
+                                    <div class="card">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-lg-1">
@@ -161,30 +163,35 @@
                                             </div>
 
                                             <div class="col-11">
-                                                <p>
-                                                    <span class="float-left h5">Título de la opinión</strong></span>
-                                                    <span class="float-right fa fa-star fa-lg"></span>
-                                                    <span class="float-right fa fa-star fa-lg"></span>
-                                                    <span class="float-right fa fa-star fa-lg"></span>
-                                                    <span class="float-right fa fa-star fa-lg"></span>
-                                                    <span class="float-right fa fa-star fa-lg"></span>
-                                                </p>
+                                                <div class="d-none d-lg-block">
+                                                    <span class="float-left h5"><c:out value="${review.commentTitle}"></c:out></span>
+                                                    <ul class="list-inline d-none d-lg-inline float-right">
+                                                        <li class="list-inline-item mx-0"><span class="fa fa-star fa-lg"></span></li>
+                                                        <li class="list-inline-item mx-0"><span class="fa fa-star fa-lg"></span></li>
+                                                        <li class="list-inline-item mx-0"><span class="fa fa-star fa-lg"></span></li>
+                                                        <li class="list-inline-item mx-0"><span class="fa fa-star fa-lg"></span></li>
+                                                        <li class="list-inline-item mx-0"><span class="fa fa-star fa-lg"></span></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="d-lg-none">
+                                                    <h5><c:out value="${review.commentTitle}"></c:out></h5>
+                                                    <ul class="list-inline">
+                                                        <li class="list-inline-item"><span class="fa fa-star fa-lg"></span></li>
+                                                        <li class="list-inline-item"><span class="fa fa-star fa-lg"></span></li>
+                                                        <li class="list-inline-item"><span class="fa fa-star fa-lg"></span></li>
+                                                        <li class="list-inline-item"><span class="fa fa-star fa-lg"></span></li>
+                                                        <li class="list-inline-item"><span class="fa fa-star fa-lg"></span></li>
+                                                    </ul>
+                                                </div>
                                                 <div class="clearfix"></div>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                                    culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                <p><c:out value="${review.comment}"></c:out></p>
                                                 <ul class="list-inline">
                                                     <li class="list-inline-item">
-                                                        <span class="text-secondary pl-1 text-center pl-0"><a
-                                                                href="info_usuario.jsp">Nombre de usuario</a></span>
-
+                                                        <span class="text-secondary pl-1 text-center pl-0"><p><c:out value="${review.user.name}"></c:out></p></span>
                                                     </li>
                                                     <li class="list-inline-item">
-                                                        <span class="small text-gray-500 pl-1 text-center">2017-05-22</span>
+                                                        <span class="small text-gray-500 pl-1 text-center"><c:out value="${review.date2string()}"></c:out></span>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -193,39 +200,8 @@
 
                                     </div>
                                 </div>
+                                </c:forEach>
                             </div>
-                            <a class="list-group-item list-group-item-action py-4" href="#!">
-                                <div class="d-flex justify-content-between">
-                                    <div class="mr-4 d-flex">
-                                        <div class="icon-stack icon-stack bg-red-soft text-red flex-shrink-0 mr-4"><img
-                                                src="assets/images/profile.jpg" height="64px"
-                                                class="img rounded-circle d-none d-md-block"></div>
-                                        <div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item"><h5>Título de la opinión</h5></li>
-                                                <li class="list-inline-item float-right"><span
-                                                        class="fa fa-star fa-lg"></span></li>
-                                                <li class="list-inline-item float-right"><span
-                                                        class="fa fa-star fa-lg"></span></li>
-                                                <li class="list-inline-item float-right"><span
-                                                        class="fa fa-star fa-lg"></span></li>
-                                                <li class="list-inline-item float-right"><span
-                                                        class="fa fa-star fa-lg"></span></li>
-                                                <li class="list-inline-item float-right"><span
-                                                        class="fa fa-star fa-lg"></span></li>
-
-                                            </ul>
-                                            <p class="card-text">Your request has been declined. Thank you for using our
-                                                service. This case is now being marked as closed. If you would like to
-                                                reopen this case, please reply to this message.</p>
-                                        </div>
-                                    </div>
-                                    <div class="small text-gray-400 flex-shrink-0 text-right">
-                                        10:26 PM<br>
-                                        <div class="badge badge-red-soft badge-pill text-red">Declined</div>
-                                    </div>
-                                </div>
-                            </a>
                         </div>
 
 

@@ -69,4 +69,16 @@ public class Review implements Serializable{
 
         return og;
     }
+
+    @Override
+    public String toString() {
+        return "Review{" +
+                "user=" + user +
+                ", scoreProduct=" + scoreProduct +
+                ", scoreReview=" + scoreReview +
+                ", date=" + date +
+                ", comment='" + comment + '\'' +
+                ", commentTitle='" + commentTitle + '\'' +
+                '}';
+    }
 }

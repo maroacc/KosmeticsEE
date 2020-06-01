@@ -24,8 +24,8 @@ public class uploadImg extends HttpServlet {
         System.out.println("inputPrecio: " + request.getParameter("inputPrecio"));
 
         Collection<Part> files = request.getParts();
-        int id = this.getIdCookie(request);
-
+        //int id = this.getIdCookie(request);
+        int id = 69;
         System.out.println(files.size());
 
         for (Part f : files) {
@@ -41,7 +41,7 @@ public class uploadImg extends HttpServlet {
                 ProductsDAO.uploadImg(id,imagen,i);
             }
         }
-
+        request.getRequestDispatcher("/tablero.jsp").forward(request, response);
         //response.setStatus(200);
         //request.getRequestDispatcher("/imagen").forward(request, response);
     }

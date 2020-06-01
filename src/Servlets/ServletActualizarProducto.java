@@ -7,11 +7,11 @@ import Dominio.Product;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 
 @WebServlet(name = "ServletActualizarProducto", urlPatterns = "/actualizar-producto")
@@ -44,6 +44,24 @@ public class ServletActualizarProducto extends HttpServlet {
         Product product = new Product(request.getParameter("inputNombre"), request.getParameter("description"), request.getParameter("categoria"), Float.parseFloat(request.getParameter("precio")), descuento, false);
 
         ProductsDAO.uploadColors(productId, request.getParameter("inputColor"));
+        /*Collection<Part> files = request.getParts();
+        //int id = this.getIdCookie(request);
+        int id = 69;
+        System.out.println(files.size());
+
+        for (Part f : files) {
+            System.out.println(f.getSubmittedFileName());
+
+            InputStream imagen = f.getInputStream();
+
+            System.out.println(f.getSize() + " B");
+
+            if (f.getSize() > 0) {
+                System.out.println("Se ha leído la imagen");
+                int i = ProductsDAO.checkImg(id);
+                ProductsDAO.uploadImg(id, imagen, i);
+            }
+        }*/
         int brandId = BrandsDAO.getBrandId((String) request.getSession().getAttribute("username"));
         if(brandId != 0) {
             if(!ProductsDAO.updateProduct(product))
@@ -52,6 +70,19 @@ public class ServletActualizarProducto extends HttpServlet {
         } else
             request.getRequestDispatcher("/error.jsp").forward(request, response);
     }
+
+        private int getIdCookie(HttpServletRequest request) {
+            Cookie id = null;
+            Cookie[] cookies = request.getCookies();
+            if(cookies!=null) {
+                for (int i = 0; i < cookies.length; i++) {
+                    if (cookies[i].getName().equals("id")) {
+                        id = cookies[i];
+                    }
+                }
+            }
+            return Integer.parseInt(id.getValue());
+        }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

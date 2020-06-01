@@ -17,7 +17,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <title>Hello, world!</title>
 </head>
@@ -35,13 +36,13 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="assets/images/honest-beauty-mascara.jpg" class="d-block w-100" alt="...">
+                        <img src="ReadImg?id=${producto.id}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/honest-beauty-mascara.jpg" class="d-block w-100" alt="...">
+                        <img src="ReadImg?id=${producto.id}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/honest-beauty-mascara.jpg" class="d-block w-100" alt="...">
+                        <img src="ReadImg?id=${producto.id}" class="d-block w-100" alt="...">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

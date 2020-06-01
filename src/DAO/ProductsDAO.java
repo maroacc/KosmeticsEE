@@ -73,7 +73,7 @@ public class ProductsDAO {
             pstmt.setNString(1, nombre);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
-                product = new Product(rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getBoolean("freeDeliver"));
+                product = new Product(rs.getInt("idProducts"), rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getBoolean("freeDeliver"));
             }
         } catch (SQLException var4) {
             var4.printStackTrace();
@@ -226,7 +226,7 @@ public class ProductsDAO {
             }
         } else {
             try {
-                pstmt = conBD.getConnection().prepareStatement("INSERT INTO productimages (productImg,Products_idProducts) values(?,?)");
+                pstmt = conBD.getConnection().prepareStatement("UPDATE products SET productImg = ? WHERE idProducts = ?");
                 pstmt.setBlob(1, imagen);
                 pstmt.setInt(2, id);
 
@@ -235,6 +235,23 @@ public class ProductsDAO {
                 throwables.printStackTrace();
             }
         }
+    }
+
+    public static byte[] getProductImg(int id) {
+        byte[] retorno = null;
+        try {
+            PreparedStatement pst = conBD.getConnection().prepareStatement("SELECT productImg FROM products WHERE idProducts = ?");
+            pst.setInt(1, id);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                retorno = rs.getBytes(1);
+            }
+
+        } catch (SQLException sqle){
+            System.out.println(sqle.getMessage());
+            sqle.printStackTrace();
+        }
+        return retorno;
     }
 
     public static void uploadColors(int productId, String colores) {

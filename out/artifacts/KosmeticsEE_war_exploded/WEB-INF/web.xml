@@ -160,4 +160,13 @@
         <url-pattern>/graficas</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>uploadImg</servlet-name>
+        <servlet-class>Servlets.uploadImg</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>uploadImg</servlet-name>
+        <url-pattern>/uploadImg</url-pattern>
+    </servlet-mapping>
+
 </web-app>

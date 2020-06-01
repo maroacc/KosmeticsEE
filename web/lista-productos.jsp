@@ -53,7 +53,7 @@
     <c:forEach var="producto" items="${listaProductos}">
         <div class="col-lg-4 col-sm-6 mb-4">
             <div class="card h-100 shadow">
-                <a href="ServletInfoProducto?producto=${producto.name}"><img class="card-img-top" src="assets/images/honest-beauty-mascara.jpg" alt="..."></a>
+                <a href="ServletInfoProducto?producto=${producto.name}"><img class="card-img-top" src="ReadImg?id=${producto.id}" alt="..."></a>
 
                 <div class="card-body">
                     <h4 class="card-title">

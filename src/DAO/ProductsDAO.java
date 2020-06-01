@@ -21,8 +21,6 @@ public class ProductsDAO {
         }
     }
 
-    public ProductsDAO() {
-    }
 
     public static boolean addProduct(Product product, int brandId) {
         boolean ok = true;
@@ -56,7 +54,7 @@ public class ProductsDAO {
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
-                product = new Product(rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getInt("freeDeliver"));
+                product = new Product(rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getBoolean("freeDeliver"));
             }
         } catch (SQLException var4) {
             var4.printStackTrace();
@@ -75,7 +73,7 @@ public class ProductsDAO {
             pstmt.setNString(1, nombre);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
-                product = new Product(rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getInt("freeDeliver"));
+                product = new Product(rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getBoolean("freeDeliver"));
             }
         } catch (SQLException var4) {
             var4.printStackTrace();
@@ -111,7 +109,7 @@ public class ProductsDAO {
             pstmt.setNString(3, product.getProductCategory());
             pstmt.setFloat(4, product.getPrice());
             pstmt.setInt(5, product.getOffer());
-            pstmt.setInt(6, product.getFreeDelivery());
+            pstmt.setBoolean(6, product.getFreeDelivery());
             pstmt.setInt(7, product.getId());
             pstmt.executeUpdate();
 
@@ -132,7 +130,7 @@ public class ProductsDAO {
             pstmt = conBD.getConnection().prepareStatement("SELECT * FROM products ORDER BY idProducts DESC LIMIT 4");
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()){
-                products.add(new Product(rs.getInt("idProducts"), rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getInt("freeDeliver")));
+                products.add(new Product(rs.getInt("idProducts"), rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getBoolean("freeDeliver")));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -150,7 +148,7 @@ public class ProductsDAO {
             pstmt.setInt(1, idBrand);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()){
-                products.add(new Product(rs.getInt("idProducts"), rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getInt("freeDeliver")));
+                products.add(new Product(rs.getInt("idProducts"), rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getBoolean("freeDeliver")));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -168,7 +166,7 @@ public class ProductsDAO {
             pstmt.setInt(1, idBrand);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()){
-                products.add(new Product(rs.getInt("idProducts"), rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getInt("freeDeliver")));
+                products.add(new Product(rs.getInt("idProducts"), rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getBoolean("freeDeliver")));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -255,6 +253,44 @@ public class ProductsDAO {
             System.out.println(sqle.getMessage());
             sqle.printStackTrace();
         }
+    }
+
+    public static Product getProductFromId(int id) {
+        Product product = null;
+        try{
+            PreparedStatement pst = conBD.getConnection().prepareStatement("SELECT * FROM products WHERE idProducts = ?");
+            pst.setInt(1,id);
+            ResultSet rs = pst.executeQuery();
+
+            if (rs.next()) {
+                //this will change
+                product =new Product(rs.getInt("idProducts"), rs.getString("name"), BrandsDAO.getBrandFromId(rs.getInt("Brands_idBrands")), rs.getString("productCategory"), rs.getDouble("price"), rs.getInt("offer"),rs.getString("description"),rs.getBoolean("freeDeliver"));
+                PreparedStatement pst2 = conBD.getConnection().prepareStatement("SELECT AVG(scoreProduct) FROM reviews WHERE Products_idProducts = ?");
+                pst2.setInt(1,id);
+                ResultSet rs2 = pst2.executeQuery();
+                if(rs2.next()) {
+                    product.setScore(rs2.getFloat(1));
+                    product.setResto();
+                }
+                PreparedStatement pst3 = conBD.getConnection().prepareStatement("SELECT Features_idFeatures FROM products_features WHERE Products_idProducts = ?");
+                pst3.setInt(1,id);
+                ResultSet rs3 = pst3.executeQuery();
+                while (rs3.next()) {
+                    PreparedStatement pst4 = conBD.getConnection().prepareStatement("SELECT featuresText FROM features WHERE idFeatures = ?");
+                    pst4.setInt(1,rs3.getInt(1));
+                    ResultSet rs4 = pst4.executeQuery();
+                    while(rs4.next()) {
+                        product.addFeature(rs4.getString(1));
+                    }
+                }
+            }
+
+        } catch (SQLException sqle) {
+
+            System.out.println(sqle.getMessage());
+            sqle.printStackTrace();
+        }
+        return product;
     }
 
 }

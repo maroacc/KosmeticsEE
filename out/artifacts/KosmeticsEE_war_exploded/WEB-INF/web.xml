@@ -150,7 +150,7 @@
         <servlet-name>infoProductoJSP</servlet-name>
         <url-pattern>/info-producto</url-pattern>
     </servlet-mapping>
-    
+
     <servlet>
         <servlet-name>servletGraficas</servlet-name>
         <servlet-class>Servlets.ServletGraficas</servlet-class>

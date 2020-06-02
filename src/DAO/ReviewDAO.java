@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
 
+import Dominio.Brand;
 import Dominio.Product;
 import Dominio.Review;
 import Dominio.User;
@@ -112,5 +113,42 @@ public class ReviewDAO {
     private static java.sql.Date convertUtilToSql(java.util.Date uDate) {
         java.sql.Date sDate = new java.sql.Date(uDate.getTime());
         return sDate;
+    }
+
+    /* Devuelve un ArrayList con todas las opiniones de todos los productos de una marca*/
+
+    public static ArrayList<Review> getAllReviewsBrand(Brand brand){
+
+        ArrayList<Review> reviews = new ArrayList<Review>();
+        Connection con = null;
+        //QUERY for loading reviews. we also need the query user
+        try{
+            con = ConnectionDAO.getInstance().getConnection();
+
+            PreparedStatement pst = con.prepareStatement("SELECT  reviews.scoreProduct, reviews.reviewLikes, reviews.title, reviews.text, reviews.Users_idUser, reviews.fechaReview, products.name, users.name\n" +
+                    "FROM products\n" +
+                    "INNER JOIN reviews ON reviews.Products_idProducts = products.idProducts  \n" +
+                    "INNER JOIN brands ON brands.idBrands = products.Brands_idBrands\n" +
+                    "INNER JOIN users ON users.idUser = reviews.Users_idUser\n" +
+                    "where  brands.username = ?");
+
+            pst.setNString(1,brand.getUsername());
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                reviews.add(new Review(new User(rs.getNString("users.name")), rs.getInt("reviews.scoreProduct"), rs.getInt("reviews.reviewLikes"), rs.getString("reviews.title"), rs.getString("reviews.text"),rs.getString("reviews.fechaReview")));
+            }
+
+        } catch (final SQLException sqle) {
+
+            System.out.println(sqle.getMessage());
+            sqle.printStackTrace();
+        }catch (ClassNotFoundException cnfe){
+            cnfe.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return reviews;
+
     }
 }

@@ -25,8 +25,11 @@ public class ServletReviews extends HttpServlet {
         String username = (String) request.getSession().getAttribute("username");
         Brand brand = BrandsDAO.getBrand(username);
         if (brand != null){
+/*
             request.getSession().setAttribute("reviews", ReviewDAO.getAllUserReviews(new User("Alejandro Rodriguez", "alex.rgg10@gmail.com", "p5j9C4iBFnpvESG")));
             System.out.println("reviews" + ReviewDAO.getAllUserReviews(new User("Alejandro Rodriguez", "alex.rgg10@gmail.com", "p5j9C4iBFnpvESG")));
+*/
+            request.getSession().setAttribute("reviews", ReviewDAO.getAllReviewsBrand(brand));
             request.getRequestDispatcher("/opiniones.jsp").forward(request, response);
         }
         else {

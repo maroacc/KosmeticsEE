@@ -12,13 +12,17 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private final String name;
-    private final String email;
-    private final String userPassword;
+    private String email;
+    private String userPassword;
     private Date birthDate;
     private String skinColor;
     private String skinCondition;
     private boolean admin;
     private boolean imagen;
+
+    public User(String name){
+        this.name = name;
+    }
 
     public User(String name, String email, String userPasword,
                 String birthDate, String skinColor, String skinCondition, boolean admin, boolean imagen) throws ParseException {

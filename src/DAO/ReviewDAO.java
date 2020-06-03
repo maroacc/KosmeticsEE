@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import Dominio.Brand;
 import Dominio.Product;
@@ -117,9 +118,8 @@ public class ReviewDAO {
 
     /* Devuelve un ArrayList con todas las opiniones de todos los productos de una marca*/
 
-    public static ArrayList<Review> getAllReviewsBrand(Brand brand){
-
-        ArrayList<Review> reviews = new ArrayList<Review>();
+    public static HashMap<Review, String> getAllReviewsBrand(Brand brand){
+        HashMap <Review, String> hashMap = new HashMap<>();
         Connection con = null;
         //QUERY for loading reviews. we also need the query user
         try{
@@ -136,7 +136,8 @@ public class ReviewDAO {
             ResultSet rs = pst.executeQuery();
 
             while (rs.next()) {
-                reviews.add(new Review(new User(rs.getNString("users.name")), rs.getInt("reviews.scoreProduct"), rs.getInt("reviews.reviewLikes"), rs.getString("reviews.title"), rs.getString("reviews.text"),rs.getString("reviews.fechaReview")));
+                hashMap.put(new Review(new User(rs.getNString("users.name")), rs.getInt("reviews.scoreProduct"), rs.getInt("reviews.reviewLikes"), rs.getString("reviews.title"), rs.getString("reviews.text"),rs.getString("reviews.fechaReview")), rs.getString("products.name"));
+
             }
 
         } catch (final SQLException sqle) {
@@ -148,7 +149,7 @@ public class ReviewDAO {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return reviews;
+        return hashMap;
 
     }
 }

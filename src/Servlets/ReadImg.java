@@ -31,7 +31,5 @@ public class ReadImg extends HttpServlet {
         os.write(img);
         os.flush();
         os.close();
-
-
     }
 }

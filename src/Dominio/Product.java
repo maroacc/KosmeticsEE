@@ -2,6 +2,7 @@ package Dominio;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Product implements Serializable {
     private int id;
@@ -19,6 +20,9 @@ public class Product implements Serializable {
     private int resto;
     private int score;
     private float scoreFloat;
+    private HashMap<Integer,Integer> parcialScores = new HashMap<Integer,Integer>();
+    private int totalScores;
+
 
     public Product(){
 
@@ -212,8 +216,25 @@ public class Product implements Serializable {
         this.brand = brand;
     }
 
-
     public ArrayList<Review> getReviews() {
         return reviews;
+    }
+    public HashMap<Integer, Integer> getParcialScores(){
+        int i,valor;
+        for(i=1;i<=5;i++){
+            parcialScores.put(i,0);
+        }
+        totalScores = reviews.size();
+        for(i=0; i<reviews.size();i++){
+            valor = reviews.get(i).getProductScore();
+            parcialScores.put(valor,parcialScores.get(valor)+1);
+        }
+        for(i=1; i<=5;i++){
+            parcialScores.put(i,Math.round(((float)parcialScores.get(i)/totalScores)*100));
+        }
+        return parcialScores;
+    }
+    public int getParcialScoresResto(int i){
+        return (100 -i);
     }
 }

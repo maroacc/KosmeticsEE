@@ -21,6 +21,5 @@ public class ServletInfoProducto extends HttpServlet {
         request.getSession().setAttribute("producto", product);
         request.getRequestDispatcher("/info-producto").forward(request, response);
 
-
     }
 }

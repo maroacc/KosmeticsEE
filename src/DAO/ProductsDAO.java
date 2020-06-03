@@ -64,29 +64,14 @@ public class ProductsDAO {
     }
 
     public static Product getProduct(String nombre) {
-        PreparedStatement pstmt = null;
-        Product product = new Product();
-
-        try {
-            ConnectionDAO var10000 = conBD;
-            pstmt = ConnectionDAO.getConnection().prepareStatement("SELECT * FROM products WHERE name = ? LIMIT 1");
-            pstmt.setNString(1, nombre);
-            ResultSet rs = pstmt.executeQuery();
-            if (rs.next()) {
-                product = new Product(rs.getInt("idProducts"), rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getBoolean("freeDeliver"));
-            }
-        } catch (SQLException var4) {
-            var4.printStackTrace();
-        }
-
-        return product;
+     return getProductFromId(getProductID(nombre));
     }
 
     public static int getProductID(String name) {
         int id = -1;
 
         try {
-            PreparedStatement pstmt = ConnectionDAO.getConnection().prepareStatement("SELECT idProducts FROM  products WHERE name = ?");
+            PreparedStatement pstmt = ConnectionDAO.getConnection().prepareStatement("SELECT idProducts FROM  products WHERE name = ? LIMIT 1");
             pstmt.setString(1,name);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {

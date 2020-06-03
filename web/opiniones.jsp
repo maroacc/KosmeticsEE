@@ -154,7 +154,7 @@
                                 <!--Contenedor review-->
                                 <c:forEach var="review" items="${sessionScope.reviews}">
                                     <div class="card">
-                                    <div class="card-body">
+                                    <div class="card-body pb-0">
                                         <div class="row">
                                             <div class="col-xl-1">
                                                 <div class="d-xl-flex justify-content-center">
@@ -170,9 +170,7 @@
                                                             <li class="list-inline-item mx-0"><svg class="bi bi-star-fill" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="#17a2b8" xmlns="http://www.w3.org/2000/svg"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></li>
                                                         </c:forEach>
                                                         <c:forEach var = "i" begin = "1" end = "${review.key.gerScoreResto()}">
-                                                            <svg class="bi bi-star" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="#17a2b8" xmlns="http://www.w3.org/2000/svg">
-                                                                <path fill-rule="evenodd" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                                                            </svg>
+                                                            <li class="list-inline-item mx-0"><svg class="bi bi-star" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="#17a2b8" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path></svg></li>
                                                         </c:forEach>
                                                     </ul>
                                                 </div>
@@ -202,27 +200,30 @@
                                         </div>
 
                                     </div>
-                                    <div class="card mb-3 mx-2 m-lg-3" style="max-width: 400px;">
+                                    <div class="card mb-3 mx-2 mx-lg-3 bg-gray-100 shadow-sm d-none d-lg-block" style="max-width: 400px; margin-top: 0px">
                                         <div class="row no-gutters">
-                                            <div class="col-md-4">
-                                                <img src="..." class="card-img" alt="...">
+                                            <div class="col-3">
+                                                <div>
+                                                    <img src="ReadImg?id=${review.value.id}" class="card-img" alt="...">
+                                                </div>
                                             </div>
-                                            <div class="col-md-8">
-                                                <div class="card-body py-1 px-2">
-                                                    <p class="mb-0">Producto</p>
+                                            <div class="col-9">
+                                                <div class="card-body pt-2 pl-3">
+                                                    <p class="mb-0"><c:out value="${review.value.name}"></c:out></p>
                                                     <ul class="list-inline mb-0">
-                                                        <li class="list-inline-item" style="margin-right: 0px"><svg class="bi bi-star-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="#17a2b8" xmlns="http://www.w3.org/2000/svg"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></li>
-                                                        <li class="list-inline-item" style="margin-right: 0px"><svg class="bi bi-star-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="#17a2b8" xmlns="http://www.w3.org/2000/svg"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></li>
-                                                        <li class="list-inline-item" style="margin-right: 0px"><svg class="bi bi-star-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="#17a2b8" xmlns="http://www.w3.org/2000/svg"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></li>
-                                                        <li class="list-inline-item" style="margin-right: 0px"><svg class="bi bi-star-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="#17a2b8" xmlns="http://www.w3.org/2000/svg"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></li>
-                                                        <li class="list-inline-item" style="margin-right: 0px"><svg class="bi bi-star-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="#17a2b8" xmlns="http://www.w3.org/2000/svg"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></li>
-                                                    </ul>
-                                                    <p class="card-text"><small class="text-muted">273 reviews</small></p>
+                                                        <c:forEach var = "i" begin = "1" end = "${review.value.score}">
+                                                            <li class="list-inline-item" style="margin-right: 0px"><svg class="bi bi-star-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="#17a2b8" xmlns="http://www.w3.org/2000/svg"><path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/></svg></li>
+                                                        </c:forEach>
+                                                        <c:forEach var = "i" begin = "1" end = "${review.value.resto}">
+                                                            <li class="list-inline-item" style="margin-right: 0px"><svg class="bi bi-star" width="1em" height="1em" viewBox="0 0 16 16" fill="#17a2b8" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path></svg></li>
+                                                        </c:forEach>
+                                                   </ul>
+                                                    <p class="card-text"><small class="text-muted"><c:out value="${review.value.nReviews}"></c:out> reviews</small></p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                    </div>
                                 </c:forEach>
                             </div>
                         </div>

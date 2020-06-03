@@ -6,15 +6,16 @@ import java.util.ArrayList;
 public class Product implements Serializable {
     private int id;
     private String name;
-    private Brand brand;
+    private Brand brand  = new Brand();
     private String description;
     private String productCategory;
-    private float price;
+    private double price;
     private int offer;
     private boolean freeDeliver;
     private ArrayList<String> features = new ArrayList<String>();
     private Survey survey;
     private ArrayList<Review> reviews = new ArrayList<Review>();
+    private int nReviews;
     private int resto;
     private int score;
     private float scoreFloat;
@@ -23,12 +24,20 @@ public class Product implements Serializable {
 
     };
 
+    public Product(String name, int score, int resto, int nReviews){
+        this.setName(name);
+        this.setScore(score);
+        this.setResto(resto);
+        this.setnReviews(nReviews);
+
+    }
+
     public Product(int id, String name, String brand, String productCategory, double ogPrice, int offer,
                    String description, boolean freeDeliver){
 
         this.id = id;
         this.setName(name);
-        this.setPrice(price);
+        this.setPrice(ogPrice);
         this.getBrand().setName(brand);
         this.setDescription(description);
         this.setProductCategory(productCategory);
@@ -71,7 +80,7 @@ public class Product implements Serializable {
         this.productCategory = productCategory;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -99,6 +108,14 @@ public class Product implements Serializable {
         this.scoreFloat = scoreFloat;
     }
 
+    public int getnReviews() {
+        return nReviews;
+    }
+
+    public void setnReviews(int nReviews) {
+        this.nReviews = nReviews;
+    }
+
     public int getId() {
         return this.id;
     }
@@ -115,7 +132,7 @@ public class Product implements Serializable {
         return this.productCategory;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return this.price;
     }
 
@@ -144,8 +161,8 @@ public class Product implements Serializable {
                 ", freeDeliver=" + freeDeliver +
                 '}';
     }
-    public float getNuevoPrecio(){
-        float precio = this.getPrice();
+    public double getNuevoPrecio(){
+        double precio = this.getPrice();
         int oferta = this.getOffer();
         precio = precio * (100 - oferta)/100;
         return precio;

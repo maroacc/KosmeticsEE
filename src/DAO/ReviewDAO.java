@@ -118,14 +118,14 @@ public class ReviewDAO {
 
     /* Devuelve un ArrayList con todas las opiniones de todos los productos de una marca*/
 
-    public static HashMap<Review, String> getAllReviewsBrand(Brand brand){
-        HashMap <Review, String> hashMap = new HashMap<>();
+    public static HashMap<Review, Product> getAllReviewsBrand(Brand brand){
+        HashMap <Review, Product> hashMap = new HashMap<>();
         Connection con = null;
         //QUERY for loading reviews. we also need the query user
         try{
             con = ConnectionDAO.getInstance().getConnection();
 
-            PreparedStatement pst = con.prepareStatement("SELECT  reviews.scoreProduct, reviews.reviewLikes, reviews.title, reviews.text, reviews.Users_idUser, reviews.fechaReview, products.name, users.name\n" +
+            PreparedStatement pst = con.prepareStatement("SELECT  reviews.scoreProduct, reviews.reviewLikes, reviews.title, reviews.text, reviews.Users_idUser, reviews.fechaReview, products.name, products.idProducts, users.name\n" +
                     "FROM products\n" +
                     "INNER JOIN reviews ON reviews.Products_idProducts = products.idProducts  \n" +
                     "INNER JOIN brands ON brands.idBrands = products.Brands_idBrands\n" +
@@ -136,7 +136,7 @@ public class ReviewDAO {
             ResultSet rs = pst.executeQuery();
 
             while (rs.next()) {
-                hashMap.put(new Review(new User(rs.getNString("users.name")), rs.getInt("reviews.scoreProduct"), rs.getInt("reviews.reviewLikes"), rs.getString("reviews.title"), rs.getString("reviews.text"),rs.getString("reviews.fechaReview")), rs.getString("products.name"));
+                hashMap.put(new Review(new User(rs.getNString("users.name")), rs.getInt("reviews.scoreProduct"), rs.getInt("reviews.reviewLikes"), rs.getString("reviews.title"), rs.getString("reviews.text"),rs.getString("reviews.fechaReview")), ProductsDAO.getProductFromId(rs.getInt("products.idProducts")));
 
             }
 

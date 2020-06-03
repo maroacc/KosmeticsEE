@@ -31,7 +31,7 @@ public class ProductsDAO {
             pstmt.setNString(1, product.getName());
             pstmt.setNString(2, product.getDescription());
             pstmt.setNString(3, product.getProductCategory());
-            pstmt.setFloat(4, product.getPrice());
+            pstmt.setDouble(4, product.getPrice());
             pstmt.setInt(5, product.getOffer());
             pstmt.setInt(6, 0);
             pstmt.setInt(7, brandId);
@@ -107,7 +107,7 @@ public class ProductsDAO {
             pstmt.setNString(1, product.getName());
             pstmt.setNString(2, product.getDescription());
             pstmt.setNString(3, product.getProductCategory());
-            pstmt.setFloat(4, product.getPrice());
+            pstmt.setDouble(4, product.getPrice());
             pstmt.setInt(5, product.getOffer());
             pstmt.setBoolean(6, product.getFreeDelivery());
             pstmt.setInt(7, product.getId());
@@ -282,12 +282,13 @@ public class ProductsDAO {
             if (rs.next()) {
                 //this will change
                 product =new Product(rs.getInt("idProducts"), rs.getString("name"), BrandsDAO.getBrandFromId(rs.getInt("Brands_idBrands")), rs.getString("productCategory"), rs.getDouble("price"), rs.getInt("offer"),rs.getString("description"),rs.getBoolean("freeDeliver"));
-                PreparedStatement pst2 = conBD.getConnection().prepareStatement("SELECT AVG(scoreProduct) FROM reviews WHERE Products_idProducts = ?");
+                PreparedStatement pst2 = conBD.getConnection().prepareStatement("SELECT AVG(scoreProduct), COUNT(idReviews) FROM reviews WHERE Products_idProducts = ?");
                 pst2.setInt(1,id);
                 ResultSet rs2 = pst2.executeQuery();
                 if(rs2.next()) {
                     product.setScore(rs2.getFloat(1));
                     product.setResto();
+                    product.setnReviews(rs2.getInt(2));
                 }
                 PreparedStatement pst3 = conBD.getConnection().prepareStatement("SELECT Features_idFeatures FROM products_features WHERE Products_idProducts = ?");
                 pst3.setInt(1,id);

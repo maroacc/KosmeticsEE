@@ -27,7 +27,7 @@
     <div class="row d-flex justify-content-center">
         <div class="col-8">
             <div class="row">
-                <img class="img-fluid rounded logo my-3" src="assets/images/honest-beauty-logo.jpg">
+                <img class="img-fluid rounded logo my-3" src="ReadImgBrand?nombre=${brand.username}">
                 <div class="row">
                     <h1 class="col-12 col-xl-9"><c:out value="${brand.name}"></c:out></h1>
                     <div class="col-12 col-xl-3 my-2">

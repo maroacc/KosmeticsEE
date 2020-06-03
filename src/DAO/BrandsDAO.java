@@ -250,4 +250,20 @@ public class BrandsDAO {
         return brand;
     }
 
+    public static byte[] getBrandImg(int id) {
+        byte[] retorno = null;
+        try {
+            PreparedStatement pst = conBD.getConnection().prepareStatement("SELECT logo FROM brands WHERE idBrands = ?");
+            pst.setInt(1, id);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                retorno = rs.getBytes(1);
+            }
+
+        } catch (SQLException sqle){
+            System.out.println(sqle.getMessage());
+            sqle.printStackTrace();
+        }
+        return retorno;
+    }
 }

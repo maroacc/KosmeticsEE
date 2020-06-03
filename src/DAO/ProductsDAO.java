@@ -147,11 +147,11 @@ public class ProductsDAO {
         PreparedStatement pstmt = null;
 
         try {
-            pstmt = conBD.getConnection().prepareStatement("SELECT * FROM products WHERE Brands_idBrands = ?");
+            pstmt = conBD.getConnection().prepareStatement("SELECT idProducts FROM products WHERE Brands_idBrands = ?");
             pstmt.setInt(1, idBrand);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()){
-                products.add(new Product(rs.getInt("idProducts"), rs.getNString("name"), rs.getNString("description"), rs.getNString("productCategory"), rs.getFloat("price"), rs.getInt("offer"), rs.getBoolean("freeDeliver")));
+                products.add(getProductFromId(rs.getInt(1)));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

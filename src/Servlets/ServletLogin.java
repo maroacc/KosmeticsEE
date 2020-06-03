@@ -2,6 +2,7 @@ package Servlets;
 
 import DAO.AdminDAO;
 import DAO.BrandsDAO;
+import DAO.ProductsDAO;
 import Dominio.Admin;
 import Dominio.Brand;
 import Dominio.Product;
@@ -23,11 +24,15 @@ public class ServletLogin extends HttpServlet {
         //Comprobamos que coincidan usuario y contraseña
         String username = BrandsDAO.checkLogin(brand); //Comprobamos que sea una marca
 
-        if (username != null) {
-            ArrayList productos = new ArrayList<Product>();
+
+        if (username != null) { // Login como marca (no administrador)
             request.getSession().setAttribute("invalidLogin", false);
             request.getSession().setAttribute("username", username);
-            request.getSession().setAttribute("productos", productos);
+
+            // Recogemos todos los productos de la marca
+            int brandId = DAO.BrandsDAO.getBrandId((String) request.getSession().getAttribute("username"));
+            ArrayList productos = ProductsDAO.getProducts(brandId);
+            request.getSession().setAttribute("listaProductos", productos);
             request.getRequestDispatcher("/tablero.jsp").forward(request, response);
 
         } else if (AdminDAO.checkLogin(admin) != null){

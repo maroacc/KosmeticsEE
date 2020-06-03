@@ -29,7 +29,7 @@ public class ServletReviews extends HttpServlet {
             request.getSession().setAttribute("reviews", ReviewDAO.getAllUserReviews(new User("Alejandro Rodriguez", "alex.rgg10@gmail.com", "p5j9C4iBFnpvESG")));
             System.out.println("reviews" + ReviewDAO.getAllUserReviews(new User("Alejandro Rodriguez", "alex.rgg10@gmail.com", "p5j9C4iBFnpvESG")));
 */
-            request.getSession().setAttribute("reviews", ReviewDAO.getAllReviewsBrand(brand));
+            request.getSession().setAttribute("reviews", ReviewDAO.getAllReviewsBrand(brand ));
             request.getRequestDispatcher("/opiniones.jsp").forward(request, response);
         }
         else {

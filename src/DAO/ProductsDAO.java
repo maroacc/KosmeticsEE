@@ -259,7 +259,7 @@ public class ProductsDAO {
             String[] coloresSplit = colores.split(";");
             for (String color: coloresSplit
             ) {
-                PreparedStatement pst = conBD.getConnection().prepareStatement("INSERT INTO productcolor (color,Products_idProducts) values(?,?)");
+                PreparedStatement pst = conBD.getConnection().prepareStatement("INSERT INTO productColor (color,Products_idProducts) values(?,?)");
                 pst.setString(1,color);
                 pst.setInt(2, productId);
 

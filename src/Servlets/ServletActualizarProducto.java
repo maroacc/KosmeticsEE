@@ -26,6 +26,25 @@ public class ServletActualizarProducto extends HttpServlet {
         System.out.println("precio: " + request.getParameter("precio"));
         System.out.println("features: " + request.getParameterValues("features"));
 
+        int productId = ProductsDAO.getProductID(request.getParameter("inputNombre"));
+        Collection<Part> files = request.getParts();
+        //int id = this.getIdCookie(request);
+        //int id = ProductsDAO.getProductID(request.getParameter("inputNombre"));
+        System.out.println(files.size());
+
+        for (Part f : files) {
+            System.out.println(f.getSubmittedFileName());
+
+            InputStream imagen = f.getInputStream();
+
+            System.out.println(f.getSize() + " B");
+
+            if (f.getSize() > 10) {
+                System.out.println("Se ha leído la imagen");
+                int i = ProductsDAO.checkImg(productId);
+                ProductsDAO.uploadImg(productId,imagen,i);
+            }
+        }
         String[] idFeatures = request.getParameterValues("features");
         ArrayList<String> features = new ArrayList<String>();
 
@@ -36,7 +55,6 @@ public class ServletActualizarProducto extends HttpServlet {
             //System.out.println("feature: "+feature);
         }
 
-        int productId = ProductsDAO.getProductID(request.getParameter("inputNombre"));
         ProductsDAO.setFeatures(productId,idFeatures);
         int descuento = 0;
         if(request.getParameter("inputDescuento") != null)
@@ -44,24 +62,7 @@ public class ServletActualizarProducto extends HttpServlet {
         Product product = new Product(request.getParameter("inputNombre"), request.getParameter("description"), request.getParameter("categoria"), Float.parseFloat(request.getParameter("precio")), descuento, false);
 
         ProductsDAO.uploadColors(productId, request.getParameter("inputColor"));
-        /*Collection<Part> files = request.getParts();
-        //int id = this.getIdCookie(request);
-        int id = 69;
-        System.out.println(files.size());
 
-        for (Part f : files) {
-            System.out.println(f.getSubmittedFileName());
-
-            InputStream imagen = f.getInputStream();
-
-            System.out.println(f.getSize() + " B");
-
-            if (f.getSize() > 0) {
-                System.out.println("Se ha leído la imagen");
-                int i = ProductsDAO.checkImg(id);
-                ProductsDAO.uploadImg(id, imagen, i);
-            }
-        }*/
         int brandId = BrandsDAO.getBrandId((String) request.getSession().getAttribute("username"));
         if(brandId != 0) {
             if(!ProductsDAO.updateProduct(product))
@@ -71,18 +72,18 @@ public class ServletActualizarProducto extends HttpServlet {
             request.getRequestDispatcher("/error.jsp").forward(request, response);
     }
 
-        private int getIdCookie(HttpServletRequest request) {
-            Cookie id = null;
-            Cookie[] cookies = request.getCookies();
-            if(cookies!=null) {
-                for (int i = 0; i < cookies.length; i++) {
-                    if (cookies[i].getName().equals("id")) {
-                        id = cookies[i];
-                    }
+    private int getIdCookie(HttpServletRequest request) {
+        Cookie id = null;
+        Cookie[] cookies = request.getCookies();
+        if(cookies!=null) {
+            for (int i = 0; i < cookies.length; i++) {
+                if (cookies[i].getName().equals("id")) {
+                    id = cookies[i];
                 }
             }
-            return Integer.parseInt(id.getValue());
         }
+        return Integer.parseInt(id.getValue());
+    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

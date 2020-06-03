@@ -21,14 +21,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
     <title>Añadir Producto · Kosmetics</title>
 </head>
-<% response.addCookie(new Cookie("id", "69")); %>
 <body>
 <div class="pricing-header px-3 py pt-md-5 pb-md-4 mx-auto text-center">
     <h1 class="display-4">Editar Producto</h1>
 </div>
 
 <div class="d-flex justify-content-center mb-5 " >
-    <form class="col-10 col-lg-8 col-xl-6 needs-validation" enctype="multipart/form-data" id="form" onsubmit="return validate();" action="uploadImg" method="post" novalidate>
+    <form class="col-10 col-lg-8 col-xl-6 needs-validation" enctype="multipart/form-data" id="form" onsubmit="return validate();" action="actualizar-producto" method="post" novalidate>
         <h4 class="my-3">Información general</h4>
         <div class="form-group">
             <label for="inputNombre">Nombre del producto</label>

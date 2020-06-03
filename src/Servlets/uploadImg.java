@@ -25,7 +25,7 @@ public class uploadImg extends HttpServlet {
 
         Collection<Part> files = request.getParts();
         //int id = this.getIdCookie(request);
-        int id = 69;
+        int id = ProductsDAO.getProductID(request.getParameter("inputNombre"));
         System.out.println(files.size());
 
         for (Part f : files) {

@@ -32,8 +32,10 @@
 </head>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
-<body class="bg-light">
+<body class="bg-light page-top">
 <jsp:include page="nav.jsp"/>
+<div id="wrapper">
+<jsp:include page="nav-lateral.jsp"/>
 
 <c:if test="${empty listaProductos}">
     <div class="d-flex justify-content-center row mt-5">
@@ -43,15 +45,116 @@
 </c:if>
 
 <!-- Page Content -->
-<div class="container">
-
+<div id="content-wrapper" class="d-flex flex-column pl-3">
     <!-- Page Heading -->
     <h1 class="h3 mt-4 mb-2 text-gray-800">Catálogo</h1>
     <p class="mb-4">El catálogo te permite ver los productos publicados en tu página de Kosmetics</a>.</p>
 
-    <div class="row">
-    <c:forEach var="producto" items="${listaProductos}">
-        <div class="col-lg-4 col-sm-6 mb-4">
+    <p class="mt-2">
+        <button aria-controls="collapseExample" aria-expanded="false" class="btn btn-primary" data-target="#collapseExample"
+                data-toggle="collapse" type="button">
+            Filters
+        </button>
+    </p>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                    <h5>Categoría</h5>
+                    <div class="" id="collapseCategoria">
+                        <input class="form-control form-control-sm appended-form-control"
+                               placeholder="Search" type="text">
+                        <div class="p-2">
+                            <ul class="list-unstyled overflow-auto" style="max-height: 150px">
+                                <li class="d-flex justify-content-between align-items-center mb-1 mx-1">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox" id="inputCategoria1">
+                                        <label class="custom-control-label" for="inputCategoria1">Bases</label>
+                                    </div><span class="font-size-xs text-muted">32</span>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-center mb-1 mx-1">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox" id="inputCategoria2">
+                                        <label class="custom-control-label" for="inputCategoria2">Bases</label>
+                                    </div><span class="font-size-xs text-muted">32</span>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-center mb-1 mx-1">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox" id="inputCategoria3">
+                                        <label class="custom-control-label" for="inputCategoria3">Bases</label>
+                                    </div><span class="font-size-xs text-muted">32</span>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-center mb-1 mx-1">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox" id="inputCategoria4">
+                                        <label class="custom-control-label" for="inputCategoria4">Bases</label>
+                                    </div><span class="font-size-xs text-muted">32</span>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-center mb-1 mx-1">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox" id="inputCategoria5">
+                                        <label class="custom-control-label" for="inputCategoria5">Bases</label>
+                                    </div><span class="font-size-xs text-muted">32</span>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-center mb-1 mx-1">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox" id="inputCategoria6">
+                                        <label class="custom-control-label" for="inputCategoria6">Bases</label>
+                                    </div><span class="font-size-xs text-muted">32</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <h5>Precio</h5>
+                    <div class="" id="collapsePrecio">
+                        <input type="range" class="custom-range my-3" id="customRange1" min="0" max="100" value="50" name = "precio">
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                            <input class="form-control" type="text" id ="precioFiltro">
+                        </div>
+                    </div>
+                    <h5 class="mt-3">Color</h5>
+                    <div>
+                        <ul class="list-inline my-3">
+                            <li class="list-inline-item p-1"><img class="img-fluid" src="assets/images/deep1.png" height="25" width="25"></li>
+                            <li class="list-inline-item p-1"><img class="img-fluid" src="assets/images/deep1.png" height="25" width="25"></li>
+                            <li class="list-inline-item p-1"><img class="img-fluid" src="assets/images/deep1.png" height="25" width="25"></li>
+                            <li class="list-inline-item p-1"><img class="img-fluid" src="assets/images/deep1.png" height="25" width="25"></li>
+                            <li class="list-inline-item p-1"><img class="img-fluid" src="assets/images/deep1.png" height="25" width="25"></li>
+                            <li class="list-inline-item p-1"><img class="img-fluid" src="assets/images/deep1.png" height="25" width="25"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <h5>Características</h5>
+                    <div class="" id="collapseCaracteristicas">
+                        <input class="form-control form-control-sm appended-form-control"
+                               placeholder="Search" type="text">
+                        <div class="p-2">
+                            <ul class="list-unstyled overflow-auto" style="max-height: 150px">
+                                <c:forEach var="categoria" items="${sessionScope.features}">
+                                    <li class="d-flex justify-content-between align-items-center mb-1 mx-1">
+                                        <div class="custom-control custom-checkbox">
+                                            <input class="custom-control-input" type="checkbox" id="inputCaracteristica1">
+                                            <label class="custom-control-label" for="inputCaracteristica1"><c:out value="${categoria.value}"></c:out></label>
+                                        </div><span class="font-size-xs text-muted">32</span>
+                                    </li>
+                                </c:forEach>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <c:forEach var="producto" items="${listaProductos}">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="card h-100 shadow">
                 <a href="ServletInfoProducto?producto=${producto.name}"><img class="card-img-top" src="ReadImg?id=${producto.id}" alt="..."></a>
 
@@ -70,6 +173,7 @@
         </div>
     </c:forEach>
     </div>
+</div>
     <!-- /.row -->
 
 <%--    <!-- Pagination -->
@@ -107,5 +211,21 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<!-- Bootstrap core JavaScript-->
+<script src="startbootstrap-sb-admin-2-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="startbootstrap-sb-admin-2-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<!-- Page level plugins -->
+<script src="startbootstrap-sb-admin-2-gh-pages/vendor/chart.js/Chart.min.js"></script>
+<script src="startbootstrap-sb-admin-2-gh-pages/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="startbootstrap-sb-admin-2-gh-pages/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="js/filters.js"></script>
+
+
+
 </body>
 </html>

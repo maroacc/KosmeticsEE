@@ -150,7 +150,14 @@
         <servlet-name>infoProductoJSP</servlet-name>
         <url-pattern>/info-producto</url-pattern>
     </servlet-mapping>
-
+    <servlet>
+        <servlet-name>listaProductosJSP</servlet-name>
+        <jsp-file>/lista-productos.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>listaProductosJSP</servlet-name>
+        <url-pattern>/lista-productos</url-pattern>
+    </servlet-mapping>
     <servlet>
         <servlet-name>servletGraficas</servlet-name>
         <servlet-class>Servlets.ServletGraficas</servlet-class>

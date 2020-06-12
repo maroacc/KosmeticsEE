@@ -263,13 +263,13 @@
                                 <hr>
                                 <p>Se aplica a</p>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios2" id="input-pedido-completo" value="option1" checked="">
+                                    <input class="form-check-input" type="radio" name="exampleRadios2" id="radio-pedido-completo" value="option1" checked="">
                                     <label class="form-check-label" for="exampleRadios1">
                                         Pedido completo
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios2" id="input-productos-especificos" value="option2">
+                                    <input class="form-check-input" type="radio" name="exampleRadios2" id="radio-productos-especificos" value="option2">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Productos específicos
                                     </label>
@@ -344,18 +344,18 @@
                                 </div>
                                 <small class="mt-3">A UN VALOR DESCONTADO</small>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios2" id="input-gratis" value="option1" checked="">
+                                    <input class="form-check-input" type="radio" name="exampleRadios2" id="radio-gratis" value="option1" checked="">
                                     <label class="form-check-label" for="exampleRadios1">
                                         Gratis
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios2" id="input-porcentaje" value="option2">
+                                    <input class="form-check-input" type="radio" name="exampleRadios2" id="radio-porcentaje-x-y" value="option2">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Porcentaje
                                     </label>
                                 </div>
-                                <div class="input-group mb-3" id="input-porcentaje-x-y">
+                                <div class="input-group my-3" id="input-porcentaje-x-y">
                                     <input type="text" class="form-control" aria-label="" aria-describedby="basic-addon2">
                                     <div class="input-group-append">
                                         <span class="input-group-text" id="basic-addon2">%</span>
@@ -373,25 +373,23 @@
                         </div>
                         <div class="card-body">
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="radio-monto-min" value="option1" checked="">
                                 <label class="form-check-label" for="exampleRadios1">
                                     Monto mínimo de compra (€)
                                 </label>
-                                <div class="input-group mb-3">
+                                <div class="input-group mb-3" id="input-monto-min">
                                     <input type="text" class="form-control" aria-label="" aria-describedby="basic-addon2">
                                     <div class="input-group-append">
                                         <span class="input-group-text" id="basic-addon2">€</span>
                                     </div>
                                 </div>
-                                <small id="emailHelp" class="form-text text-muted">Se aplica a todo el proyecto</small>
                             </div>
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="radio-cantidad-min" value="option1" checked="">
                                 <label class="form-check-label" for="exampleRadios1">
                                     Cantidad mínima de artículos
                                 </label>
-                                <input type="text" class="form-control" aria-label="" aria-describedby="basic-addon2">
-                                <small id="emailHelp" class="form-text text-muted">Se aplica a todo el proyecto</small>
+                                <input type="text" class="form-control" aria-label="" aria-describedby="basic-addon2" id="input-cantidad-min">
                             </div>
                         </div>
                     </div>

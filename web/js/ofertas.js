@@ -10,6 +10,8 @@ $(document).ready(function(){
     $("#input-fija").hide();
     $("#card-producto").hide();
     $("#search-productos-especificos").hide();
+    $("#input-porcentaje-x-y").hide();
+    $("#input-cantidad-min").hide();
 
     $("#radio-porcentaje").click(function(){
         $("#card-valor").show();
@@ -37,11 +39,29 @@ $(document).ready(function(){
         $("#card-producto").show();
     });
 
-    $("#input-pedido-completo").click(function(){
+    $("#radio-pedido-completo").click(function(){
         $("#search-productos-especificos").hide();
     });
 
-    $("#input-productos-especificos").click(function(){
+    $("#radio-productos-especificos").click(function(){
         $("#search-productos-especificos").show();
+    });
+
+    $("#radio-gratis").click(function(){
+        $("#input-porcentaje-x-y").hide();
+    });
+
+    $("#radio-porcentaje-x-y").click(function(){
+        $("#input-porcentaje-x-y").show();
+    });
+
+    $("#radio-monto-min").click(function(){
+        $("#input-monto-min").show();
+        $("#input-cantidad-min").hide();
+    });
+
+    $("#radio-cantidad-min").click(function(){
+        $("#input-monto-min").hide();
+        $("#input-cantidad-min").show();
     });
 });

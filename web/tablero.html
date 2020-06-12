@@ -188,7 +188,7 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Título del descuento</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="por ej.: Black Friday">
+                                    <input type="text" class="form-control" id="input-titulo" aria-describedby="emailHelp" maxlength="30" placeholder="por ej.: Black Friday">
                                     <small id="emailHelp" class="form-text text-muted">Agregue un título para dar a conocer a sus clientes el motivo del descuento.</small>
                                 </div>
 
@@ -240,10 +240,10 @@
                                 <h6 class="m-0 font-weight-bold text-info">Valor</h6>
                             </div>
                             <div class="card-body">
-                                <div class="form-group" id="input-porcentaje">
+                                <div class="form-group" id="input-group-porcentaje">
                                     <label for="exampleInputEmail1">Valor del descuento</label>
-                                    <div class="input-group mb-3" id="input-porcentaje">
-                                        <input type="text" class="form-control" aria-label="" aria-describedby="basic-addon2">
+                                    <div class="input-group mb-3">
+                                        <input type="number" min="0" max="100" class="form-control" aria-label="" id="input-porcentaje" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <span class="input-group-text" id="basic-addon2">%</span>
                                         </div>
@@ -263,13 +263,13 @@
                                 <hr>
                                 <p>Se aplica a</p>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios2" id="radio-pedido-completo" value="option1" checked="">
+                                    <input class="form-check-input" type="radio" name="exampleRadios2" id="radio-pedido-completo" value="1" checked="">
                                     <label class="form-check-label" for="exampleRadios1">
                                         Pedido completo
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios2" id="radio-productos-especificos" value="option2">
+                                    <input class="form-check-input" type="radio" name="exampleRadios2" id="radio-productos-especificos" value="2">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Productos específicos
                                     </label>
@@ -423,12 +423,15 @@
                 <!-- Valor % Despuento -->
                 <div class="mt-5 mr-5">
 
-                    <div class="card shadow mb-4 position-fixed">
+                    <div class="card shadow mb-4 position-fixed" style="width: 300px">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-info">Resumen</h6>
                         </div>
                         <div class="card-body">
-                            Aún no se han introducido datos
+                            <p id="label-titulo" class="text-info">Aún no se ha introducido ningún título</p>
+                            <ul>
+                                <li id="label-tipo"></li>
+                            </ul>
                             <hr>
 
                         </div>

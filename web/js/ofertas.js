@@ -12,7 +12,7 @@ $(document).ready(function(){
     * Tipo: porcentaje
     * aplicado al pedido entero */
 
-    $("#input-fija").hide();
+    $("#input-group-fija").hide();
     $("#card-producto").hide();
     $("#search-productos-especificos").hide();
     $("#input-porcentaje-x-y").hide();
@@ -28,7 +28,7 @@ $(document).ready(function(){
     $("#radio-porcentaje").click(function(){
         $("#card-valor").show();
         $("#input-group-porcentaje").show();
-        $("#input-fija").hide();
+        $("#input-group-fija").hide();
         $("#card-producto").hide();
     });
 
@@ -38,7 +38,7 @@ $(document).ready(function(){
     $("#radio-fija").click(function(){
         $("#card-valor").show();
         $("#input-group-porcentaje").hide();
-        $("#input-fija").show();
+        $("#input-group-fija").show();
         $("#card-producto").hide();
 
     });
@@ -106,6 +106,10 @@ $(document).ready(function(){
       resumenPorcentaje();
     });
 
+    $("#input-fija").change(function(){
+        resumenFija();
+    });
+
     $("#input-group-monto-min").change(function () {
         resumenRequisitosMinimos();
 
@@ -116,9 +120,13 @@ $(document).ready(function(){
 
     });
     
-    $("input-fecha-inicio").change(function () {
+    $("#input-fecha-inicio").change(function () {
+        resumenFechas();
+    });
 
-    })
+    $("#input-fecha-fin").change(function () {
+        resumenFechas();
+    });
 
 
 
@@ -143,6 +151,25 @@ function resumenPorcentaje() {
 
 }
 
+function resumenFija() {
+    var fija = $("#input-fija").val();
+
+    if(fija === ""){
+        $("#label-tipo").hide();
+    }
+    else {
+        /* Comprueba si es pedido completo o selección de artículos*/
+        var opt = $("input[name='radioScope']:checked"). val();
+        if ( opt === "1"){
+            $("#label-tipo").show().text(fija + " € de descuento en pedido completo");
+        }
+        else if(opt === "2"){
+            $("#label-tipo").show().text(fija + " € de descuento en selección de artículos");
+        }
+    }
+
+}
+
 function resumenRequisitosMinimos() {
 
     var monto = $("#input-monto-min").val();
@@ -155,7 +182,7 @@ function resumenRequisitosMinimos() {
             $("#label-requisito").hide();
 
         } else {
-            $("#label-requisito").show().text("Monto mínimo de compra: " + monto + " €");
+            $("#label-requisito").show().text("Monto mínimo: " + monto + " €");
         }
     }
     else if(opt === "2"){
@@ -164,7 +191,7 @@ function resumenRequisitosMinimos() {
 
         }
         else {
-            $("#label-requisito").show().text("Cantidad mínima de compra: " + cantidad  + "€");
+            $("#label-requisito").show().text("Cantidad mínima: " + cantidad  + " artículos");
 
         }
     }
@@ -172,5 +199,8 @@ function resumenRequisitosMinimos() {
 }
 
 function resumenFechas() {
-    $("#label-duración").show().text("Duración");
+    var inicio = $("#input-fecha-inicio").val();
+    var fin = $("#input-fecha-fin").val();
+
+    $("#label-duración").show().text("Desde el " + inicio + " hasta el " + fin);
 }

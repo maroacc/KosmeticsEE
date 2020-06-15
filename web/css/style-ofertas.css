@@ -1,0 +1,11 @@
+@media screen and (min-width: 992px){
+    #card-resumen{
+        min-width: 230px;
+    }
+}
+@media screen and (min-width: 1200px){
+    #card-resumen{
+        min-width: 300px;
+    }
+
+}

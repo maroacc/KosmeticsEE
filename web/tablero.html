@@ -27,7 +27,7 @@
     <!-- Custom styles for this template-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
-
+    <link href="css/style-ofertas.css" rel="stylesheet">
 
 </head>
 
@@ -267,14 +267,14 @@
                                 <hr>
                                 <p>Se aplica a</p>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios2" id="radio-pedido-completo" value="1" checked="">
-                                    <label class="form-check-label" for="exampleRadios1">
+                                    <input class="form-check-input" type="radio" name="radioScope" id="radio-pedido-completo" value="1" checked>
+                                    <label class="form-check-label" for="radio-pedido-completo">
                                         Pedido completo
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios2" id="radio-productos-especificos" value="2">
-                                    <label class="form-check-label" for="exampleRadios2">
+                                    <input class="form-check-input" type="radio" name="radioScope" id="radio-productos-especificos" value="2">
+                                    <label class="form-check-label" for="radio-pedido-completo">
                                         Productos específicos
                                     </label>
                                 </div>
@@ -377,23 +377,23 @@
                         </div>
                         <div class="card-body">
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="radio-monto-min" value="option1" checked="">
-                                <label class="form-check-label" for="exampleRadios1">
+                                <input class="form-check-input" type="radio" name="radioRequisito" id="radio-monto-min" value="1" checked>
+                                <label class="form-check-label" for="radio-monto-min">
                                     Monto mínimo de compra (€)
                                 </label>
-                                <div class="input-group mb-3" id="input-monto-min">
-                                    <input type="text" class="form-control" aria-label="" aria-describedby="basic-addon2">
+                                <div class="input-group mb-3" id="input-group-monto-min">
+                                    <input type="number" class="form-control" aria-label="" aria-describedby="basic-addon2" id="input-monto-min">
                                     <div class="input-group-append">
                                         <span class="input-group-text" id="basic-addon2">€</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="radio-cantidad-min" value="option1" checked="">
-                                <label class="form-check-label" for="exampleRadios1">
+                                <input class="form-check-input" type="radio" name="radioRequisito" id="radio-cantidad-min" value="2">
+                                <label class="form-check-label" for="radio-cantidad-min">
                                     Cantidad mínima de artículos
                                 </label>
-                                <input type="text" class="form-control" aria-label="" aria-describedby="basic-addon2" id="input-cantidad-min">
+                                <input type="number" class="form-control" aria-label="" aria-describedby="basic-addon2" id="input-cantidad-min">
                             </div>
                         </div>
                     </div>
@@ -405,11 +405,11 @@
                             <div class="form-row">
                                 <div class="col-6 col-lg">
                                     <label for="inputProvincia" class="">Fecha de inicio</label>
-                                    <input type="datetime-local" class="form-control" id="inputProvincia" name="inputProvincia" required>
+                                    <input type="datetime-local" class="form-control" id="input-fecha-inicio" name="inputFechaInicio" required>
                                 </div>
                                 <div class="col-6 col-lg">
                                     <label for="inputProvincia" class="">Fecha de fin</label>
-                                    <input type="datetime-local" class="form-control" id="inputProvincia" name="inputProvincia" required>
+                                    <input type="datetime-local" class="form-control" id="input-fecha-fin" name="inputFechaFin" required>
                                 </div>
                             </div>
                         </div>
@@ -425,23 +425,21 @@
             <!-- Sidebar -->
             <div class="col-lg-4">
                 <!-- Valor % Despuento -->
-                <div class="mt-5">
-
-                    <div class="card shadow mb-4 mr-3 position-fixed">
+                    <div class="card shadow mb-4 mr-3 position-fixed mt-5" id="card-resumen">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-info">Resumen</h6>
                         </div>
                         <div class="card-body">
-                            <p id="label-titulo" class="text-info">Aún no se ha introducido ningún título</p>
-                            <ul>
-                                <li id="label-tipo"></li>
-                            </ul>
+                            <p id="label-titulo" class="text-info">Aún no se ha introducido ninún título</p>
                             <hr>
+                            <ul style="padding-left: 15px !important;">
+                                <li id="label-tipo"></li>
+                                <li id="label-requisito"></li>
+                                <li id="label-duración"></li>
+                            </ul>
 
                         </div>
                     </div>
-
-                </div>
             </div>
             <!-- End of Sidebar -->
         </div>

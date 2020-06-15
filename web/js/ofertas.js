@@ -18,6 +18,9 @@ $(document).ready(function(){
     $("#input-porcentaje-x-y").hide();
     $("#input-cantidad-min").hide();
     $("#label-tipo").hide();
+    $("#label-requisito").hide();
+    $("#label-duración").hide();
+
 
     /*Porcentaje:
     * Muestra la card para introducir el valor del porcentaje*/
@@ -58,10 +61,14 @@ $(document).ready(function(){
 
     $("#radio-pedido-completo").click(function(){
         $("#search-productos-especificos").hide();
+        resumenPorcentaje();
+
     });
 
     $("#radio-productos-especificos").click(function(){
         $("#search-productos-especificos").show();
+        resumenPorcentaje();
+
     });
 
     $("#radio-gratis").click(function(){
@@ -73,20 +80,24 @@ $(document).ready(function(){
     });
 
     $("#radio-monto-min").click(function(){
-        $("#input-monto-min").show();
+        $("#input-group-monto-min").show();
         $("#input-cantidad-min").hide();
+        resumenRequisitosMinimos();
+
     });
 
     $("#radio-cantidad-min").click(function(){
-        $("#input-monto-min").hide();
+        $("#input-group-monto-min").hide();
         $("#input-cantidad-min").show();
+        resumenRequisitosMinimos();
+
     });
 
     /*Rellenar Resumen Pedido*/
     $("#input-titulo").keyup(function(){
         var titulo = $("#input-titulo").val();
         if(titulo === ""){
-            titulo = "Aún no se ha introducido ningún título"
+            titulo = "Aún no se ha introducido ninún título"
         }
         $("#label-titulo").text(titulo);
     });
@@ -95,13 +106,21 @@ $(document).ready(function(){
       resumenPorcentaje();
     });
 
-/*    $("#radio-monto-min").click(function(){
-        resumenPorcentaje();
+    $("#input-group-monto-min").change(function () {
+        resumenRequisitosMinimos();
+
     });
 
-    $("#radio-cantidad-min").click(function(){
-        resumenPorcentaje();
-    });*/
+    $("#input-cantidad-min").change(function () {
+        resumenRequisitosMinimos();
+
+    });
+    
+    $("input-fecha-inicio").change(function () {
+
+    })
+
+
 
 });
 
@@ -113,13 +132,45 @@ function resumenPorcentaje() {
     }
     else {
         /* Comprueba si es pedido completo o selección de artículos*/
-        var opt = $("input[name='exampleRadios2']:checked"). val();
-        if ( opt == 1){
+        var opt = $("input[name='radioScope']:checked"). val();
+        if ( opt === "1"){
             $("#label-tipo").show().text(porcentaje + "% de descuento en pedido completo");
         }
-        else if(opt == 2){
+        else if(opt === "2"){
             $("#label-tipo").show().text(porcentaje + "% de descuento en selección de artículos");
         }
     }
 
+}
+
+function resumenRequisitosMinimos() {
+
+    var monto = $("#input-monto-min").val();
+    var cantidad = $("#input-cantidad-min").val();
+
+    var opt = $("input[name='radioRequisito']:checked"). val();
+
+    if (opt === "1"){
+        if(monto === ""){
+            $("#label-requisito").hide();
+
+        } else {
+            $("#label-requisito").show().text("Monto mínimo de compra: " + monto + " €");
+        }
+    }
+    else if(opt === "2"){
+        if (cantidad === ""){
+            $("#label-requisito").hide();
+
+        }
+        else {
+            $("#label-requisito").show().text("Cantidad mínima de compra: " + cantidad  + "€");
+
+        }
+    }
+
+}
+
+function resumenFechas() {
+    $("#label-duración").show().text("Duración");
 }
